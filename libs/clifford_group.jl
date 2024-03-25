@@ -99,6 +99,17 @@ end
 
 # symplectic action on subspace:
 
+function symplectic_group(n)
+
+    n_string = string(n);
+    GAP.evalstr("n:= "*string(n)*";;");
+    GAP.evalstr("sp"*n_string*" := symplectic_group(n);;");
+
+end
+
+# symplectic action on subspace:
+# note: should run symplectic_group(n) first:
+
 function symplectic_orbit(n,subspace)
     if string(subspace)[1] == 'A'
         ss = "Set("*string(subspace)[4:end]*")";
@@ -113,7 +124,7 @@ function symplectic_orbit(n,subspace)
     GAP.evalstr("subspace := "*ss*";;");
 
     # call symplectic_orbit function:
-    orbit = (GAP.evalstr("symp_orbit := symplectic_orbit_subspace(n,subspace);"));
+    orbit = (GAP.evalstr("symp_orbit := symplectic_orbit_subspace(n,sp"*nn*",subspace);"));
 
     return GAP.gap_to_julia(orbit)
 end

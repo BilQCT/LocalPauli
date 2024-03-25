@@ -345,23 +345,52 @@ bit_to_pauli_string := function(x)
     return strg;
 end;
 
+
+
+gf_to_pauli_string := function(x)
+
+    local i, n, strg;
+
+    n := (Length(x)/2);
+    strg := "";
+    for i in [1..n] do
+        if (x[i] = 0*Z(2)) and (x[i+n] = 0*Z(2)) then
+            strg := Concatenation(strg,"i");
+        elif (x[i] = Z(2)^0) and (x[i+n] = 0*Z(2)) then
+            strg := Concatenation(strg,"x");
+        elif (x[i] = 0*Z(2)) and (x[i+n] = Z(2)^0) then
+            strg := Concatenation(strg,"z");
+        elif (x[i] = Z(2)^0) and (x[i+n] = Z(2)^0) then
+            strg := Concatenation(strg,"y");
+        else
+            return "error";
+        fi;
+    od;
+
+    return strg;
+end;
+
 ######################################
 
-list_bit_to_pauli_string := function(E)
+pauli_strings := function(n,bool)
 
-    local i, N, P_strgs;
+    local i, En, pstrings;
 
-    N := Length(E);
-    P_strgs := [];
+    En := all_bit_strings(2*n);;
 
-    for i in [1..N] do
-        Add(P_strgs,bit_to_pauli_string(E[i]));
+
+    pstrings := [];
+
+    for i in [1..Length(En)] do
+        Add(pstrings,bit_to_pauli_string(En[i]));
     od;
 
     # sort in lexicographic order:
-    SortParallel(P_strgs, E);
+	if bool = true then
+		SortParallel(pstrings, En);
+	fi;
 
-    return [P_strgs,E];
+    return [pstrings,En];
 end;
 
 ######################################
@@ -537,19 +566,32 @@ symplectic_matrix := function(n)
 
 end;
 
-
-symplectic_orbit_subspace := function(n,subspace)
-
-    local orb, g, SPn, im_subspace, v, im_v, e, form,mat;
+symplectic_group := function(n)
+	local mat,form;
 
     mat := symplectic_matrix(n);
 
     form := BilinearFormByMatrix(mat,GF(2));
 
-    SPn := SymplecticGroup(2*n,2,form);
+    return SymplecticGroup(2*n,2,form);
+end;
+
+
+symplectic_group_action := function(n)
+	local spn;
+
+	spn := symplectic_group(n);;
+
+
+end;
+
+
+symplectic_orbit_subspace := function(n,spn,subspace)
+
+    local orb, g, im_subspace, v, im_v, e, form,mat;
 
     orb := [];
-    for g in SPn do
+    for g in spn do
         im_subspace := Set([]);;
         for v in subspace do
             im_v := [];;
