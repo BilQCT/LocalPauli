@@ -6,3 +6,22 @@ clifford_group.g: GAP script for generating clifford group and/or symplectic gro
 clifford_group.jl: julia script for calling GAP and running GAP clifford_group.g functions.
 
 stab.jl: julia script for generating stabilizer states.
+
+
+
+# Requirements:
+
+GAP
+Polymake
+Nemo
+Combinatorics
+
+## Instructions
+
+To create an environment for running StabTheory, in Julia REPL use the following commands:
+
+using Pkg
+Pkg.generate("path/to/MyProject")
+Pkg.activate("path/to/MyProject")
+
+Pkg.add("YourPackage")
