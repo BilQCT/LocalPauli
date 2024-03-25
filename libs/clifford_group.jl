@@ -1,7 +1,7 @@
 using GAP
 
 # read gap script:
-@gap("Read(\"clifford_group.g\");;");
+@gap("Read(\"libs/clifford_group.g\");;");
 
 @gap("LoadPackage(\"forms\");;");
 
