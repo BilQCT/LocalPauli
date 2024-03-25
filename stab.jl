@@ -1,5 +1,30 @@
 # Stabilizer theory
 
+
+
+# convert array to matrix:
+# assume elements are vectors of same length:
+function array_to_matrix(typ, arry)
+    n = length(arry); d = length(arry[1]);
+    # intialize matrix:
+    M = Matrix{typ}(undef, 0, d);
+    for i in 1:n
+        M = vcat(M,transpose(arry[i]));
+    end;
+    return M
+end
+
+
+# convert array to polymake matrix:
+# input: typ: pm.Rational, pm.Integer, etc.
+# input: julia array:
+function array_to_polymake_matrix(typ, arry)
+    M = array_to_matrix(typ,arry);
+    return pm.Matrix{typ}(M)
+end
+
+################################################################################################
+
 function tensor_prod(A,n)
     An = A;
     for i in 1:(n-1); An = kron(An,A); end;
@@ -282,23 +307,27 @@ using Combinatorics
 
 using Nemo
 
-function find_gens(isotropic)
+function find_gens(n,isotropic)
     # determine ring:
-    Z2 = ResidueRing(ZZ, 2);
-    
-    # determine number of qubits:
-    n = Int64(log2(length(isotropic)));
+    ZZ2 = residue_ring(ZZ,2);;
+    Z2 = ZZ2[1];
+
+    # Define matrix space over Z2:
+    S = matrix_space(Z2, n, 2*n)
     
     # remove identity
     identity = [0 for i in 1:(2*n)];
     idx = findall(x->x != identity, isotropic)
+
+    M = S(gens_to_check_matrix(isotropic))
+    rnk = rank(M);
     
-    combs = combinations(isotropic[idx],n);
+    combs = combinations(isotropic[idx],rnk);
     for c in combs
         
-        A = matrix(Z2, gens_to_check_matrix(c));
+        A = S(gens_to_check_matrix(c));
         r = rank(A);
-        if r == n; return c; end;
+        if r == rnk; return c; end;
     end
     
 end
@@ -407,7 +436,7 @@ function stabilizer_coefficients(n,II)
     
     for iso in II
         # generate valid value assignments
-        gens = find_gens(iso);
+        gens = find_gens(n,iso);
         Gamma_iso = Gamma(gens);
     
         for gamma in Gamma_iso
@@ -426,4 +455,185 @@ function stabilizer_coefficients(n,II)
         end
     end
     return A;
+end
+
+
+################################################################################################
+################################################################################################
+
+using DelimitedFiles
+
+function save_isotropics(II,n)
+    N = 2*n;
+    
+    # initialize matrix array:
+    M = Array{Int64}(undef,N,0);
+    
+    for i in 1:length(II)
+        for j in II[i]
+            cj = Vector{Int64}(j);
+            M = hcat(M,cj);
+        end
+    end
+    
+    nn = string(n);
+    
+    open(nn*"_qubit_isotropics.txt", "w") do io
+           writedlm(io, M, ',')
+       end
+end
+
+
+
+function load_isotropics(n)
+    filename = string(n)*"_qubit_isotropics.txt";
+    # read file:
+    A = readdlm(filename, ',', Int64);
+    
+    N = size(A)[2]; K = 2^n; M=Int(N/K);
+    Isotropics = [];
+    for i in 1:M
+        isotropic = [];
+        for j in 1:K
+            k = K*(i-1)+j;
+            ak = A[:,k];
+            push!(isotropic,ak)
+        end
+        push!(Isotropics,isotropic);
+    end
+    
+    return Isotropics;
+end
+
+################################################################################################
+################################################################################################
+
+
+
+function local_isotropics(II,n)
+    En, pn = pauli_list(n);
+    
+    # map: pn->En:
+    dict = Dict(zip(pn,En));
+    
+    # local paulis:
+    En_loc = [dict[p] for p in pn if length(findall(x->x=='i',p)) == (n-1)];
+    
+    II_loc = [];
+    for iso in II
+        iso_loc = [a for a in iso if a in En_loc];
+        if length(iso_loc) == n; push!(II_loc,iso); end;
+    end
+    
+    return II_loc
+    
+end
+
+
+
+
+
+
+function local_inequalities(In,n)
+    # compute local isotropics:
+    Inloc = local_isotropics(In,n);
+    
+    # number of elements in each isotropic:
+    N = Int(2^n);
+    
+    # array of indices:
+    all_indices = [];
+    
+    for i in 1:length(In)
+        if In[i] in Inloc
+            indices = [N*(i-1)+j for j in 1:N];
+            all_indices = vcat(all_indices,indices)
+        end
+    end
+    return all_indices;
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+using Combinatorics
+
+function deterministic_vertices(Iloc,n)
+    # generate Paulis:
+    E, P = pauli_list(n); dim = length(E);
+    
+    # dictionary:
+    dict1 = Dict(zip(P,E));
+    
+    # index positions:
+    index_array = [i for i in 1:dim];
+    
+    # dictionary:
+    dict2 = Dict(zip(E,index_array));
+    
+    # local paulis:
+    Eloc = [dict1[p] for p in P if length(findall(x->x=='i',p)) == (n-1)];
+    
+    # Number of local paulis:
+    N = length(Eloc);
+    
+    # all functions: En_loc -> Z2:
+    Z = all_dit_strings(2,N);
+    
+    # Set of deterministic vertices:
+    D = [];
+    
+    for z in Z
+        # dictionary:
+        dict3 = Dict(zip(Eloc,z));
+        
+        # initialize
+        d = [0 for i in 1:dim]; d[1] = 1;
+        
+        # local pauli positions:
+        index_loc = [dict2[a] for a in Eloc];
+        
+        # local pauli values:
+        values_loc = [(-1)^s for s in z];
+        
+        # initialize values for Eloc:
+        d[index_loc] = values_loc;
+        
+        for iso in Iloc
+            g = [a for a in iso if a in Eloc];
+            G = length(g);
+            
+            # nonlocal outcomes:
+            values_nloc = [];
+            
+            for i in 2:G
+                combs = collect(combinations(g,i));
+                
+                for j in 1:length(combs)
+                    a = [0 for k in 1:(2*n)];
+                    s = 0;
+                    
+                    for c in combs[j][1:end]
+                        a = sum_bitstrings(a,c);
+                        s = (s + dict3[c]) %2;
+                    end
+                    
+                    # nonlocal expectation
+                    d[dict2[a]] = (-1)^s;
+                end
+            end
+        end
+        # add d to D:
+        push!(D,d);
+    end
+    return D
 end

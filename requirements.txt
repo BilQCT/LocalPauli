@@ -1,0 +1,4 @@
+GAP
+Polymake
+Nemo
+Combinatorics
