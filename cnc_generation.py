@@ -4,6 +4,7 @@ import numpy as np
 from typing import Union
 import pickle
 from itertools import combinations
+import yaml
 
 
 class Pauli:
@@ -23,7 +24,7 @@ class Pauli:
         elif not isinstance(T, np.ndarray):
             raise ValueError("T should be either a list or a numpy array.")
 
-        self.T = T
+        self.T = T.astype(int)
         self.n = T.shape[0] // 2
 
     def __str__(self) -> str:
@@ -39,9 +40,9 @@ class Pauli:
                 pauli_str += "I"
 
         return pauli_str
-    
+
     def __add__(self, other) -> Pauli:
-        T  = (self.T + other.T) % 2
+        T = (self.T + other.T) % 2
         return Pauli(T)
 
     def __repr__(self) -> str:
@@ -240,12 +241,12 @@ def generate_isotropic_from_gens(isotropic_gens: list[Pauli]) -> set[Pauli]:
 
     for r in range(1, len(isotropic_gens) + 1):
         for subset in combinations(isotropic_gens, r):
-            if r == 1: 
+            if r == 1:
                 isotropic_group.add(subset[0])
             else:
                 T = np.zeros(2 * isotropic_gens[0].n)
                 for p in subset:
-                    T = (T + p.T) % 2 
+                    T = (T + p.T) % 2
                 isotropic_group.add(Pauli(T))
 
     return isotropic_group
@@ -267,10 +268,12 @@ def find_ksi_anticommuting_paulis(
 
     ksi = 2 * m + 1
 
-    commutative_paulis_for_isotropic = commutative_paulis_for_isotropic.copy() # Copy the set
+    commutative_paulis_for_isotropic = (
+        commutative_paulis_for_isotropic.copy()
+    )  # Copy the set
 
-    a = next(iter(commutative_paulis_for_isotropic)) # Get an element from the set
-    
+    a = next(iter(commutative_paulis_for_isotropic))  # Get an element from the set
+
     anticommuting_paulis = {a}
 
     while len(anticommuting_paulis) < ksi:
@@ -280,15 +283,18 @@ def find_ksi_anticommuting_paulis(
             for q in commutative_paulis_for_isotropic:
                 if not is_commute(p, q):
                     new_commutative_paulis_for_isotropic.add(q)
-            
+
             commutative_paulis_for_isotropic = new_commutative_paulis_for_isotropic
 
         anticommuting_paulis.add(next(iter(commutative_paulis_for_isotropic)))
 
     return anticommuting_paulis
 
+
 class Cnc_Set:
-    def __init__(self, isotropic_gens: list[Pauli], anticommuting_paulis: set[Pauli]) -> None:
+    def __init__(
+        self, isotropic_gens: list[Pauli], anticommuting_paulis: set[Pauli]
+    ) -> None:
         self.isotropic_gens = isotropic_gens.copy()
         self.anticommuting_paulis = anticommuting_paulis.copy()
         self.n = isotropic_gens[0].n
@@ -297,7 +303,7 @@ class Cnc_Set:
     def full_set(self) -> set[Pauli]:
         """
         Uses the isotropic generators and the anticommuting Paulis to generate the full closed noncontextual set.
-        
+
         Returns:
             set[Pauli]: The full closed noncontextual set.
         """
@@ -306,15 +312,14 @@ class Cnc_Set:
         for p in self.anticommuting_paulis:
             for q in isotropic:
                 cnc.add(p + q)
-        
+
         return cnc
 
     def __str__(self) -> str:
         return f"Isotropic generators: {self.isotropic_gens}\nAnticommuting Paulis: {self.anticommuting_paulis}"
-    
+
     def __repr__(self) -> str:
         return self.__str__()
-
 
 
 def generate_cnc(n: int, m: int) -> Cnc_Set:
@@ -329,27 +334,44 @@ def generate_cnc(n: int, m: int) -> Cnc_Set:
         Cnc_Set: A closed noncontextual set for the given n and m.
     """
     isotropic_gens = generate_canonical_isotropic_gens(n, m)
-    
+
     # Handle the edge case of m = 0
     if m == 0:
         iden = np.zeros(2 * n)
         return Cnc_Set(isotropic_gens, {Pauli(iden)})
-    
+
     commutative_paulis_for_isotropic = find_commutative_paulis_for_isotropic(
         isotropic_gens,
     )
 
-    isotropic = generate_isotropic_from_gens(isotropic_gens)  
+    isotropic = generate_isotropic_from_gens(isotropic_gens)
 
-    commutative_paulis_for_isotropic = commutative_paulis_for_isotropic.difference(isotropic)
+    commutative_paulis_for_isotropic = commutative_paulis_for_isotropic.difference(
+        isotropic
+    )
 
     ksi_anticommuting_paulis = find_ksi_anticommuting_paulis(
         commutative_paulis_for_isotropic, m
-    )    
+    )
 
     return Cnc_Set(isotropic_gens, ksi_anticommuting_paulis)
 
+
 if __name__ == "__main__":
-    cnc = generate_cnc(5, 2)
-    print(cnc.full_set())
-    print(cnc)
+    cncs = {}
+    for n in range(2, 6):
+        data = {}
+        for m in range(n + 1):
+            cnc = generate_cnc(n, m)
+            isotropic_gens = [p.T.tolist() for p in cnc.isotropic_gens]
+            anticommuting_paulis = [p.T.tolist() for p in cnc.anticommuting_paulis]
+            full_set = [p.T.tolist() for p in cnc.full_set()]
+            data[m] = {
+                "isotropic_gens": isotropic_gens,
+                "anticommuting_paulis": anticommuting_paulis,
+                "full_set": full_set,
+            }
+        cncs[n] = data
+
+    with open("cnc.yaml", "w") as file:
+        yaml.dump(cncs, file)
