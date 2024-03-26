@@ -395,6 +395,21 @@ end;
 
 ######################################
 
+build_dictionary := function(list1,list2)
+	local dict,i;
+	if (Length(list1) = Length(list2)) = false then
+		return Error("Lists must be of same length");
+	else
+		dict := NewDictionary(1,true);;
+		for i in [1..Length(list1)] do
+			AddDictionary(dict,list1[i],list2[i]);;
+		od;
+	fi;
+	return dict;
+end;
+
+######################################
+
 #input: pauli_list: list of strings; e.g., ["iii","iix",...];
 #input: value_list: coefficients assigned Pauli in pauli_list
 generate_pauli_coef := function(P_strings,pauli_list,value_list)
@@ -577,13 +592,43 @@ symplectic_group := function(n)
 end;
 
 
-symplectic_group_action := function(n)
-	local spn;
+symplectic_group_perm := function(n)
+	local spn,En,hom,Spn,Fn,fdict,bdict;
 
+	# Generate symplectic group as permutation action:
 	spn := symplectic_group(n);;
+	En := ShallowCopy(Elements(GF(2)^(2*n)));; Sort(En);;
+	hom := ActionHomomorphism(spn,En);; Spn := hom(spn);;
 
+	# Generate dictionary from elements of GF(2)^2*n to arrays:
+	Fn := all_bit_strings(2*n);; Sort(Fn);;
+	fdict := build_dictionary(Fn,[1..Length(Fn)]);;
+	bdict := build_dictionary([1..Length(Fn)],Fn);;
+
+	return [Spn,fdict,bdict];
 
 end;
+
+
+symplectic_orbit := function(n,G,subset,fdict,bdict)
+
+    local dsubset,a,dorbs,dorb,orbs,orb,d;
+
+	dsubset := [];
+	for a in subset do; Add(dsubset,LookupDictionary(fdict,a)); od;
+	dsubset := Set(dsubset);;
+
+	dorbs := Orbits(G,[dsubset],OnSets)[1];; orbs := [];;
+
+	for dorb in dorbs do
+		orb := [];;
+		for d in dorb do; Add(orb,LookupDictionary(bdict,d)); od;
+		Add(orbs,orb);;
+	od;
+
+    return orbs;
+end;
+
 
 
 symplectic_orbit_subspace := function(n,spn,subspace)
