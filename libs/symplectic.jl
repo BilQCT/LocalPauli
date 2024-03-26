@@ -5,13 +5,14 @@ const jlg = GAP.julia_to_gap
 
 include("stab.jl");
 
+# convert from default GAP convention to physics convention for symplectic form:
 function form_conversion(a,n)
     b = [a[i] for i in 1:n];
     for i in 1:n; push!(b,a[2*n-i+1]);; end
     return b
 end
 
-
+# Generate symplectic group as permutation group:
 function symplectic_perm_group(n)
     # Generate symplectic group:
     spn = g.SymplecticGroup(2*n,2)
@@ -27,6 +28,7 @@ function symplectic_perm_group(n)
     return [hom(spn),fdict,bdict]
 end
 
+# Generate symplectic orbit:
 function symplectic_orbit(n,spn,subset,fdict,bdict)
     subset = [form_conversion(a,n) for a in subset];
     # generate gap object of subset:

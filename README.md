@@ -15,6 +15,7 @@ GAP
 Polymake
 Nemo
 Combinatorics
+YAML
 
 ## Instructions
 
