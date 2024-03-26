@@ -1,4 +1,5 @@
 using GAP
+const g = GAP.Globals;;
 
 # read gap script:
 @gap("Read(\"libs/clifford_group.g\");;");
@@ -97,7 +98,7 @@ end
 
 ################################################################################################
 
-# symplectic action on subspace:
+# symplectic action on subset:
 
 function symplectic_group(n)
 
@@ -107,24 +108,51 @@ function symplectic_group(n)
 
 end
 
-# symplectic action on subspace:
-# note: should run symplectic_group(n) first:
 
-function symplectic_orbit(n,subspace)
-    if string(subspace)[1] == 'A'
-        ss = "Set("*string(subspace)[4:end]*")";
+function symplectic_perm_group(n)
+    nn = string(n);
+
+    # map symplectic group to permutation group:
+    GAP.evalstr("symperm"*nn*" := symplectic_group_perm("*nn*");");
+    GAP.evalstr("sp"*nn*" := symperm"*nn*"[1];");
+    GAP.evalstr("fdict"*nn*" := symperm"*nn*"[2];");
+    GAP.evalstr("bdict"*nn*" := symperm"*nn*"[3];");
+end
+
+# symplectic action on subset:
+# note: should run symplectic_perm_group(n) first:
+"""
+function symplectic_orbit(n,subset)
+    if string(subset)[1] == 'A'
+        ss = "Set("*string(subset)[4:end]*")";
     else
-        ss = "Set("*string(subspace)*")";
+        ss = "Set("*string(subset)*")";
     end
 
     nn = string(n);
 
     #input to GAP:
     GAP.evalstr("n:= "*nn*";;");
-    GAP.evalstr("subspace := "*ss*";;");
+    GAP.evalstr("subset := "*ss*";;");
+
 
     # call symplectic_orbit function:
     orbit = (GAP.evalstr("symp_orbit := symplectic_orbit_subspace(n,sp"*nn*",subspace);"));
 
     return GAP.gap_to_julia(orbit)
+end
+"""
+
+using GAP
+
+
+function symplectic_perm_group(n)
+    # Generate symplectic group:
+    spn = g.SymplecticGroup(2*n,2)
+
+    # Generate domain of symplectic group action:
+    En = g.ShallowCopy(g.Elements(g.GF(2)^(2*n))); g.Sort(En);
+    hom = g.ActionHomomorphism(spn,En)
+    
+    return hom(spn)
 end
