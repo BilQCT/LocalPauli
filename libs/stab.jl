@@ -660,6 +660,38 @@ end
 
 
 
+function gf_to_pauli_string(x)
+    n = div(length(x), 2)
+    strg = ""
+    for i in 1:n
+        if x[i] == 0 && x[i+n] == 0
+            strg *= "i"
+        elseif x[i] == 1 && x[i+n] == 0
+            strg *= "x"
+        elseif x[i] == 0 && x[i+n] == 1
+            strg *= "z"
+        elseif x[i] == 1 && x[i+n] == 1
+            strg *= "y"
+        else
+            return "error"
+        end
+    end
+    return strg
+end
+
+
+function pauli_strings(n, bool)
+    En = all_dit_strings(2,2n)
+
+    pstrings = [gf_to_pauli_string(a) for a in En]
+
+    # Sort in lexicographic order:
+    if bool
+        sortperm!(pstrings, lt = (x, y) -> isless(x, y))
+    end
+
+    return pstrings, En
+end
 
 
 
