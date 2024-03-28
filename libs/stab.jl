@@ -680,18 +680,3 @@ function gf_to_pauli_string(x)
 end
 
 
-function pauli_strings(n, bool)
-    En = all_dit_strings(2,2n)
-
-    pstrings = [gf_to_pauli_string(a) for a in En]
-
-    # Sort in lexicographic order:
-    if bool
-        sortperm!(pstrings, lt = (x, y) -> isless(x, y))
-    end
-
-    return pstrings, En
-end
-
-
-

@@ -311,3 +311,54 @@ function get_full_cnc_set(n::Int, m::Int)::Set{Vector{Int}}
     data = YAML.load_file("cnc.yaml")
     return Set(data[n][m]["full_set"])
 end
+
+
+mutable struct PauliStrings
+    """
+    Structure to store a pauli strings, bit strings, and dictionary mapping between the two 
+
+    Attributes:
+    pauli_strings: for each operator (e.g., XI) a string 'xi'
+    bit_strings: for each operator (e.g., XI) a bit string [1,0,0,0]
+    pauli_to_bit: dictionary from pauli strings to bit strings
+    bit_to_pauli: dictionary from bit strings to pauli strings
+    bit_to_int: dictionary from bit string to integer order of pauli strings in lexicographic order
+    """
+    bit_strings::Vector{Vector{Int}}
+    pauli_strings::Vector{String}
+    pauli_to_bit::Dict{String,Vector{Int}}
+    bit_to_pauli::Dict{Vector{Int},String}
+    bit_to_int::Dict{Vector{Int},Int}
+
+    function PauliStrings(n::Int)
+        """
+        Constructor for the PauliStrings structure that creates a vectors of pauli strings and bit strings and dictionaries mapping between them
+        """
+        bit_strings = all_dit_strings(2,2*n)
+        pauli_strings = [get_pauli_string(x) for x in bit_strings]
+        
+        # In lex order
+        perm = sortperm(pauli_strings)
+        pauli_strings = pauli_strings[perm]; bit_strings = bit_strings[perm];
+
+        pauli_to_bit = Dict(zip(pauli_strings,bit_strings))
+        bit_to_pauli = Dict(zip(bit_strings,pauli_strings))
+        bit_to_int = Dict(zip(bit_strings,[i for i in 1:length(bit_strings)]))
+        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int)
+    end
+end
+
+
+function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliStrings)
+    bit_strings = ps.bit_strings
+    N = length(bit_strings); V = []
+
+    gamma = cnc.value_assignment
+    gamma_keys = collect(keys(gamma))
+
+    for x in bit_strings
+        if x in gamma_keys; push!(V,gamma[x]); else push!(V,0); end;
+    end
+
+    return V
+end
