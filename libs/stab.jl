@@ -323,6 +323,9 @@ function gens_to_check_matrix(gens)
 end
 
 
+using Nemo
+
+
 """
 Generate all deterministic vertices for a given set of isotropic subspaces.
 
@@ -337,16 +340,14 @@ function find_gens(n, isotropic)
     ZZ2 = residue_ring(ZZ, 2)
     Z2 = ZZ2[1]
 
-    S = matrix_space(Z2, n, 2 * n)
-    identity = [0 for i in 1:(2 * n)]
-    idx = findall(x -> x != identity, isotropic)
-
-    M = S(gens_to_check_matrix(isotropic))
+    S1 = matrix_space(Z2,2^n,2*n); S2 = matrix_space(Z2,n,2*n)
+    M = S1(gens_to_check_matrix(isotropic))
     rnk = rank(M)
 
+    id = [0 for i in 1:(2*n)]; idx = findall(x -> x != id,isotropic)
     combs = combinations(isotropic[idx], rnk)
     for c in combs
-        A = S(gens_to_check_matrix(c))
+        A = S2(gens_to_check_matrix(c))
         r = rank(A)
         if r == rnk
             return c
@@ -446,6 +447,46 @@ end
 
 
 
+
+mutable struct PauliStrings
+    """
+    Structure to store a pauli strings, bit strings, and dictionary mapping between the two 
+
+    Attributes:
+    pauli_strings: for each operator (e.g., XI) a string 'xi'
+    bit_strings: for each operator (e.g., XI) a bit string [1,0,0,0]
+    pauli_to_bit: dictionary from pauli strings to bit strings
+    bit_to_pauli: dictionary from bit strings to pauli strings
+    bit_to_int: dictionary from bit string to integer order of pauli strings in lexicographic order
+    """
+    bit_strings::Vector{Vector{Int}}
+    pauli_strings::Vector{String}
+    pauli_to_bit::Dict{String,Vector{Int}}
+    bit_to_pauli::Dict{Vector{Int},String}
+    bit_to_int::Dict{Vector{Int},Int}
+
+    function PauliStrings(n::Int)
+        """
+        Constructor for the PauliStrings structure that creates a vectors of pauli strings and bit strings and dictionaries mapping between them
+        """
+        bit_strings = all_dit_strings(2,2*n)
+        pauli_strings = [get_pauli_string(x) for x in bit_strings]
+        
+        # In lex order
+        perm = sortperm(pauli_strings)
+        pauli_strings = pauli_strings[perm]; bit_strings = bit_strings[perm];
+
+        pauli_to_bit = Dict(zip(pauli_strings,bit_strings))
+        bit_to_pauli = Dict(zip(bit_strings,pauli_strings))
+        bit_to_int = Dict(zip(bit_strings,[i for i in 1:length(bit_strings)]))
+        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int)
+    end
+end
+
+
+
+
+
 """
 Generate stabilizer coefficients for given isotropic subspaces.
 
@@ -457,10 +498,12 @@ Returns:
 - Stabilizer coefficients.
 """
 function stabilizer_coefficients(n, II)
-    En, pn = pauli_list(n)
-    N = length(En)
-    idx = [i for i in 1:N]
-    dict = Dict(zip(En, idx))
+    PS = PauliStrings(n)
+    En = PS.bit_strings;  N = length(En)
+    Pn = PS.pauli_strings;
+    dict = PS.bit_to_int
+
+    # initialize array:
     A = Array{Int64}(undef, 0, N)
     
     for iso in II
@@ -546,12 +589,15 @@ Parameters:
 Returns:
 - The local isotropic subspaces.
 """
-function local_isotropics(II, n)
-    En, pn = pauli_list(n)
-    dict = Dict(zip(pn, En))
-    En_loc = [dict[p] for p in pn if length(findall(x -> x == 'i', p)) == (n - 1)]
+function local_isotropics(II,n)
+    PS = PauliStrings(n)
+    En = PS.bit_strings; pn = PS.pauli_strings
+    dict = PS.pauli_to_bit
+
+    # Extract local paulis:
+    En_loc = [dict[p] for p in pn if length(findall(x -> x == 'I', p)) == (n - 1)]
+
     II_loc = []
-    
     for iso in II
         iso_loc = [a for a in iso if a in En_loc]
         if length(iso_loc) == n
@@ -612,16 +658,16 @@ Returns:
 - All deterministic vertices.
 """
 function deterministic_vertices(Iloc, n)
-    E, P = pauli_list(n)
-    dim = length(E)
-    dict1 = Dict(zip(P, E))
-    index_array = [i for i in 1:dim]
-    dict2 = Dict(zip(E, index_array))
-    Eloc = [dict1[p] for p in P if length(findall(x -> x == 'i', p)) == (n - 1)]
-    N = length(Eloc)
-    Z = all_dit_strings(2, N)
-    D = []
+    PSn = PauliStrings(n);
+    E = PS.bit_strings; dim = length(E); P = PS.pauli_strings;
+    dict1 = PS.pauli_to_bit; dict2 = PS.bit_to_int
     
+    Eloc = [dict1[p] for p in P if length(findall(x -> x == 'I', p)) == (n - 1)]
+    N = length(Eloc); Z = all_dit_strings(2, N)
+
+    # initialize matrix:
+    D = Array{Int}(undef, 4^n, 0)
+
     for z in Z
         dict3 = Dict(zip(Eloc, z))
         d = [0 for i in 1:dim]
@@ -652,7 +698,7 @@ function deterministic_vertices(Iloc, n)
             end
         end
         
-        push!(D, d)
+        D = hcat(D, d)
     end
     
     return D
