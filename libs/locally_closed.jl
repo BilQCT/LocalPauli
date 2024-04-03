@@ -1,5 +1,6 @@
 using Combinatorics
 using StatsBase
+using LinearAlgebra
 
 include("cnc.jl")
 
@@ -121,4 +122,228 @@ function almost_maximal_to_pauli_basis(almost_maximal::AlmostMaximalTwoDim, ps::
     end
 
     return V
+end
+
+function generate_isotropic_from_gens(gens::Vector{Vector{Int}})::Set{Vector{Int}}
+    """
+    Generates the isotropic set from the generators.
+
+    Args:
+        gens: The generators of the isotropic set.
+
+    Returns:
+        The isotropic set.
+    """
+
+    n = length(gens[1]) / 2
+
+    identity = [0 for i in 1:2n]
+    isotropic = Set{Vector{Int}}([identity])
+
+    for i in 1:length(gens)
+        for used_gens in combinations(gens, i)
+            pauli = identity
+            for used_gen in used_gens
+                pauli = (pauli + used_gen) .% 2
+            end
+            push!(isotropic, pauli)
+        end
+    end
+
+    return isotropic
+end
+
+function generate_all_three_dim_maximal_local_isotropics_gens()::Set{Set{Vector{Int}}}
+
+    XII = [1, 0, 0, 0, 0, 0]
+    YII = [1, 0, 0, 1, 0, 0]
+    ZII = [0, 0, 0, 1, 0, 0]
+
+    alice_locals = [XII, YII, ZII]
+
+    IXI = [0, 1, 0, 0, 0, 0]
+    IYI = [0, 1, 0, 0, 1, 0]
+    IZI = [0, 0, 0, 0, 1, 0]
+
+    bob_locals = [IXI, IYI, IZI]
+
+    IIX = [0, 0, 1, 0, 0, 0]
+    IIY = [0, 0, 1, 0, 0, 1]
+    IIZ = [0, 0, 0, 0, 0, 1]
+
+    charlie_locals = [IIX, IIY, IIZ]
+
+    all_maximal_local_isotropics_gens = Set{Set{Vector{Int}}}()
+
+    for alice_local in alice_locals
+        for bob_local in bob_locals
+            for charlie_local in charlie_locals
+                gens = Set{Vector{Int}}([alice_local, bob_local, charlie_local])
+                push!(all_maximal_local_isotropics_gens, gens)
+            end
+        end
+    end
+
+    return all_maximal_local_isotropics_gens
+end
+
+function do_locally_commute(pauli1::Vector{Int}, pauli2::Vector{Int})::Bool
+    
+    if length(pauli1) != length(pauli2)
+        return false
+    end
+
+    pauli_str_1 = get_pauli_string(pauli1)
+    pauli_str_2 = get_pauli_string(pauli2)
+
+
+    n = length(pauli_str_1)
+
+    for i in 1:n
+        if pauli_str_1[i] != pauli_str_2[i]
+            if pauli_str_1[i] != 'I' && pauli_str_2[i] != 'I'
+                return false
+            end
+        end
+    end
+
+    return true
+end
+
+function find_local_closure(omega::Set{Vector{Int}})
+    is_closed = false
+
+    while !is_closed
+        is_closed = true
+        for paulis in combinations(collect(omega), 2)
+            pauli1 = paulis[1]
+            pauli2 = paulis[2]
+            if do_locally_commute(pauli1, pauli2) && !((pauli1 + pauli2) .%2 in omega)
+                is_closed = false
+                push!(omega, (pauli1 + pauli2) .% 2)
+            end
+        end
+    end
+
+    return omega
+end
+
+function is_locally_closed(omega::Set{Vector{Int}})
+    if omega == find_local_closure(omega)
+        return true
+    end
+
+    return false
+end
+
+function is_almost_maximal(omega::Set{Vector{Int}})
+    l = length(first(omega))
+    is_almost_maximal = true
+
+    for i in 0:(2^l - 1)
+        bitstring = string(i, base=2, pad=l)
+        pauli = [parse(Int, c) for c in bitstring]
+
+        if !(pauli in omega)
+            new_omega = copy(omega)
+            push!(new_omega, pauli)
+            if length(find_local_closure(new_omega)) != 2^l
+                println(get_pauli_string(pauli), " is added and closure is not maximal")
+                return false
+            end
+        end
+    end
+
+    return true
+end
+
+
+function generate_all_possible_value_assignments(omega::Set{Vector{Int}}, indep_paulis::Vector{Vector{Int}})
+    n = length(first(omega)) / 2
+
+    num_indep = length(indep_paulis)
+
+    all_value_assignments = Set{Dict{Vector{Int},Int}}()
+
+    values_set = [i for i in 0:2^num_indep-1]
+
+    # If more than 16 number of independent Paulis then choose 2^16 random value assignments
+    if num_indep >= 16
+        values_set = sample(values_set, 2^16 , replace=false)
+    end
+
+    
+    count = 0
+    for i in values_set
+        identity = [0 for i in 1:2n]
+
+        # Initialize the value assignment by assigning the identity to 1
+        value_assignment = Dict{Vector{Int},Int}(identity => 1)
+
+        # Convert the integer to a binary string of length num_indep
+        bitstring = string(i, base=2, pad=num_indep)
+        value_array = [parse(Int, c) for c in bitstring]
+
+        # Assign the values specified by binary array to the independent Paulis
+        for (p, v) in zip(indep_paulis, value_array)
+            value_assignment[p] = (-1)^v
+        end
+
+        for paulis in combinations(indep_paulis, 2)
+            pauli1 = paulis[1]
+            pauli2 = paulis[2]
+            pauli = (pauli1 + pauli2) .% 2
+            
+            
+            if do_locally_commute(pauli1, pauli2) && (pauli in omega)
+                value_assignment[pauli] = value_assignment[pauli1] * value_assignment[pauli2]
+            end
+        end
+
+        push!(all_value_assignments, value_assignment)
+        count += 1
+    end
+
+    return all_value_assignments
+end
+
+function value_assignment_to_pauli_basis(value_assignment::Dict{Vector{Int},Int}, n::Int)
+    ps = PauliStrings(n)
+    bit_strings = ps.bit_strings
+    V = []
+
+    gamma_keys = collect(keys(value_assignment))
+
+    for x in bit_strings
+        if x in gamma_keys; push!(V,value_assignment[x]); else push!(V,0); end;
+    end
+
+    return V
+end
+
+function find_ranks_count_for_given_set_of_value_assignments(value_assignments::Set{Dict{Vector{Int},Int}}, n::Int, stab_coeffs)
+    
+    # initialize matrix:
+    M = Array{Int}(undef, 4^n, 0)
+
+    for value_assignment in value_assignments
+        A = value_assignment_to_pauli_basis(value_assignment, n)
+        M = hcat(M, A)
+    end
+
+    rank_counts = Dict{Int, Int}()
+    H = stab_coeffs * M
+
+    for j in 1:size(H)[2]
+        Z = findall(x->x==0,H[:,j])
+        AZ = stab_coeffs[Z,:]
+        rank_AZ = rank(AZ)
+        if haskey(rank_counts, rank_AZ)
+            rank_counts[rank_AZ] += 1
+        else
+            rank_counts[rank_AZ] = 1
+        end
+    end
+
+    return rank_counts
 end
