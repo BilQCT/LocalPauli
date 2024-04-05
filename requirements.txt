@@ -4,3 +4,4 @@ Nemo
 Combinatorics
 YAML
 StatsBase
+PlotlyJS

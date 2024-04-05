@@ -53,6 +53,24 @@ function get_pauli_string(T::Vector{Int})
     return pauli_str
 end
 
+function get_pauli_from_pauli_string(pauli_string::String)
+    n = length(pauli_string)
+    pauli = [0 for _ in 1:2n]
+
+    for i in 1:n
+        if pauli_string[i] == 'X'
+            pauli[i] = 1
+        elseif pauli_string[i] == 'Y'
+            pauli[i] = 1
+            pauli[i+n] = 1
+        elseif pauli_string[i] == 'Z'
+            pauli[i+n] = 1
+        end
+    end
+
+    return pauli
+end
+
 function find_isotropic_gens(isotropic::Set{Vector{Int}})::Set{Vector{Int}}
     """
     Find the isotropic generators of a given isotropic set of Pauli operators.
