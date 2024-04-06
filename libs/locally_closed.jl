@@ -211,6 +211,11 @@ function do_locally_commute(pauli1::Vector{Int}, pauli2::Vector{Int})::Bool
 end
 
 function find_local_closure(omega::Set{Vector{Int}})
+    omega = copy(omega)
+
+    identity = [0 for i in 1:length(first(omega))]
+    push!(omega, identity)
+
     is_closed = false
 
     while !is_closed
@@ -280,72 +285,111 @@ function is_almost_maximal(omega::Set{Vector{Int}})
     return true
 end
 
+function is_local(pauli::Vector{Int})
+    pauli_str = get_pauli_string(pauli)
+
+    identity_count = 0
+
+    for c in pauli_str
+        if c == 'I'
+            identity_count += 1
+        end
+    end
+
+    if identity_count < length(pauli_str) - 1
+        return false
+    end
+
+    return true
+end
+
 function find_independent_paulis(omega::Set{Vector{Int}})
     if length(omega) == 0
         return []
     end
-    omega = copy(omega)
-    identity = [0 for i in 1:length(first(omega))]
-    delete!(omega, identity)
-    inferred_paulis = Set{Vector{Int}}([identity])
 
-    random_indep_pauli = sample(collect(omega), 1)[1]
-    delete!(omega, random_indep_pauli)
-    push!(inferred_paulis, random_indep_pauli)
-    independent_paulis = [random_indep_pauli]
+    omega = copy(omega)
+    n = length(first(omega)) / 2
+    identity = [0 for i in 1:2n]
+
+    omega_locals = [pauli for pauli in omega if is_local(pauli)]
+    indep_paulis = Set{Vector{Int}}(omega_locals)
+
+    inferred_paulis = find_local_closure(indep_paulis)
+
+    for pauli in inferred_paulis
+        delete!(omega, pauli)
+    end
+
+    delete!(indep_paulis, identity)
 
     while length(omega) > 0
         random_indep_pauli = sample(collect(omega), 1)[1]
-        delete!(omega, random_indep_pauli)
-        newly_inferred_paulis = []
-        for pauli in inferred_paulis
-            if do_locally_commute(random_indep_pauli, pauli)
-                inferred_pauli = (random_indep_pauli + pauli) .% 2
-                push!(newly_inferred_paulis, inferred_pauli)
-                delete!(omega, inferred_pauli)
+
+        push!(indep_paulis, random_indep_pauli)
+
+        closed_inferred_paulis = copy(inferred_paulis)
+
+        push!(closed_inferred_paulis, random_indep_pauli)
+
+        closed_inferred_paulis = find_local_closure(closed_inferred_paulis)
+
+        newly_inferred_paulis = Set{Vector{Int}}()
+
+        for pauli in closed_inferred_paulis
+            if !(pauli in inferred_paulis)
+                push!(newly_inferred_paulis, pauli)
             end
         end
 
         for pauli in newly_inferred_paulis
-            push!(inferred_paulis, pauli)
+            delete!(omega, pauli)
         end
 
-        push!(independent_paulis, random_indep_pauli)
+        inferred_paulis = closed_inferred_paulis
     end
 
-    return independent_paulis
+    return indep_paulis
 end
 
-function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
-    n = length(first(omega)) / 2
-    l = length(omega)
 
+function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
     omega = copy(omega)
-    identity = [0 for i in 1:2n]
-    delete!(omega, identity)
+    indep_paulis = find_independent_paulis(omega)
+    
+    identity = [0 for i in 1:length(first(omega))]
+    num_indep = length(indep_paulis)
 
     all_value_assignments = Set{Dict{Vector{Int},Int}}()
 
-    values_set = [i for i in 0:2^l-1]
-
-    if l < 20
-        values_set = [i for i in 0:2^l-1]
-    else
-        values_set = rand(0:2^l-1, 2^20)
-    end
-
-    for i in values_set
+    for i in 0:(2^num_indep - 1)
         # Initialize the value assignment by assigning the identity to 1
         value_assignment = Dict{Vector{Int},Int}(identity => 1)
 
         # Convert the integer to a binary string of length l
-        bitstring = string(i, base=2, pad=l)
+        bitstring = string(i, base=2, pad=num_indep)
         value_array = [parse(Int, c) for c in bitstring]
 
         # Assign the values specified by binary array to the independent Paulis
-        for (p, v) in zip(collect(omega), value_array)
+        for (p, v) in zip(collect(indep_paulis), value_array)
             value_assignment[p] = (-1)^v
         end
+
+        while length(value_assignment) < length(omega)
+            for paulis in combinations(collect(keys(value_assignment)), 2)
+                pauli1 = paulis[1]
+                pauli2 = paulis[2]
+
+                if do_locally_commute(pauli1, pauli2)
+                    pauli = (pauli1 + pauli2) .% 2
+                    value_assignment[pauli] = value_assignment[pauli1] * value_assignment[pauli2]
+                    if length(value_assignment) == length(omega)
+                        break
+                    end
+                end
+            end
+        end
+
 
         locally_value_assignment = true
         for paulis in combinations(collect(omega), 2)
@@ -353,6 +397,7 @@ function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
             pauli2 = paulis[2]
             if do_locally_commute(pauli1, pauli2)
                 pauli = (pauli1 + pauli2) .% 2
+                println("Checking ", get_pauli_string(pauli), " = ", get_pauli_string(pauli1), " * ", get_pauli_string(pauli2))
                 if value_assignment[pauli] != value_assignment[pauli1] * value_assignment[pauli2]
                     locally_value_assignment = false
                     break
