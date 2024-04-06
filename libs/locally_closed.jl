@@ -257,51 +257,89 @@ function is_almost_maximal(omega::Set{Vector{Int}})
     return true
 end
 
-
-function generate_all_possible_value_assignments(omega::Set{Vector{Int}}, indep_paulis::Vector{Vector{Int}})
-    n = length(first(omega)) / 2
-
-    num_indep = length(indep_paulis)
-
-    all_value_assignments = Set{Dict{Vector{Int},Int}}()
-
-    values_set = [i for i in 0:2^num_indep-1]
-
-    # If more than 16 number of independent Paulis then choose 2^16 random value assignments
-    if num_indep >= 16
-        values_set = sample(values_set, 2^16 , replace=false)
+function find_independent_paulis(omega::Set{Vector{Int}})
+    if length(omega) == 0
+        return []
     end
+    omega = copy(omega)
+    identity = [0 for i in 1:length(first(omega))]
+    delete!(omega, identity)
+    inferred_paulis = Set{Vector{Int}}([identity])
 
-    
-    count = 0
-    for i in values_set
-        identity = [0 for i in 1:2n]
+    random_indep_pauli = sample(collect(omega), 1)[1]
+    delete!(omega, random_indep_pauli)
+    push!(inferred_paulis, random_indep_pauli)
+    independent_paulis = [random_indep_pauli]
 
-        # Initialize the value assignment by assigning the identity to 1
-        value_assignment = Dict{Vector{Int},Int}(identity => 1)
-
-        # Convert the integer to a binary string of length num_indep
-        bitstring = string(i, base=2, pad=num_indep)
-        value_array = [parse(Int, c) for c in bitstring]
-
-        # Assign the values specified by binary array to the independent Paulis
-        for (p, v) in zip(indep_paulis, value_array)
-            value_assignment[p] = (-1)^v
-        end
-
-        for paulis in combinations(indep_paulis, 2)
-            pauli1 = paulis[1]
-            pauli2 = paulis[2]
-            pauli = (pauli1 + pauli2) .% 2
-            
-            
-            if do_locally_commute(pauli1, pauli2) && (pauli in omega)
-                value_assignment[pauli] = value_assignment[pauli1] * value_assignment[pauli2]
+    while length(omega) > 0
+        random_indep_pauli = sample(collect(omega), 1)[1]
+        delete!(omega, random_indep_pauli)
+        newly_inferred_paulis = []
+        for pauli in inferred_paulis
+            if do_locally_commute(random_indep_pauli, pauli)
+                inferred_pauli = (random_indep_pauli + pauli) .% 2
+                push!(newly_inferred_paulis, inferred_pauli)
+                delete!(omega, inferred_pauli)
             end
         end
 
-        push!(all_value_assignments, value_assignment)
-        count += 1
+        for pauli in newly_inferred_paulis
+            push!(inferred_paulis, pauli)
+        end
+
+        push!(independent_paulis, random_indep_pauli)
+    end
+
+    return independent_paulis
+end
+
+function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
+    n = length(first(omega)) / 2
+    l = length(omega)
+
+    omega = copy(omega)
+    identity = [0 for i in 1:2n]
+    delete!(omega, identity)
+
+    all_value_assignments = Set{Dict{Vector{Int},Int}}()
+
+    values_set = [i for i in 0:2^l-1]
+
+    if l < 20
+        values_set = [i for i in 0:2^l-1]
+    else
+        values_set = rand(0:2^l-1, 2^20)
+    end
+
+    for i in values_set
+        # Initialize the value assignment by assigning the identity to 1
+        value_assignment = Dict{Vector{Int},Int}(identity => 1)
+
+        # Convert the integer to a binary string of length l
+        bitstring = string(i, base=2, pad=l)
+        value_array = [parse(Int, c) for c in bitstring]
+
+        # Assign the values specified by binary array to the independent Paulis
+        for (p, v) in zip(collect(omega), value_array)
+            value_assignment[p] = (-1)^v
+        end
+
+        locally_value_assignment = true
+        for paulis in combinations(collect(omega), 2)
+            pauli1 = paulis[1]
+            pauli2 = paulis[2]
+            if do_locally_commute(pauli1, pauli2)
+                pauli = (pauli1 + pauli2) .% 2
+                if value_assignment[pauli] != value_assignment[pauli1] * value_assignment[pauli2]
+                    locally_value_assignment = false
+                    break
+                end
+            end
+        end
+
+        if locally_value_assignment
+            push!(all_value_assignments, value_assignment)
+        end
     end
 
     return all_value_assignments

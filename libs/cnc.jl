@@ -3,6 +3,7 @@ using Combinatorics
 using YAML
 
 include("stab.jl")
+include("symplectic.jl");
 
 function do_commute(T_a::Vector{Int}, T_b::Vector{Int})
     """
@@ -343,4 +344,54 @@ function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliStrings)
     end
 
     return V
+end
+
+function find_full_rank_maximal_cnc_examples_for_n_m(n::Int, m::Int, num_examples::Int)
+    symptuple_n = symplectic_perm_group(n)
+    sp_n = symptuple_n[1] 
+    fdict_n = symptuple_n[2]
+    bdict_n = symptuple_n[3]
+
+    ps_n = PauliStrings(n)
+
+    i_n = canonical_maximal_isotropic(n)
+    I_n = (symplectic_orbit(n, sp_n, i_n, fdict_n, bdict_n))
+
+    A_n_loc = stabilizer_coefficients(n, I_n)
+
+    cnc = get_full_cnc_set(n, m)
+    orb = symplectic_orbit(n, sp_n, cnc, fdict_n, bdict_n)
+
+    M = Array{Int}(undef, 4^n, 0)
+
+    println("Starting to go over the orbit")
+
+    cncs = []
+    # generate all value assignments:
+    for o in orb
+        cnc = MaximalCncSet(Set(o))
+        all_cnc = generate_all_cncs_for_given_cnc_set(cnc)
+        for set in all_cnc
+            A = cnc_to_pauli_basis(set, ps_n)
+            M = hcat(M,A)
+            push!(cncs,set)
+        end
+    end
+
+    println("Checking ranks")
+
+    full_rank_examples = []
+
+    H = A_n_loc * M
+    for j in 1:size(H)[2]
+        Z = findall(x->x==0, H[:,j])
+        AZ = A_n_loc[Z,:]
+        if rank(AZ) === (4^n - 1)
+            push!(full_rank_examples, cncs[j])
+        end
+    end
+
+    full_rank_examples = sample(full_rank_examples, num_examples, replace=false)
+
+    return full_rank_examples
 end
