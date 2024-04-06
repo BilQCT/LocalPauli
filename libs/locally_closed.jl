@@ -228,6 +228,29 @@ function find_local_closure(omega::Set{Vector{Int}})
     return omega
 end
 
+function find_local_extension(value_assignment::Dict{Vector{Int},Int}, new_Pauli::Vector{Int}, value::Int)
+    new_value_assignment = copy(value_assignment)
+    new_value_assignment[new_Pauli] = value
+
+    is_closed = false
+
+    while !is_closed
+        is_closed = true
+        for paulis in combinations(collect(keys(new_value_assignment)), 2)
+            pauli1 = paulis[1]
+            pauli2 = paulis[2]
+            if do_locally_commute(pauli1, pauli2) && !((pauli1 + pauli2) .%2 in collect(keys(new_value_assignment)))
+                inferred_pauli = (pauli1 + pauli2) .% 2
+                is_closed = false
+                new_value_assignment[inferred_pauli] = new_value_assignment[pauli1] * new_value_assignment[pauli2]
+            end
+        end
+    end
+
+    return new_value_assignment
+
+end
+
 function is_locally_closed(omega::Set{Vector{Int}})
     if omega == find_local_closure(omega)
         return true

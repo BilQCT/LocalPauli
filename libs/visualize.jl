@@ -133,6 +133,8 @@ function create_3dim_paulis_with_value_assignment_table(value_assignment::Dict{V
                 push!(header_colors, plus_one_color)
             elseif value == -1
                 push!(header_colors, minus_one_color)
+            else
+                push!(header_colors, zero_color)
             end
         else
             push!(header_colors, zero_color)
@@ -153,6 +155,8 @@ function create_3dim_paulis_with_value_assignment_table(value_assignment::Dict{V
                     push!(col_colors, plus_one_color)
                 elseif value == -1
                     push!(col_colors, minus_one_color)
+                else
+                    push!(col_colors, zero_color)
                 end
             else
                 push!(col_colors, zero_color)
