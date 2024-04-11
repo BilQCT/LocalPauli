@@ -397,7 +397,6 @@ function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
             pauli2 = paulis[2]
             if do_locally_commute(pauli1, pauli2)
                 pauli = (pauli1 + pauli2) .% 2
-                println("Checking ", get_pauli_string(pauli), " = ", get_pauli_string(pauli1), " * ", get_pauli_string(pauli2))
                 if value_assignment[pauli] != value_assignment[pauli1] * value_assignment[pauli2]
                     locally_value_assignment = false
                     break
@@ -432,6 +431,8 @@ function find_ranks_count_for_given_set_of_value_assignments(value_assignments::
     # initialize matrix:
     M = Array{Int}(undef, 4^n, 0)
 
+    stab_coeffs = copy(stab_coeffs)
+
     for value_assignment in value_assignments
         A = value_assignment_to_pauli_basis(value_assignment, n)
         M = hcat(M, A)
@@ -452,4 +453,81 @@ function find_ranks_count_for_given_set_of_value_assignments(value_assignments::
     end
 
     return rank_counts
+end
+
+function find_random_independent_paulis(n::Int, num_indep::Int, num_examples::Int)
+    independent_pauli_examples = Set{Set{Vector{Int}}}()
+    identity = [0 for i in 1:2n]
+    for i in 1:num_examples
+        indep_paulis = Set{Vector{Int}}()
+        inferred_paulis = Set{Vector{Int}}([identity])
+        for j in 1:num_indep
+            indep_pauli_found = false
+            while !indep_pauli_found && length(inferred_paulis) < 4^n
+                random_pauli = rand(0:1, 2n)
+                if !(random_pauli in inferred_paulis)
+                    push!(indep_paulis, random_pauli)
+                    push!(inferred_paulis, random_pauli)
+                    inferred_paulis = find_local_closure(inferred_paulis)
+                    indep_pauli_found = true
+                end
+            end
+        end
+        push!(independent_pauli_examples, indep_paulis)
+    end
+
+    return independent_pauli_examples
+end
+
+function is_value_assignment_local(value_assignment::Dict{Vector{Int},Int})
+    for paulis in combinations(collect(keys(value_assignment)), 2)
+        pauli1 = paulis[1]
+        pauli2 = paulis[2]
+        if do_locally_commute(pauli1, pauli2)
+            pauli = (pauli1 + pauli2) .% 2
+            if value_assignment[pauli] != value_assignment[pauli1] * value_assignment[pauli2]
+                return false
+            end
+        end
+    end
+
+    return true
+end
+
+function find_full_rank_maximal_cnc_examples_for_n_m(n::Int, m::Int, num_examples::Int)
+    symptuple_n = symplectic_perm_group(n)
+    sp_n = symptuple_n[1] 
+    fdict_n = symptuple_n[2]
+    bdict_n = symptuple_n[3]
+
+    i_n = canonical_maximal_isotropic(n)
+    I_n = (symplectic_orbit(n, sp_n, i_n, fdict_n, bdict_n))
+
+    I_n_loc = local_isotropics(I_n, n)
+    A_n_loc = stabilizer_coefficients(n, I_n_loc)
+
+    cnc = get_full_cnc_set(n, m)
+    orb = symplectic_orbit(n, sp_n, cnc, fdict_n, bdict_n)
+
+    full_rank_examples = []
+
+    for o in orb
+        cnc = MaximalCncSet(Set(o))
+        all_cnc = generate_all_cncs_for_given_cnc_set(cnc)
+        value_assignments = Set{Dict{Vector{Int},Int}}()
+        for max_cnc in all_cnc
+            if !is_value_assignment_local(max_cnc.value_assignment)
+                error("Value assignment is not local")
+            end
+            push!(value_assignments, max_cnc.value_assignment)
+        end
+        ranks = find_ranks_count_for_given_set_of_value_assignments(value_assignments, n, A_n_loc)
+        if haskey(ranks, 4^n - 1)
+            push!(full_rank_examples, Set(o))
+        end
+    end
+
+    full_rank_examples = sample(full_rank_examples, num_examples, replace=false)
+
+    return full_rank_examples
 end

@@ -154,6 +154,8 @@ mutable struct MaximalCncSet
         Args:
         cnc_set: Full set of Pauli operators in the maximal CNC set.
         """
+
+        cnc_set = copy(cnc_set)
         isotropic = Set{Vector{Int}}()
         n = length(first(cnc_set)) ÷ 2
 
@@ -197,7 +199,7 @@ mutable struct MaximalCncSet
         m = (length(anticommuting_paulis) - 1) ÷ 2
         new(isotropic_gens, anticommuting_paulis, n, m)
     end
-end
+end    
 
 function Base.show(io::IO, cnc_set::MaximalCncSet)
     """
@@ -218,6 +220,35 @@ function Base.show(io::IO, cnc_set::MaximalCncSet)
     anticommuting_paulis_str = [get_pauli_string(p) for p in cnc_set.anticommuting_paulis]
     print(io, "  ")
     println(io, anticommuting_paulis_str)
+end
+
+function find_full_set_for_given_cnc_set(cnc_set::MaximalCncSet)::Set{Vector{Int}}
+    n = cnc_set.n
+    identity = [0 for i in 1:2n]
+    full_set = Set{Vector{Int}}(cnc_set.isotropic_gens)
+    push!(full_set, identity)
+    isotropic = Set{Vector{Int}}(cnc_set.isotropic_gens)
+    push!(isotropic, identity)
+
+    for i in 2:length(isotropic)
+        for used_generators in combinations(collect(cnc_set.isotropic_gens), i)
+            pauli = identity
+            for gen in used_generators
+                pauli = (pauli + gen) .% 2
+            end
+            push!(full_set, pauli)
+            push!(isotropic, pauli)
+        end
+    end
+
+    for anti_com in cnc_set.anticommuting_paulis
+        for p in isotropic
+            pauli = (p + anti_com) .% 2
+            push!(full_set, pauli)
+        end
+    end
+
+    return full_set
 end
 
 
@@ -344,54 +375,4 @@ function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliStrings)
     end
 
     return V
-end
-
-function find_full_rank_maximal_cnc_examples_for_n_m(n::Int, m::Int, num_examples::Int)
-    symptuple_n = symplectic_perm_group(n)
-    sp_n = symptuple_n[1] 
-    fdict_n = symptuple_n[2]
-    bdict_n = symptuple_n[3]
-
-    ps_n = PauliStrings(n)
-
-    i_n = canonical_maximal_isotropic(n)
-    I_n = (symplectic_orbit(n, sp_n, i_n, fdict_n, bdict_n))
-
-    A_n_loc = stabilizer_coefficients(n, I_n)
-
-    cnc = get_full_cnc_set(n, m)
-    orb = symplectic_orbit(n, sp_n, cnc, fdict_n, bdict_n)
-
-    M = Array{Int}(undef, 4^n, 0)
-
-    println("Starting to go over the orbit")
-
-    cncs = []
-    # generate all value assignments:
-    for o in orb
-        cnc = MaximalCncSet(Set(o))
-        all_cnc = generate_all_cncs_for_given_cnc_set(cnc)
-        for set in all_cnc
-            A = cnc_to_pauli_basis(set, ps_n)
-            M = hcat(M,A)
-            push!(cncs,set)
-        end
-    end
-
-    println("Checking ranks")
-
-    full_rank_examples = []
-
-    H = A_n_loc * M
-    for j in 1:size(H)[2]
-        Z = findall(x->x==0, H[:,j])
-        AZ = A_n_loc[Z,:]
-        if rank(AZ) === (4^n - 1)
-            push!(full_rank_examples, cncs[j])
-        end
-    end
-
-    full_rank_examples = sample(full_rank_examples, num_examples, replace=false)
-
-    return full_rank_examples
 end

@@ -200,8 +200,6 @@ function draw_3dim_paulis(omega::Set{Vector{Int}})
     return p
 end
 
-
-
 function draw_3_dim_paulis_with_value_assignment(value_assignment::Dict{Vector{Int}, Int})
     pauli_table = create_3dim_paulis_with_value_assignment_table(value_assignment)
     p = plot(pauli_table)
