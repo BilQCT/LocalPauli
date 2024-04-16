@@ -5,3 +5,4 @@ Combinatorics
 YAML
 StatsBase
 PlotlyJS
+JuMP

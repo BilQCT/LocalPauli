@@ -2,7 +2,7 @@ using Combinatorics
 using StatsBase
 using LinearAlgebra
 
-include("cnc.jl")
+include("cnc.jl"); include("pauli.jl")
 
 mutable struct AlmostMaximalTwoDimSet
     n::Int
@@ -110,7 +110,7 @@ function generate_all_two_dim_almost_maximals(almost_maximal::AlmostMaximalTwoDi
 end
 
 
-function almost_maximal_to_pauli_basis(almost_maximal::AlmostMaximalTwoDim, ps::PauliStrings)
+function almost_maximal_to_pauli_basis(almost_maximal::AlmostMaximalTwoDim, ps::PauliString)
     bit_strings = ps.bit_strings
     N = length(bit_strings); V = []
 
@@ -413,7 +413,7 @@ function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
 end
 
 function value_assignment_to_pauli_basis(value_assignment::Dict{Vector{Int},Int}, n::Int)
-    ps = PauliStrings(n)
+    ps = PauliString(n)
     bit_strings = ps.bit_strings
     V = []
 

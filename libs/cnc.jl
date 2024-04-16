@@ -375,7 +375,6 @@ function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)
 
     return V
 end
-<<<<<<< HEAD
 
 
 function pauli_basis_to_cnc(V::Vector,ps::PauliString)
@@ -394,5 +393,3 @@ function pauli_basis_to_cnc(V::Vector,ps::PauliString)
 
     return cnc
 end
-=======
->>>>>>> 034ed438eccf914cd66d76034cfb0a18ee852c65
