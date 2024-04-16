@@ -8,40 +8,55 @@ Stabilizer Theory
 Functions for working with stabilizer states and related operations.
 """
 
-function array_to_matrix(typ, arry)
-    """
-    Convert an array of vectors into a matrix.
+include("symplectic.jl")
+include("pauli.jl")
 
-    Parameters:
-    - `typ`: The element type of the resulting matrix.
-    - `arry`: The array of vectors to be converted.
+"""
+Generate all dit strings recursively.
 
-    Returns:
-    - A matrix with the elements of `arry`.
-    """
-    n = length(arry)
-    d = length(arry[1])
-    M = Matrix{typ}(undef, 0, d)
-    for i in 1:n
-        M = vcat(M, transpose(arry[i]))
+Parameters:
+- `d`: The number of outcomes.
+- `N`: The number of generators.
+- `n`: The current iteration.
+- `s`: The current set of dit strings.
+
+Returns:
+- All dit strings.
+"""
+function generate_dit_strings(d, N, n, s)
+    if n < N
+        Zd = [(i - 1) for i in 1:d]
+        dit_strings = []
+        for i in 1:length(s)
+            for x in Zd
+                push!(dit_strings, push!(copy(s[i]), x))
+            end
+        end
+        s = dit_strings
+        n = n + 1
+        generate_dit_strings(d, N, n, s)
+    else
+        return s
     end
-    return M
 end
 
-function array_to_polymake_matrix(typ, arry)
-    """
-    Convert an array of vectors to a polymake matrix.
 
-    Parameters:
-    - `typ`: The element type of the resulting polymake matrix.
-    - `arry`: The array of vectors to be converted.
+"""
+Generate all possible dit strings.
 
-    Returns:
-    - A polymake matrix with the elements of `arry`.
-    """
-    M = array_to_matrix(typ, arry)
-    return pm.Matrix{typ}(M)
+Parameters:
+- `d`: The number of outcomes.
+- `N`: The number of generators.
+
+Returns:
+- All dit strings.
+"""
+function all_dit_strings(d, N)
+    s = [[i - 1] for i in 1:d]
+    n = 1
+    return generate_dit_strings(d, N, n, s)
 end
+
 
 function tensor_prod(A, n)
     """
@@ -400,94 +415,6 @@ end
 
 
 """
-Generate all dit strings recursively.
-
-Parameters:
-- `d`: The number of outcomes.
-- `N`: The number of generators.
-- `n`: The current iteration.
-- `s`: The current set of dit strings.
-
-Returns:
-- All dit strings.
-"""
-function generate_dit_strings(d, N, n, s)
-    if n < N
-        Zd = [(i - 1) for i in 1:d]
-        dit_strings = []
-        for i in 1:length(s)
-            for x in Zd
-                push!(dit_strings, push!(copy(s[i]), x))
-            end
-        end
-        s = dit_strings
-        n = n + 1
-        generate_dit_strings(d, N, n, s)
-    else
-        return s
-    end
-end
-
-
-"""
-Generate all possible dit strings.
-
-Parameters:
-- `d`: The number of outcomes.
-- `N`: The number of generators.
-
-Returns:
-- All dit strings.
-"""
-function all_dit_strings(d, N)
-    s = [[i - 1] for i in 1:d]
-    n = 1
-    return generate_dit_strings(d, N, n, s)
-end
-
-
-
-
-mutable struct PauliStrings
-    """
-    Structure to store a pauli strings, bit strings, and dictionary mapping between the two 
-
-    Attributes:
-    pauli_strings: for each operator (e.g., XI) a string 'xi'
-    bit_strings: for each operator (e.g., XI) a bit string [1,0,0,0]
-    pauli_to_bit: dictionary from pauli strings to bit strings
-    bit_to_pauli: dictionary from bit strings to pauli strings
-    bit_to_int: dictionary from bit string to integer order of pauli strings in lexicographic order
-    """
-    bit_strings::Vector{Vector{Int}}
-    pauli_strings::Vector{String}
-    pauli_to_bit::Dict{String,Vector{Int}}
-    bit_to_pauli::Dict{Vector{Int},String}
-    bit_to_int::Dict{Vector{Int},Int}
-
-    function PauliStrings(n::Int)
-        """
-        Constructor for the PauliStrings structure that creates a vectors of pauli strings and bit strings and dictionaries mapping between them
-        """
-        bit_strings = all_dit_strings(2,2*n)
-        pauli_strings = [get_pauli_string(x) for x in bit_strings]
-        
-        # In lex order
-        perm = sortperm(pauli_strings)
-        pauli_strings = pauli_strings[perm]; bit_strings = bit_strings[perm];
-
-        pauli_to_bit = Dict(zip(pauli_strings,bit_strings))
-        bit_to_pauli = Dict(zip(bit_strings,pauli_strings))
-        bit_to_int = Dict(zip(bit_strings,[i for i in 1:length(bit_strings)]))
-        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int)
-    end
-end
-
-
-
-
-
-"""
 Generate stabilizer coefficients for given isotropic subspaces.
 
 Parameters:
@@ -498,7 +425,7 @@ Returns:
 - Stabilizer coefficients.
 """
 function stabilizer_coefficients(n, II)
-    PS = PauliStrings(n)
+    PS = PauliString(n)
     En = PS.bit_strings;  N = length(En)
     Pn = PS.pauli_strings;
     dict = PS.bit_to_int
@@ -519,6 +446,20 @@ function stabilizer_coefficients(n, II)
         end
     end
     return A
+end
+
+
+function stabilizer_states(n)
+    symplectic_tuple = symplectic_perm_group(n)
+    sp = symplectic_tuple[1]; fdict = symplectic_tuple[2]; bdict = symplectic_tuple[3];
+
+    # generate canonical S = {I,X} maximal isotropic:
+    I = canonical_maximal_isotropic(n) 
+
+    # compute orbit:
+    II = symplectic_orbit(n,sp,I,fdict,bdict)
+
+    return stabilizer_coefficients(n, II)
 end
 
 
@@ -590,7 +531,7 @@ Returns:
 - The local isotropic subspaces.
 """
 function local_isotropics(II,n)
-    PS = PauliStrings(n)
+    PS = PauliString(n)
     En = PS.bit_strings; pn = PS.pauli_strings
     dict = PS.pauli_to_bit
 
@@ -658,7 +599,7 @@ Returns:
 - All deterministic vertices.
 """
 function deterministic_vertices(Iloc, n)
-    PSn = PauliStrings(n);
+    PSn = PauliString(n);
     E = PS.bit_strings; dim = length(E); P = PS.pauli_strings;
     dict1 = PS.pauli_to_bit; dict2 = PS.bit_to_int
     

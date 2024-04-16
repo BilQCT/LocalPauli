@@ -313,16 +313,33 @@ function get_full_cnc_set(n::Int, m::Int)::Set{Vector{Int}}
 end
 
 
-function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliStrings)
-    bit_strings = ps.bit_strings
-    N = length(bit_strings); V = []
+function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)
+    bitstrings = ps.bit_strings; V = []
 
     gamma = cnc.value_assignment
     gamma_keys = collect(keys(gamma))
 
-    for x in bit_strings
+    for x in bitstrings
         if x in gamma_keys; push!(V,gamma[x]); else push!(V,0); end;
     end
 
     return V
+end
+
+
+function pauli_basis_to_cnc(V::Vector,ps::PauliString)
+    # dictionary from lex ordered Paulis to bit strings:
+    dict = ps.int_to_bit
+
+    # extract elements of cnc set:
+    Omega = [Vector{Int}(dict[i]) for i in 1:length(V) if V[i] != 0]
+
+    # extract value assignments:
+    images = [Int(v) for v in V if v != 0]
+    gamma = Dict(zip(Omega,images))
+    
+    cnc_set = MaximalCncSet(Set(Omega));
+    cnc = MaximalCnc(cnc_set,gamma)
+
+    return cnc
 end

@@ -16,6 +16,9 @@ Polymake
 Nemo
 Combinatorics
 YAML
+JuMP
+GLPK
+Distributions
 
 ## Instructions
 

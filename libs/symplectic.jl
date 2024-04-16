@@ -3,7 +3,7 @@ const g = GAP.Globals
 const gjl = GAP.gap_to_julia
 const jlg = GAP.julia_to_gap
 
-include("stab.jl");
+#include("stab.jl");
 
 # convert from default GAP convention to physics convention for symplectic form:
 function form_conversion(a,n)
