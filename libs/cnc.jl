@@ -3,6 +3,7 @@ using Combinatorics
 using YAML
 
 include("stab.jl")
+include("symplectic.jl");
 
 function do_commute(T_a::Vector{Int}, T_b::Vector{Int})
     """
@@ -51,6 +52,24 @@ function get_pauli_string(T::Vector{Int})
     end
 
     return pauli_str
+end
+
+function get_pauli_from_pauli_string(pauli_string::String)
+    n = length(pauli_string)
+    pauli = [0 for _ in 1:2n]
+
+    for i in 1:n
+        if pauli_string[i] == 'X'
+            pauli[i] = 1
+        elseif pauli_string[i] == 'Y'
+            pauli[i] = 1
+            pauli[i+n] = 1
+        elseif pauli_string[i] == 'Z'
+            pauli[i+n] = 1
+        end
+    end
+
+    return pauli
 end
 
 function find_isotropic_gens(isotropic::Set{Vector{Int}})::Set{Vector{Int}}
@@ -135,6 +154,8 @@ mutable struct MaximalCncSet
         Args:
         cnc_set: Full set of Pauli operators in the maximal CNC set.
         """
+
+        cnc_set = copy(cnc_set)
         isotropic = Set{Vector{Int}}()
         n = length(first(cnc_set)) ÷ 2
 
@@ -178,7 +199,7 @@ mutable struct MaximalCncSet
         m = (length(anticommuting_paulis) - 1) ÷ 2
         new(isotropic_gens, anticommuting_paulis, n, m)
     end
-end
+end    
 
 function Base.show(io::IO, cnc_set::MaximalCncSet)
     """
@@ -199,6 +220,35 @@ function Base.show(io::IO, cnc_set::MaximalCncSet)
     anticommuting_paulis_str = [get_pauli_string(p) for p in cnc_set.anticommuting_paulis]
     print(io, "  ")
     println(io, anticommuting_paulis_str)
+end
+
+function find_full_set_for_given_cnc_set(cnc_set::MaximalCncSet)::Set{Vector{Int}}
+    n = cnc_set.n
+    identity = [0 for i in 1:2n]
+    full_set = Set{Vector{Int}}(cnc_set.isotropic_gens)
+    push!(full_set, identity)
+    isotropic = Set{Vector{Int}}(cnc_set.isotropic_gens)
+    push!(isotropic, identity)
+
+    for i in 2:length(isotropic)
+        for used_generators in combinations(collect(cnc_set.isotropic_gens), i)
+            pauli = identity
+            for gen in used_generators
+                pauli = (pauli + gen) .% 2
+            end
+            push!(full_set, pauli)
+            push!(isotropic, pauli)
+        end
+    end
+
+    for anti_com in cnc_set.anticommuting_paulis
+        for p in isotropic
+            pauli = (p + anti_com) .% 2
+            push!(full_set, pauli)
+        end
+    end
+
+    return full_set
 end
 
 
@@ -325,6 +375,7 @@ function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)
 
     return V
 end
+<<<<<<< HEAD
 
 
 function pauli_basis_to_cnc(V::Vector,ps::PauliString)
@@ -343,3 +394,5 @@ function pauli_basis_to_cnc(V::Vector,ps::PauliString)
 
     return cnc
 end
+=======
+>>>>>>> 034ed438eccf914cd66d76034cfb0a18ee852c65

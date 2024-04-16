@@ -3,3 +3,5 @@ Polymake
 Nemo
 Combinatorics
 YAML
+StatsBase
+PlotlyJS
