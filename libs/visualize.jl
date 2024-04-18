@@ -195,7 +195,7 @@ end
 
 function draw_3dim_paulis(omega::Set{Vector{Int}}, title::String="3-dimensional Pauli Operators") 
     pauli_table = create_3dim_paulis_table(omega)
-    p = plot(pauli_table)
+    p = PlotlyJS.plot(pauli_table)
     relayout!(p, showlegend=false, title_text=title)
 
     return p
@@ -203,7 +203,7 @@ end
 
 function draw_3_dim_paulis_with_value_assignment(value_assignment::Dict{Vector{Int}, Int})
     pauli_table = create_3dim_paulis_with_value_assignment_table(value_assignment)
-    p = plot(pauli_table)
+    p = PlotlyJS.plot(pauli_table)
     relayout!(p, showlegend=false, title_text="3-dimensional Pauli Operators")
 
     return p
@@ -231,7 +231,7 @@ function find_3dim_degree_two_isotropic_type(isotropic::Set{Vector{Int}})
     return "(" * join(weight_set, ", ") * ")"
 end
 
-function draw_isotropic_composition_graph(composition_elements::Set{Set{Vector{Int}}})
+function draw_isotropic_composition_graph(composition_elements::Set{Set{Vector{Int}}}, title::String="Isotropic Composition", node_size=0.04)
     composition_elements = collect(composition_elements)
     num_elements = length(composition_elements)
     isotropic_gens_list = [find_isotropic_gens(isotropic) for isotropic in composition_elements]
@@ -262,5 +262,5 @@ function draw_isotropic_composition_graph(composition_elements::Set{Set{Vector{I
 
     edges = hcat(edges...)'
 
-    graphplot(edges, curves=false, names=node_names, self_edge_size=0.3, nodesize=0.05)
+    graphplot(edges, curves=false, names=node_names, self_edge_size=0.3, nodesize=node_size, title=title)
 end

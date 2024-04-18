@@ -355,7 +355,7 @@ function find_independent_paulis(omega::Set{Vector{Int}})
 end
 
 
-function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
+function find_all_possible_local_value_assignments(omega::Set{Vector{Int}}, max_num_assignments::Int=-1)
     omega = copy(omega)
     indep_paulis = find_independent_paulis(omega)
     
@@ -364,16 +364,24 @@ function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
 
     all_value_assignments = Set{Dict{Vector{Int},Int}}()
 
-    for i in 0:2^14
+    num_repetition = 2^num_indep - 1
+    
+    if max_num_assignments != -1
+        num_repetition = max_num_assignments
+    end
+
+    for i in 0:num_repetition
 
         # Initialize the value assignment by assigning the identity to 1
         value_assignment = Dict{Vector{Int},Int}(identity => 1)
 
         # Convert the integer to a binary string of length l
-        #bitstring = string(i, base=2, pad=num_indep)
-        #value_array = [parse(Int, c) for c in bitstring]
+        bitstring = string(i, base=2, pad=num_indep)
+        value_array = [parse(Int, c) for c in bitstring]
 
-        value_array = rand(0:1, num_indep)
+        if max_num_assignments != -1 
+            value_array = rand(0:1, num_indep)
+        end
 
         # Assign the values specified by binary array to the independent Paulis
         for (p, v) in zip(collect(indep_paulis), value_array)
