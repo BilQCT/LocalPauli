@@ -6,3 +6,5 @@ YAML
 StatsBase
 PlotlyJS
 JuMP
+GraphRecipes
+Plots
