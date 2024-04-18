@@ -3,7 +3,6 @@ using Combinatorics
 using YAML
 
 include("stab.jl")
-include("symplectic.jl");
 
 function do_commute(T_a::Vector{Int}, T_b::Vector{Int})
     """
@@ -376,7 +375,6 @@ function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)
     return V
 end
 
-
 function pauli_basis_to_cnc(V::Vector,ps::PauliString)
     # dictionary from lex ordered Paulis to bit strings:
     dict = ps.int_to_bit
@@ -393,3 +391,144 @@ function pauli_basis_to_cnc(V::Vector,ps::PauliString)
 
     return cnc
 end
+
+function get_canonical_isotropic_gens(n::Int, m::Int)
+    if m > n
+        error("The dimension of the isotropic generators should be less than or equal to the number of qubits.")
+    end
+
+    identity = [0 for _ in 1:2n]
+
+    if m == n
+        return [identity]
+    end
+
+    generators = Vector{Vector{Int}}()
+
+    for i in 1:(n - m)
+        pauli = [0 for _ in 1:2n]
+        pauli[i] = 1
+
+        push!(generators, pauli)
+    end
+
+    return generators
+end
+
+
+function generate_isotropic_from_gens(gens::Vector{Vector{Int}})::Set{Vector{Int}}
+    """
+    Generates the isotropic set from the generators.
+
+    Args:
+        gens: The generators of the isotropic set.
+
+    Returns:
+        The isotropic set.
+    """
+
+    n = length(gens[1]) / 2
+
+    identity = [0 for i in 1:2n]
+    isotropic = Set{Vector{Int}}([identity])
+
+    for i in 1:length(gens)
+        for used_gens in combinations(gens, i)
+            pauli = identity
+            for used_gen in used_gens
+                pauli = (pauli + used_gen) .% 2
+            end
+            push!(isotropic, pauli)
+        end
+    end
+
+    return isotropic
+end
+
+function find_commuting_paulis(omega::Set{Vector{Int}})
+    pauli_array_length = length(first(omega))
+    commuting_paulis = Set{Vector{Int}}()
+
+    for i in 0:(2^pauli_array_length - 1)
+        candidate_pauli = digits(i, base=2, pad=pauli_array_length)
+        commutes_with_omega = true
+        for pauli in omega
+            if candidate_pauli in omega || !do_commute(pauli, candidate_pauli)
+                commutes_with_omega = false
+                break
+            end
+        end
+
+        if commutes_with_omega
+            push!(commuting_paulis, candidate_pauli)
+        end
+    end
+
+    return commuting_paulis
+end
+
+function generate_anticommuting_paulis(ksi::Int, commutative_paulis_for_isotropic::Set{Vector{Int}})
+    commutative_paulis_for_isotropic = copy(commutative_paulis_for_isotropic)  # Copy the set
+
+    anticommuting_paulis = Set{Vector{Int}}()
+    while(length(anticommuting_paulis) < ksi)
+        anticommuting_paulis = Set{Vector{Int}}()
+        a = rand(collect(commutative_paulis_for_isotropic))
+        anticommuting_paulis = Set{Vector{Int}}([a])
+        new_commutative_paulis_for_isotropic = copy(commutative_paulis_for_isotropic)
+
+        while(length(anticommuting_paulis) < ksi && length(new_commutative_paulis_for_isotropic) > 0)
+            for p in anticommuting_paulis
+                for q in new_commutative_paulis_for_isotropic
+                    if do_commute(p, q)
+                        delete!(new_commutative_paulis_for_isotropic, q)
+                    end
+                end
+            end
+
+            if length(new_commutative_paulis_for_isotropic) == 0
+                break
+            end
+
+            new_rand_element = rand(collect(new_commutative_paulis_for_isotropic))
+            push!(anticommuting_paulis, new_rand_element)
+        end
+    end
+
+    return anticommuting_paulis
+end
+
+function generate_canonical_cnc_with_n_m(n::Int, m::Int)
+    isotropic_gens = get_canonical_isotropic_gens(n, m)
+    if m == 0
+        return MaximalCncSet(Set(isotropic_gens), Set{Vector{Int}}())
+    end
+    
+    isotropic = generate_isotropic_from_gens(isotropic_gens)
+
+    commuting_paulis = find_commuting_paulis(isotropic)
+
+    anticommuting_paulis = generate_anticommuting_paulis(2m +1, commuting_paulis) 
+
+    return MaximalCncSet(Set(isotropic_gens), anticommuting_paulis)
+end
+
+function generate_all_cncs(n::Int, m_values::Vector{Int}= [i for i in 0:n])::Set{MaximalCnc}
+    SP_n = SympPerm(n)
+    all_cncs = Set{MaximalCnc}()
+    for m in m_values
+        cnc = generate_canonical_cnc_with_n_m(n, m)
+        cnc_set = find_full_set_for_given_cnc_set(cnc)
+        symplectic_orbit = SympOrbit(n, SP_n, cnc_set)
+        for orbit_cnc_set in symplectic_orbit.Orbit
+            orbit_cnc_set = MaximalCncSet(orbit_cnc_set)
+            for generated_cnc in generate_all_cncs_for_given_cnc_set(orbit_cnc_set)
+                push!(all_cncs, generated_cnc)
+            end
+        end
+    end
+
+    return all_cncs
+end
+
+println(length(generate_all_cncs(2)))
