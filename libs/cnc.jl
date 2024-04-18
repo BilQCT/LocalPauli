@@ -362,8 +362,8 @@ function get_full_cnc_set(n::Int, m::Int)::Set{Vector{Int}}
 end
 
 
-function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)
-    bitstrings = ps.bit_strings; V = []
+function cnc_to_pauli_basis(cnc::MaximalCnc,ps::PauliString)::Vector{Rational{Int64}}
+    bitstrings = ps.bit_strings; V = Vector{Rational{Int64}}([])
 
     gamma = cnc.value_assignment
     gamma_keys = collect(keys(gamma))
@@ -531,4 +531,19 @@ function generate_all_cncs(n::Int, m_values::Vector{Int}= [i for i in 0:n])::Set
     return all_cncs
 end
 
-println(length(generate_all_cncs(2)))
+function generate_cnc_vertices(n::Int,AllCncs::Set{MaximalCnc})
+    # Convert AllCncs to Vector:
+    CNC = collect(AllCncs)
+    # Create PauliString object:
+    PS = PauliString(n)
+
+    # intialize matrix of vertices:
+    R = Array{Rational{Int64}}(undef,4^n,0)
+    for cnc in CNC
+        V = cnc_to_pauli_basis(cnc,PS)
+        R = hcat(R,V)
+    end
+    return R
+end
+
+#println(length(generate_all_cncs(2)))
