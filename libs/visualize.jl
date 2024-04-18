@@ -1,4 +1,5 @@
 using PlotlyJS
+using GraphRecipes, Plots
 
 include("cnc.jl")
 
@@ -192,10 +193,10 @@ function create_3dim_paulis_with_value_assignment_table(value_assignment::Dict{V
 
 end
 
-function draw_3dim_paulis(omega::Set{Vector{Int}}) 
+function draw_3dim_paulis(omega::Set{Vector{Int}}, title::String="3-dimensional Pauli Operators") 
     pauli_table = create_3dim_paulis_table(omega)
     p = plot(pauli_table)
-    relayout!(p, showlegend=false, title_text="3-dimensional Pauli Operators")
+    relayout!(p, showlegend=false, title_text=title)
 
     return p
 end
@@ -206,4 +207,60 @@ function draw_3_dim_paulis_with_value_assignment(value_assignment::Dict{Vector{I
     relayout!(p, showlegend=false, title_text="3-dimensional Pauli Operators")
 
     return p
+end
+
+function find_3dim_degree_two_isotropic_type(isotropic::Set{Vector{Int}})
+    identity = [0, 0, 0, 0, 0, 0]
+
+    weight_set = []
+    for pauli in isotropic
+        if pauli == identity
+            continue
+        end
+        weight = 0
+        pauli_str = get_pauli_string(pauli)
+        for op in pauli_str
+            if op != 'I'
+                weight += 1
+            end
+        end
+        push!(weight_set, weight)
+    end
+    
+    sort!(weight_set)
+    return "(" * join(weight_set, ", ") * ")"
+end
+
+function draw_isotropic_composition_graph(composition_elements::Set{Set{Vector{Int}}})
+    composition_elements = collect(composition_elements)
+    num_elements = length(composition_elements)
+    isotropic_gens_list = [find_isotropic_gens(isotropic) for isotropic in composition_elements]
+    
+    node_names = ["<" * join(map(get_pauli_string, collect(isotropic_gens)), ", ")* ">" for isotropic_gens in isotropic_gens_list]
+
+    edges = [[0 for _ in 1:num_elements] for _ in 1:num_elements]
+    is_no_edge = true
+    for i in 1:num_elements
+        isotropic = composition_elements[i]
+        if length(isotropic) == 4
+            node_names[i] = node_names[i] * "\n" * find_3dim_degree_two_isotropic_type(isotropic)
+        end
+
+        for j in i+1:num_elements
+            isotropic2 = composition_elements[j]
+            if length(intersect(isotropic, isotropic2)) > 1
+                is_no_edge = false
+                edges[i][j] = 1
+                edges[j][i] = 1
+            end
+        end
+    end
+
+    if is_no_edge
+        error("Graph has no edges so it is not possible to draw")
+    end
+
+    edges = hcat(edges...)'
+
+    graphplot(edges, curves=false, names=node_names, self_edge_size=0.3, nodesize=0.05)
 end

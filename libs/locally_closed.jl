@@ -153,7 +153,8 @@ function generate_isotropic_from_gens(gens::Vector{Vector{Int}})::Set{Vector{Int
     return isotropic
 end
 
-function generate_all_three_dim_maximal_local_isotropics_gens()::Set{Set{Vector{Int}}}
+function generate_all_three_dim_maximal_local_isotropics()::Set{Set{Vector{Int}}}
+    III = [0, 0, 0, 0, 0, 0]
 
     XII = [1, 0, 0, 0, 0, 0]
     YII = [1, 0, 0, 1, 0, 0]
@@ -173,18 +174,19 @@ function generate_all_three_dim_maximal_local_isotropics_gens()::Set{Set{Vector{
 
     charlie_locals = [IIX, IIY, IIZ]
 
-    all_maximal_local_isotropics_gens = Set{Set{Vector{Int}}}()
+    all_maximal_local_isotropics = Set{Set{Vector{Int}}}()
 
     for alice_local in alice_locals
         for bob_local in bob_locals
             for charlie_local in charlie_locals
                 gens = Set{Vector{Int}}([alice_local, bob_local, charlie_local])
-                push!(all_maximal_local_isotropics_gens, gens)
+                isotropic = generate_isotropic_from_gens(collect(gens))
+                push!(all_maximal_local_isotropics, isotropic)
             end
         end
     end
 
-    return all_maximal_local_isotropics_gens
+    return all_maximal_local_isotropics
 end
 
 function do_locally_commute(pauli1::Vector{Int}, pauli2::Vector{Int})::Bool
@@ -362,13 +364,16 @@ function find_all_possible_local_value_assignments(omega::Set{Vector{Int}})
 
     all_value_assignments = Set{Dict{Vector{Int},Int}}()
 
-    for i in 0:(2^num_indep - 1)
+    for i in 0:2^14
+
         # Initialize the value assignment by assigning the identity to 1
         value_assignment = Dict{Vector{Int},Int}(identity => 1)
 
         # Convert the integer to a binary string of length l
-        bitstring = string(i, base=2, pad=num_indep)
-        value_array = [parse(Int, c) for c in bitstring]
+        #bitstring = string(i, base=2, pad=num_indep)
+        #value_array = [parse(Int, c) for c in bitstring]
+
+        value_array = rand(0:1, num_indep)
 
         # Assign the values specified by binary array to the independent Paulis
         for (p, v) in zip(collect(indep_paulis), value_array)
@@ -530,4 +535,68 @@ function find_full_rank_maximal_cnc_examples_for_n_m(n::Int, m::Int, num_example
     full_rank_examples = sample(full_rank_examples, num_examples, replace=false)
 
     return full_rank_examples
+end
+
+function find_all_3dim_maximal_isotropics_in_given_set(omega::Set{Vector{Int}})
+    all_3dim_maximal_local_isotropics = generate_all_three_dim_maximal_local_isotropics()
+
+    maximal_isotropics = Set{Set{Vector{Int}}}()
+    for maximal_isotropic in all_3dim_maximal_local_isotropics
+        if maximal_isotropic ⊆ omega
+            push!(maximal_isotropics, maximal_isotropic)
+        end
+    end
+
+    return maximal_isotropics
+end
+
+function find_all_3dim_degree_two_local_isotropics_in_given_set(omega::Set{Vector{Int}})
+    omega = copy(omega)
+    identity = [0, 0, 0, 0, 0, 0]
+    delete!(omega, identity)
+    degree_two_isotropics = Set{Set{Vector{Int}}}()
+
+    for used_paulis in combinations(collect(omega), 3)
+        is_locally_commuting = true
+        for pair in combinations(used_paulis, 2)
+            if !do_locally_commute(pair[1], pair[2])
+                is_locally_commuting = false
+                break
+            end
+        end
+
+        if !is_locally_commuting
+            continue
+        end
+
+        isotropic = Set{Vector{Int}}(used_paulis)
+        push!(isotropic, identity)
+        isotropic = find_local_closure(isotropic)
+        if length(isotropic) == 4
+            push!(degree_two_isotropics, isotropic)
+        end
+    end
+
+    return degree_two_isotropics
+end
+
+function find_local_isotropic_composition(omega::Set{Vector{Int}})::Set{Set{Vector{Int}}}
+
+    composition_elements = Set{Set{Vector{Int}}}()
+
+    maximal_local_isotropics = find_all_3dim_maximal_isotropics_in_given_set(omega)
+    degree_two_local_isotropics = find_all_3dim_degree_two_local_isotropics_in_given_set(omega)
+
+    for degree_two_isotropic in degree_two_local_isotropics
+        for maximal_isotropic in maximal_local_isotropics
+            if degree_two_isotropic ⊆ maximal_isotropic
+                delete!(degree_two_local_isotropics, degree_two_isotropic)
+            end
+        end
+    end
+
+    composition_elements = maximal_local_isotropics ∪ degree_two_local_isotropics
+
+
+    return composition_elements
 end

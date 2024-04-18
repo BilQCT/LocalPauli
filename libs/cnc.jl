@@ -530,5 +530,3 @@ function generate_all_cncs(n::Int, m_values::Vector{Int}= [i for i in 0:n])::Set
 
     return all_cncs
 end
-
-println(length(generate_all_cncs(2)))
