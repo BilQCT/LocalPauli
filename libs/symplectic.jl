@@ -69,7 +69,7 @@ mutable struct SympOrbit
     Set:
     Orbit:
     """
-    Subset::Set{Vector{Int}}
+    Canonical::Set{Vector{Int}}
     Orbit::Set{Set{Vector{Int}}}
 
     function SympOrbit(n::Int,SP::SympPerm,Subset::Set{Vector{Int}})
@@ -88,9 +88,9 @@ mutable struct SympOrbit
         end
         
         Orbit = Set(Orbs);
-        Subset = Set(Subset)
+        Canonical = Set(Subset)
 
-        new(Subset,Orbit)
+        new(Canonical,Orbit)
     end
 end
 

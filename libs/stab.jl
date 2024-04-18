@@ -128,6 +128,8 @@ end
 
 ################################################################################################
 
+using LinearAlgebra
+
 """
 Compute the beta coefficient between two Pauli operators.
 
@@ -169,10 +171,10 @@ Returns:
 - An array containing the canonical generators.
 """
 function canonical_generators(n)
-    gens = []
+    gens = Vector{Vector{Int}}([])
     
     for i in 1:n
-        g = [0 for j in 1:(2 * n)]
+        g = Vector{Int}([0 for j in 1:(2 * n)])
         g[i] = 1
         push!(gens, g)
     end
@@ -260,7 +262,7 @@ function isotropic(gens)
     end
     
     n = 1
-    return generate_elements(k, n, gens, iso)
+    return collect(generate_elements(k, n, gens, iso))
 end
 
 
@@ -279,6 +281,7 @@ Returns:
 - A matrix representation of the generators.
 """
 function gens_to_check_matrix(gens)
+    gens = collect(gens)
     m = length(gens)
     k = length(gens[1])
     M = Array{Int64}(undef, 0, k)
@@ -293,7 +296,7 @@ end
 
 
 using Nemo
-
+using Combinatorics
 
 """
 Generate all deterministic vertices for a given set of isotropic subspaces.
@@ -388,6 +391,7 @@ function stabilizer_coefficients(n, II)
     A = Array{Int64}(undef, 0, N)
     
     for iso in II
+        iso = collect(iso)
         gens = find_gens(n, iso)
         Gamma_iso = Gamma(gens)
     
@@ -404,14 +408,15 @@ end
 
 
 function stabilizer_states(n)
-    symplectic_tuple = symplectic_perm_group(n)
-    sp = symplectic_tuple[1]; fdict = symplectic_tuple[2]; bdict = symplectic_tuple[3];
+    SP = symplectic_tuple = SympPerm(n)
+    #sp = SP.Group; fdict = SP.fdict; bdict = SP.bdict;
 
     # generate canonical S = {I,X} maximal isotropic:
-    I = canonical_maximal_isotropic(n) 
+    I = Set(canonical_maximal_isotropic(n))
+    #I = Set(Vector{Vector{Int}}(canonical_maximal_isotropic(n)))
 
     # compute orbit:
-    II = symplectic_orbit(n,sp,I,fdict,bdict)
+    II = collect(SympOrbit(n,SP,I).Orbit)
 
     return stabilizer_coefficients(n, II)
 end

@@ -82,3 +82,31 @@ mutable struct PauliString
         new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int,int_to_bit)
     end
 end
+
+function get_pauli_string(T::Vector{Int})
+    """
+    Get the Pauli string representation of a Pauli operator.
+
+    Args:
+    T: Pauli operator as a binary symplectic vector.
+
+    Returns:
+    str: Pauli string representation of the Pauli operator.
+    """
+    n = length(T) ÷ 2
+    pauli_str = ""
+
+    for i in 1:n
+        if T[i] == 1 && T[i+n] == 1
+            pauli_str *= "Y"
+        elseif T[i+n] == 1
+            pauli_str *= "Z"
+        elseif T[i] == 1
+            pauli_str *= "X"
+        else
+            pauli_str *= "I"
+        end
+    end
+
+    return pauli_str
+end
