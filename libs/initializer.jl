@@ -23,7 +23,33 @@ function initial_lp(V::Vector{Float64},R)
     # solve model
     optimize!(model)
 
-    return model,x
+
+    if is_solved_and_feasible(model)
+        mixture = "Convex"
+
+        return model,x,mixture
+
+    else
+        mixture = "Affine"
+
+        # define model:
+        model = jmp.Model(GLPK.Optimizer)
+
+        # define variables: non-negative:
+        @variable(model,x[1:N] >= 0)
+
+        # define constraints:
+        @constraint(model, cons, R * x .== V)
+
+        # define objective function: We only want to find a solution:
+        @objective(model, Min, 0)
+
+        # solve model
+        optimize!(model)
+
+        return model,x,mixture
+
+    end
 end
 
 
@@ -44,6 +70,7 @@ mutable struct Initializer
     """
     InitVector::Vector{Float64}
     Feasible::Bool
+    Mixture::String
     Supports::Vector{MaximalCnc}
     InitDist::Dict{MaximalCnc,Float64}
 
@@ -56,8 +83,9 @@ mutable struct Initializer
         InitVector = Vector{Float64}(V)
 
         # run model
-        model, variables = initial_lp(V,R)
+        model, variables, mixture = initial_lp(V,R)
         Feasible = is_solved_and_feasible(model)
+        Mixture = mixture
         
         # coefficients of convex mixture:
         values = value.(variables)
@@ -70,7 +98,7 @@ mutable struct Initializer
         # Initial distribution:
         InitDist = Dict(zip(Supports,coefficients))
 
-        new(InitVector,Feasible,Supports,InitDist)
+        new(InitVector,Feasible,Mixture,Supports,InitDist)
     end
 end
 
