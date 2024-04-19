@@ -110,3 +110,72 @@ function get_pauli_string(T::Vector{Int})
 
     return pauli_str
 end
+
+III = [0, 0, 0, 0, 0, 0]
+XII = [1, 0, 0, 0, 0, 0]
+YII = [1, 0, 0, 1, 0, 0]
+ZII = [0, 0, 0, 1, 0, 0]
+IXI = [0, 1, 0, 0, 0, 0]
+IYI = [0, 1, 0, 0, 1, 0]
+IZI = [0, 0, 0, 0, 1, 0]
+IIX = [0, 0, 1, 0, 0, 0]
+IIY = [0, 0, 1, 0, 0, 1]
+IIZ = [0, 0, 0, 0, 0, 1]
+
+IXX = (IXI + IIX) .% 2
+IXY = (IXI + IIY) .% 2
+IXZ = (IXI + IIZ) .% 2
+IYX = (IYI + IIX) .% 2
+IYY = (IYI + IIY) .% 2
+IYZ = (IYI + IIZ) .% 2
+IZX = (IZI + IIX) .% 2
+IZY = (IZI + IIY) .% 2
+IZZ = (IZI + IIZ) .% 2
+
+XIX = (XII + IIX) .% 2
+XIY = (XII + IIY) .% 2
+XIZ = (XII + IIZ) .% 2
+XXI = (XII + IXI) .% 2
+XXX = (XXI + IIX) .% 2
+XXY = (XXI + IIY) .% 2
+XXZ = (XXI + IIZ) .% 2
+XYI = (XII + IYI) .% 2
+XYX = (XYI + IIX) .% 2
+XYY = (XYI + IIY) .% 2
+XYZ = (XYI + IIZ) .% 2
+XZI = (XII + IZI) .% 2
+XZX = (XZI + IIX) .% 2
+XZY = (XZI + IIY) .% 2
+XZZ = (XZI + IIZ) .% 2
+
+YIX = (YII + IIX) .% 2
+YIY = (YII + IIY) .% 2
+YIZ = (YII + IIZ) .% 2
+YXI = (YII + IXI) .% 2
+YXX = (YXI + IIX) .% 2
+YXY = (YXI + IIY) .% 2
+YXZ = (YXI + IIZ) .% 2
+YYI = (YII + IYI) .% 2
+YYX = (YYI + IIX) .% 2
+YYY = (YYI + IIY) .% 2
+YYZ = (YYI + IIZ) .% 2
+YZI = (YII + IZI) .% 2
+YZX = (YZI + IIX) .% 2
+YZY = (YZI + IIY) .% 2
+YZZ = (YZI + IIZ) .% 2
+
+ZIX = (ZII + IIX) .% 2
+ZIY = (ZII + IIY) .% 2
+ZIZ = (ZII + IIZ) .% 2
+ZXI = (ZII + IXI) .% 2
+ZXX = (ZXI + IIX) .% 2
+ZXY = (ZXI + IIY) .% 2
+ZXZ = (ZXI + IIZ) .% 2
+ZYI = (ZII + IYI) .% 2
+ZYX = (ZYI + IIX) .% 2
+ZYY = (ZYI + IIY) .% 2
+ZYZ = (ZYI + IIZ) .% 2
+ZZI = (ZII + IZI) .% 2
+ZZX = (ZZI + IIX) .% 2
+ZZY = (ZZI + IIY) .% 2
+ZZZ = (ZZI + IIZ) .% 2

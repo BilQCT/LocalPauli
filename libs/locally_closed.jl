@@ -439,6 +439,15 @@ function value_assignment_to_pauli_basis(value_assignment::Dict{Vector{Int},Int}
     return V
 end
 
+function find_rank_count_for_given_given_value_assignment(value_assignment::Dict{Vector{Int},Int}, n::Int, stab_coeffs)
+    A = value_assignment_to_pauli_basis(value_assignment, n)
+    H = stab_coeffs * A
+    Z = findall(x->x==0,H)
+    AZ = stab_coeffs[Z,:]
+    rank_AZ = rank(AZ)
+    return rank_AZ
+end
+
 function find_ranks_count_for_given_set_of_value_assignments(value_assignments::Set{Dict{Vector{Int},Int}}, n::Int, stab_coeffs)
     
     # initialize matrix:
