@@ -665,10 +665,17 @@ function CZ_action(pauli::Vector{Int}, qubits::Vector{Int})
     ZX = (ZI + IX) .% 2
     ZY = (ZI + IY) .% 2
 
+    sign = 1
     resulting_paulis = II
     if pauli_str[qubits[1]] == 'X'
+        if pauli_str[qubits[2]] == 'Y'
+            sign = -1
+        end
         resulting_paulis = (resulting_paulis + XZ).% 2
     elseif pauli_str[qubits[1]] == 'Y'
+        if pauli_str[qubits[2]] == 'X'
+            sign = -1
+        end
         resulting_paulis = (resulting_paulis + YZ).% 2
     elseif pauli_str[qubits[1]] == 'Z'
         resulting_paulis = (resulting_paulis + ZI).% 2
@@ -689,5 +696,5 @@ function CZ_action(pauli::Vector{Int}, qubits::Vector{Int})
     pauli_arr[qubits[2]] = resulting_paulis_str[2]
     pauli_str = join(pauli_arr)
 
-    return get_pauli_from_pauli_string(pauli_str)
+    return get_pauli_from_pauli_string(pauli_str), sign
 end
