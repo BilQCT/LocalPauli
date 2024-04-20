@@ -645,3 +645,49 @@ function get_fillable_weight_3s(omega::Set{Vector{Int}})::Vector{Vector{Int}}
 
     return weight_3s
 end
+
+
+function CZ_action(pauli::Vector{Int}, qubits::Vector{Int})
+    n = length(pauli) ÷ 2
+    pauli_str = get_pauli_string(pauli)
+    qubits = sort(copy(qubits))
+
+    II = [0, 0, 0, 0]
+    XI = [1, 0, 0, 0]
+    YI = [1, 0, 1, 0]
+    ZI = [0, 0, 1, 0]
+    IX = [0, 1, 0, 0]
+    IY = [0, 1, 0, 1]
+    IZ = [0, 0, 0, 1]
+
+    XZ = (XI + IZ) .% 2
+    YZ = (YI + IZ) .% 2
+    ZX = (ZI + IX) .% 2
+    ZY = (ZI + IY) .% 2
+
+    resulting_paulis = II
+    if pauli_str[qubits[1]] == 'X'
+        resulting_paulis = (resulting_paulis + XZ).% 2
+    elseif pauli_str[qubits[1]] == 'Y'
+        resulting_paulis = (resulting_paulis + YZ).% 2
+    elseif pauli_str[qubits[1]] == 'Z'
+        resulting_paulis = (resulting_paulis + ZI).% 2
+    end
+
+    if pauli_str[qubits[2]] == 'X'
+        resulting_paulis = (resulting_paulis + ZX).% 2
+    elseif pauli_str[qubits[2]] == 'Y'
+        resulting_paulis = (resulting_paulis + ZY).% 2
+    elseif pauli_str[qubits[2]] == 'Z'
+        resulting_paulis = (resulting_paulis + IZ).% 2
+    end
+
+    resulting_paulis_str = get_pauli_string(resulting_paulis)
+
+    pauli_arr = collect(pauli_str)
+    pauli_arr[qubits[1]] = resulting_paulis_str[1]
+    pauli_arr[qubits[2]] = resulting_paulis_str[2]
+    pauli_str = join(pauli_arr)
+
+    return get_pauli_from_pauli_string(pauli_str)
+end
