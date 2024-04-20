@@ -617,3 +617,31 @@ function find_local_isotropic_composition(omega::Set{Vector{Int}})::Set{Set{Vect
 
     return composition_elements
 end
+
+function get_pauli_weight(pauli::Vector{Int})
+    pauli_str = get_pauli_string(pauli)
+    weight = 0
+    for c in pauli_str
+        if c != 'I'
+            weight += 1
+        end
+    end
+
+    return weight
+end
+
+function get_fillable_weight_3s(omega::Set{Vector{Int}})::Vector{Vector{Int}}
+    weight_3s = Vector{Vector{Int}}()
+    all_maximal_isotropics = generate_all_three_dim_maximal_local_isotropics()
+    for max_isotropic in all_maximal_isotropics
+        if length(intersect(omega, max_isotropic)) == 1
+            for pauli in max_isotropic
+                if get_pauli_weight(pauli) == 3
+                    push!(weight_3s, pauli)
+                end
+            end
+        end
+    end
+
+    return weight_3s
+end
