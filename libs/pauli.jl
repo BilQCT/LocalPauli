@@ -1,50 +1,81 @@
-# PauliString struct and related functions:
+############################################################################################
+############################################################################################
+############################################################################################
 
 """
-Generate all dit strings recursively.
-
-Parameters:
-- `d`: The number of outcomes.
-- `N`: The number of generators.
-- `n`: The current iteration.
-- `s`: The current set of dit strings.
-
-Returns:
-- All dit strings.
+Functions related to Pauli operators, Pauli group. 
 """
-function generate_dit_strings(d, N, n, s)
-    if n < N
-        Zd = [(i - 1) for i in 1:d]
-        dit_strings = []
-        for i in 1:length(s)
-            for x in Zd
-                push!(dit_strings, push!(copy(s[i]), x))
-            end
+
+
+############################################################################################
+############################################################################################
+############################################################################################
+
+using GAP
+using LinearAlgebra
+
+const g = GAP.Globals
+const gjl = GAP.gap_to_julia
+const jlg = GAP.julia_to_gap
+
+include("utils.jl")
+
+function pauli_n(ab)
+    x = jlg([0 1; 1 0])
+    z = g.DiagonalMat(jlg([1, -1]))
+
+    n = length(ab) ÷ 2
+
+    a = ab[1:n]
+    b = ab[n+1:2n]
+
+    Xa = x^a[1]
+    Zb = z^b[1]
+
+    if n > 1
+        for i in 2:n
+            Xa = g.KroneckerProduct(Xa, x^a[i])
+            Zb = g.KroneckerProduct(Zb, z^b[i])
         end
-        s = dit_strings
-        n = n + 1
-        generate_dit_strings(d, N, n, s)
-    else
-        return s
     end
+
+    arg_phase = mod(sum(a .* b), 4)
+    phase = (g.E(4))^arg_phase
+
+    return phase * Xa * Zb
+end
+
+############################################################################################
+
+function Pauli_group(n)
+    P_lst = []
+
+    for i in 1:n
+        # Create Pauli binary strings
+        x = jlg(zeros(Int, 2*n)); x[i] = 1
+
+        z = jlg(zeros(Int, 2*n)); z[i+n] = 1
+
+        y = x + z
+
+        # Add Pauli matrices to the list
+        push!(P_lst, pauli_n(x))
+        push!(P_lst, pauli_n(y))
+        push!(P_lst, pauli_n(z))
+    end
+
+    return g.Group(jlg(P_lst))
 end
 
 
-"""
-Generate all possible dit strings.
 
-Parameters:
-- `d`: The number of outcomes.
-- `N`: The number of generators.
+############################################################################################
+############################################################################################
+############################################################################################
 
-Returns:
-- All dit strings.
-"""
-function all_dit_strings(d, N)
-    s = [[i - 1] for i in 1:d]
-    n = 1
-    return generate_dit_strings(d, N, n, s)
-end
+
+
+# PauliString struct and related functions:
 
 mutable struct PauliString
     """
@@ -111,6 +142,31 @@ function get_pauli_string(T::Vector{Int})
     return pauli_str
 end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 III = [0, 0, 0, 0, 0, 0]
 XII = [1, 0, 0, 0, 0, 0]
 YII = [1, 0, 0, 1, 0, 0]
@@ -120,7 +176,7 @@ IYI = [0, 1, 0, 0, 1, 0]
 IZI = [0, 0, 0, 0, 1, 0]
 IIX = [0, 0, 1, 0, 0, 0]
 IIY = [0, 0, 1, 0, 0, 1]
-IIZ = [0, 0, 0, 0, 0, 1]
+IIZ = [0, 0, 0, 0, 0, 1];
 
 IXX = (IXI + IIX) .% 2
 IXY = (IXI + IIY) .% 2
@@ -178,4 +234,4 @@ ZYZ = (ZYI + IIZ) .% 2
 ZZI = (ZII + IZI) .% 2
 ZZX = (ZZI + IIX) .% 2
 ZZY = (ZZI + IIY) .% 2
-ZZZ = (ZZI + IIZ) .% 2
+ZZZ = (ZZI + IIZ) .% 2;

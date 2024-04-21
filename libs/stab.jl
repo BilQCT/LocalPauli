@@ -8,8 +8,7 @@ Stabilizer Theory
 Functions for working with stabilizer states and related operations.
 """
 
-include("symplectic.jl")
-include("pauli.jl")
+include("symplectic.jl");include("pauli.jl");include("utils.jl")
 
 
 function tensor_prod(A, n)
