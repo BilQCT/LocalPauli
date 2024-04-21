@@ -84,7 +84,7 @@ mutable struct Initializer
 
         # run model
         model, variables, mixture = initial_lp(V,R)
-        Feasible = is_solved_and_feasible(model)
+        if mixture == "Convex"; Feasible = true; else; Feasible = false; end;
         Mixture = mixture
         
         # coefficients of convex mixture:
