@@ -254,6 +254,23 @@ function find_local_extension(value_assignment::Dict{Vector{Int},Int}, new_Pauli
         end
     end
 
+    locally_value_assignment = true
+    for paulis in combinations(collect(keys(new_value_assignment)), 2)
+        pauli1 = paulis[1]
+        pauli2 = paulis[2]
+        if do_locally_commute(pauli1, pauli2)
+            pauli = (pauli1 + pauli2) .% 2
+            if new_value_assignment[pauli] != new_value_assignment[pauli1] * new_value_assignment[pauli2]
+                locally_value_assignment = false
+                break
+            end
+        end
+    end
+
+    if !locally_value_assignment
+        return false
+    end
+
     return new_value_assignment
 
 end
