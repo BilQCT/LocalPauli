@@ -19,10 +19,11 @@ YAML
 JuMP
 GLPK
 Distributions
+Polyhedra
 
 ## Instructions
 
-To create an environment for running StabTheory, in Julia REPL use the following commands:
+To create an environment for running LocalLambda, in Julia REPL use the following commands:
 
 using Pkg
 Pkg.generate("path/to/MyProject")

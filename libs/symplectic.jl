@@ -7,36 +7,34 @@ include("pauli.jl");
 
 # convert from default GAP convention to physics convention for symplectic form:
 function form_conversion(a,n)
+    """
+    Convert from default GAP convention to physics convention for symplectic form.
+    
+    # Arguments
+    - `a::Vector{Int}`: Input vector in default GAP convention.
+    - `n::Int`: Half the length of the input vector.
+    
+    # Returns
+    - `Vector{Int}`: Output vector in physics convention.
+    """
     b = [a[i] for i in 1:n];
     for i in 1:n; push!(b,a[2*n-i+1]);; end
     return b
 end
 
-"""
-# Generate symplectic group as permutation group:
-function symplectic_perm_group(n)
-    # Generate symplectic group:
-    spn = g.SymplecticGroup(2*n,2)
-
-    # Generate domain of symplectic group action:
-    En = g.ShallowCopy(g.Elements(g.GF(2)^(2*n))); g.Sort(En);
-    hom = g.ActionHomomorphism(spn,En)
-
-    Fn = sort(all_dit_strings(2,2*n));
-    Dn = [i for i in 1:length(Fn)];
-    fdict = Dict(zip(Fn,Dn)); bdict = Dict(zip(Dn,Fn));
-    
-    return [hom(spn),fdict,bdict]
-end
-"""
-
 mutable struct SympPerm
     """
-    Description:
+    SympPerm
 
-    Group:
-    fdict:
-    bdict:
+    A mutable struct to represent a symplectic permutation group and its associated dictionaries for indexing.
+
+    # Fields
+    - `Group::GapObj`: The symplectic group as a GAP object.
+    - `fdict::Dict{Vector{Int}, Int}`: A dictionary mapping vectors to their indices.
+    - `bdict::Dict{Int, Vector{Int}}`: A dictionary mapping indices to their corresponding vectors.
+
+    # Constructor
+    - `SympPerm(n::Int)`: Generates the symplectic group of degree `2n` and the associated action on a domain of length `2n`.
     """
     Group::GapObj
     fdict::Dict{Vector{Int},Int}
@@ -65,9 +63,16 @@ end
 
 mutable struct SympOrbit
     """
-    Description:
-    Set:
-    Orbit:
+    SympOrbit
+
+    A mutable struct to represent the orbit of a set of vectors under the action of a symplectic permutation group.
+
+    # Fields
+    - `Canonical::Set{Vector{Int}}`: The canonical set of vectors.
+    - `Orbit::Set{Set{Vector{Int}}}`: The set of orbits, each orbit being a set of vectors.
+
+    # Constructor
+    - `SympOrbit(n::Int, SP::SympPerm, Subset::Set{Vector{Int}})`: Computes the orbits of a given subset under the action of a symplectic permutation group.
     """
     Canonical::Set{Vector{Int}}
     Orbit::Set{Set{Vector{Int}}}
@@ -93,26 +98,3 @@ mutable struct SympOrbit
         new(Canonical,Orbit)
     end
 end
-
-
-
-
-"""
-# Generate symplectic orbit:
-function symplectic_orbit(n,spn,subset,fdict,bdict)
-    subset = [form_conversion(a,n) for a in subset];
-    # generate gap object of subset:
-    dsubset = g.Set(jlg([g.Set(jlg([jlg(fdict[a]) for a in subset]))]))
-
-    # generate orbits:
-    dorbs = gjl(g.Orbits(spn,dsubset,g.OnSets)[1]); orbs = [];
-    
-    for dorb in dorbs
-        orb = [ form_conversion(bdict[d],n) for d in dorb]
-        push!(orbs,orb)
-    end
-    
-
-    return orbs
-end
-"""
