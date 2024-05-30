@@ -64,3 +64,58 @@ function all_dit_strings(d, N)
     n = 1
     return generate_dit_strings(d, N, n, s)
 end
+
+
+
+using DelimitedFiles
+
+function pm_to_panda(A)
+    M = copy(A[:,2:end]);
+    M = hcat(M,A[:,1]);
+    return -M
+end
+
+
+
+function save_input_panda(M,filename,delimiter,input)
+    if input == "H"
+        input = "Inequalities \n"
+    elseif input == "V"
+        input == "Vertices \n"
+    else
+        error("Not valid.")
+    end
+    open(filename, "w") do io
+        write(io,input)
+           writedlm(io, M, delimiter)
+       end
+end
+
+
+# example usage: save_input_panda(M2,"L2","  ","H")
+
+
+
+
+function save_input_lrs(M,filename,name,comment,delimiter,input)
+    if input == "H"
+        input = "H-representation \n"
+    elseif input == "V"
+        input == "V-representation \n"
+    else
+        error("Not valid.")
+    end
+    
+    # size of input:
+    m = size(M)[1]; n = size(M)[2];
+    
+    strg = name*"\n"*"* "*comment*"\n"*input*"begin \n"*string(m)*" "*string(n)*" rational \n";
+    
+    open(filename, "w") do io
+        write(io,strg);
+        writedlm(io, M, delimiter);
+        write(io,"end");
+    end
+end
+
+# example usage: save_input_lrs(A2,"L2.ine","Lambda2","Lambda2"," ","H")
