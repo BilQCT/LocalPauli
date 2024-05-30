@@ -1,0 +1,165 @@
+./lrs L3-e.ine
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 3
+*estimates 3
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 3
+*estimates 3
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 3
+*Totals: vertices=1 rays=0 bases=29772 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=50815516710060112 integer_vertices=1 
+*Total number of tree nodes evaluated: 269631
+*Estimated total running time=365080932185562.7 secs 
+*Dictionary Cache: max size= 4 misses= 0/29771   Tree Depth= 3
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*1937.148u 0.056s 10952Kb 0 flts 0 swaps 0 blks-in 280 blks-out
+
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 4
+*estimates 3
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 4
+*estimates 3
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 4
+*Totals: vertices=1 rays=0 bases=365222 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=62282527330117468160 integer_vertices=1 
+*Total number of tree nodes evaluated: 3019924
+*Estimated total running time=443160655045086464.0 secs 
+*Dictionary Cache: max size= 5 misses= 0/365221   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*21487.753u 0.356s 12744Kb 0 flts 0 swaps 0 blks-in 280 blks-out 
+
+
+
+
+
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 4
+*estimates 10
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 4
+*estimates 10
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 4
+*Totals: vertices=1 rays=0 bases=365222 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=409291597152263424 integer_vertices=1 
+*Total number of tree nodes evaluated: 9226420
+*Estimated total running time=3078848662882890.0 secs 
+*Dictionary Cache: max size= 5 misses= 0/365221   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*69404.676u 0.733s 12740Kb 0 flts 0 swaps 0 blks-in 280 blks-out 
+
+
+
+
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 5
+*estimates 3
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 5
+*estimates 3
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 5
+*Totals: vertices=1 rays=0 bases=3858650 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=8139259434988878848 integer_vertices=1 
+*Total number of tree nodes evaluated: 30299868
+*Estimated total running time=57965357629520800.0 secs 
+*Dictionary Cache: max size= 6 misses= 0/3858649   Tree Depth= 5
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*215786.548u 4.164s 14276Kb 0 flts 0 swaps 0 blks-in 280 blks-out
+
+
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 4
+*estimates 5
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 4
+*estimates 5
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 4
+*Totals: vertices=1 rays=0 bases=365222 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=321482092313402688 integer_vertices=1 
+*Total number of tree nodes evaluated: 4792867
+*Estimated total running time=2382792808299540.0 secs 
+*Dictionary Cache: max size= 5 misses= 0/365221   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*35524.247u 0.760s 12740Kb 0 flts 0 swaps 0 blks-in 280 blks-out
+
+
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3-e.ine
+Lambda3
+*maxdepth 4
+*estimates 20
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+Lambda3
+*maxdepth 4
+*estimates 20
+V-representation
+begin
+***** 64 rational
+ 1 -1  0  0  0  0  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1 -1 -1  1  0  0  0  0  0  0  0  0  0  0 -1  1  0  0  0  0 -1  1  0  0  1  1  1 -1  0  0  0  0  0  0  0  0  0  0 
+end
+*Tree truncated at depth 4
+*Totals: vertices=1 rays=0 bases=365222 integer_vertices=1  max_vertex_depth=0
+*Estimates: vertices=1 rays=0 bases=909884454155324416 integer_vertices=1 
+*Total number of tree nodes evaluated: 18087148
+*Estimated total running time=7090515218577911.0 secs 
+*Dictionary Cache: max size= 5 misses= 0/365221   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*140948.884u 1.428s 12744Kb 0 flts 0 swaps 0 blks-in 280 blks-out
+

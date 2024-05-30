@@ -1,0 +1,19 @@
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3loc-e.ine
+L3loc
+*maxdepth 30
+*estimates 10lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+L3loc
+*maxdepth 30
+*estimates 10
+V-representation
+begin
+***** 64 rational
+ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1 
+ 1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1  1 -1  1  1 
+
+lrs_lib: checkpointing:
+lrs_lib: State #0: (LRS globals)	
+restart 2 0 538086 20 7 23 27 35 37 38 44 45 51 53 54 63 71 78 94 95 103 122 153 156 159 160 126 164 128 168 32 132 134 136 176 178 112 180 182 184 143 144 188 16 191 192 118 194 195 119 198 199 200 120 150 151 152 206 207 208 88 210 211 212 213 214 215 
+integervertices 2
+lrs_lib: checkpoint finished

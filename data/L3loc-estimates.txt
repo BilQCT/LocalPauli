@@ -1,0 +1,63 @@
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3loc-e.ine
+L3loc
+*maxdepth 4
+*estimates 10
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+L3loc
+*maxdepth 4
+*estimates 10
+V-representation
+
+*Tree truncated at depth 4
+*Totals: vertices=192 rays=0 bases=693864 integer_vertices=192  max_vertex_depth=4
+*Estimates: vertices=2291 rays=0 bases=15503452689037200 integer_vertices=485 
+*Total number of tree nodes evaluated: 19021891
+*Estimated total running time=13115811243887.2 secs 
+*Dictionary Cache: max size= 5 misses= 0/693863   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*16092.385u 0.512s 4352Kb 0 flts 0 swaps 0 blks-in 56 blks-out
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3loc-e.ine
+L3loc
+*maxdepth 4
+*estimates 20
+
+*Tree truncated at depth 4
+*Totals: vertices=192 rays=0 bases=693864 integer_vertices=192  max_vertex_depth=4
+*Estimates: vertices=13059 rays=0 bases=14169506333067076 integer_vertices=291 
+*Total number of tree nodes evaluated: 37326612
+*Estimated total running time=12283937199146.0 secs 
+*Dictionary Cache: max size= 5 misses= 0/693863   Tree Depth= 4
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*32359.473u 0.988s 4352Kb 0 flts 0 swaps 0 blks-in 56 blks-out
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+lrs:lrslib_v.7.2_2022.3.6(64bit,lrslong.h,hybrid_arithmetic)
+*Input taken from  L3loc-e.ine
+L3loc
+*maxdepth 5
+*estimates 5
+*lrs:overflow possible: restarting with 128 bit arithmetic
+lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid_arithmetic)
+L3loc
+*maxdepth 5
+*estimates 5
+
+*Tree truncated at depth 5
+*Totals: vertices=564 rays=0 bases=8765267 integer_vertices=534  max_vertex_depth=5
+*Estimates: vertices=12356 rays=0 bases=34972939223723428 integer_vertices=1127 
+*Total number of tree nodes evaluated: 114623437
+*Estimated total running time=29365314360918.9 secs 
+*Dictionary Cache: max size= 6 misses= 0/8765266   Tree Depth= 5
+*overflow checking on lrslong arithmetic
+*lrs:lrslib_v.7.2_2022.3.6(128bit,lrslong.h,hybrid arithmetic)
+*96244.506u 5.539s 4736Kb 0 flts 0 swaps 0 blks-in 56 blks-out
+
