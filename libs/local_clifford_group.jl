@@ -20,7 +20,7 @@ include("utils.jl"); include("pauli.jl"); include("symplectic.jl");
 R2 = (g.E(8)+(g.E(8))^7)        # root 2 using roots of unity
 Id = jlg([1 0; 0 1])            # identity
 P = jlg([1 0; 0 g.E(4)])        # Phase gate
-H = 1/R2*jlg([1 1; 1 -1])       # Hadamard gate
+H = (1/R2)*jlg([1 1; 1 -1])       # Hadamard gate
 CNOT = jlg([1 0 0 0; 0 1 0 0;   # CNOT gate
             0 0 0 1; 0 0 1 0])
 
@@ -69,7 +69,6 @@ function phase_j(j::Int, n::Int)
         return Pj
     end
 end
-
 function cnot(c::Int, t::Int, n::Int)
     Proj00 = g.DiagonalMat(jlg([1, 0]))
     Proj11 = g.DiagonalMat(jlg([0, 1]))
@@ -79,23 +78,22 @@ function cnot(c::Int, t::Int, n::Int)
         # Not a valid generator for single qubit
         return Id
     else
-        # If c is the first qubit, initialize CX1/CX2 in Proj00/Proj11
         if c == 1
             # If control = 0, apply identity to target
             CX1 = g.KroneckerProduct(Proj00, n_fold_tensor(n-1, Id))
 
-            # If control = 1, apply X (not) gate to target
+            # If control = 1, apply X (NOT) gate to target
             if (t - c) == 1
                 CX2 = g.KroneckerProduct(Proj11, NOT)
                 if n == 2
                     return CX1 + CX2
-                elseif n > 2
+                else
                     CX2 = g.KroneckerProduct(CX2, n_fold_tensor(n-t, Id))
                 end
-            elseif (t-c) > 1
-                CX2 = g.KroneckerProduct(Proj11,n_fold_tensor(t-c-1, Id))
-                CX2 = g.KroneckerProduct(CX2,NOT)
-                CX2 = g.KroneckerProduct(CX2,n_fold_tensor(n-t, Id))
+            else
+                CX2 = g.KroneckerProduct(Proj11, n_fold_tensor(t-c-1, Id))
+                CX2 = g.KroneckerProduct(CX2, NOT)
+                CX2 = g.KroneckerProduct(CX2, n_fold_tensor(n-t, Id))
             end
 
             return CX1 + CX2
@@ -106,18 +104,20 @@ function cnot(c::Int, t::Int, n::Int)
             CX2 = g.KroneckerProduct(n_fold_tensor(c-1, Id), Proj11)
             if t - c == 1
                 CX2 = g.KroneckerProduct(CX2, NOT)
+                CX2 = g.KroneckerProduct(CX2, n_fold_tensor(n-t, Id))
             else
-                CX2 = g.KroneckerProduct(n_fold_tensor(t-c-1, Id), NOT)
+                CX2 = g.KroneckerProduct(CX2, n_fold_tensor(t-c-1, Id))
+                CX2 = g.KroneckerProduct(CX2, NOT)
                 CX2 = g.KroneckerProduct(CX2, n_fold_tensor(n-t, Id))
             end
-
+            #println("Control operation: $(CX1), \n Target operation: $(CX2)")
             return CX1 + CX2
         end
     end
 end
 
 function swap(c::Int, t::Int, n::Int)
-    result = nothing
+    #result = nothing
     hc_ht = hadamard_j(c,n)*hadamard_j(t,n)
     if c < t
         cnot_ct = cnot(c,t,n)

@@ -1,12 +1,14 @@
 name = "MyProject"
-uuid = "0758bb20-c2cc-4080-aeb8-35ec505a5029"
+uuid = "51599ffe-31b7-4902-b7e7-81c0215f3f7a"
 authors = ["selmanipek <selman.ipek.us@gmail.com>"]
 version = "0.1.0"
 
 [deps]
 Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
 GAP = "c863536a-3901-11e9-33e7-d5cd0df7b904"
 GraphRecipes = "bd48cda9-67a9-57be-86fa-5b3c104eda73"
+NPZ = "15e1cf62-19b3-5cfa-8e77-841668bca605"
 Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
 PlotlyJS = "f0f68f2c-4968-5e81-91da-67840de0976a"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"

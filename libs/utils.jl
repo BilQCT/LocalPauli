@@ -66,6 +66,18 @@ function all_dit_strings(d, N)
 end
 
 
+using LinearAlgebra
+
+function rank_of_point(V::Vector{Number},M::Matrix{Number})
+    """
+    V: Vector: (dx1)
+    M: Matrix: (mxd)
+    """
+    Z = findall(x->x==-1,M*V)
+    return rank(M[Z,:])
+end
+
+
 
 using DelimitedFiles
 
