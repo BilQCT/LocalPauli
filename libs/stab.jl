@@ -96,7 +96,7 @@ function omega(a, b)
     az = a[n + 1:end]
     bx = b[1:n]
     bz = b[n + 1:end]
-    omega_ab = ((transpose(ax) * bz) + (transpose(az) * bx) % 2)
+    omega_ab = ((transpose(ax) * bz) + (transpose(az) * bx)) % 2
     return omega_ab
 end
 

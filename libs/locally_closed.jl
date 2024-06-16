@@ -715,3 +715,79 @@ function CZ_action(pauli::Vector{Int}, qubits::Vector{Int})
 
     return get_pauli_from_pauli_string(pauli_str), sign
 end
+
+
+function find_local_cnc_generators(omega::Set{Vector{Int}})::Vector{Vector{Int}}
+    if length(omega) == 0
+        return Set{Vector{Int}}()
+    end
+
+    omega = copy(omega)
+
+    n = length(first(omega)) / 2
+    identity = [0 for i in 1:2n]
+
+    weighted_paulis = Dict{Int, Set{Vector{Int}}}()
+    for pauli in omega
+        weight = get_pauli_weight(pauli)
+        if haskey(weighted_paulis, weight)
+            push!(weighted_paulis[weight], pauli)
+        else
+            weighted_paulis[weight] = Set{Vector{Int}}([pauli])
+        end
+    end
+    
+    generators = Vector{Vector{Int}}()
+    inferred_paulis = Set{Vector{Int}}()
+
+    cur_weight = 1
+
+    while cur_weight <= n
+        if !haskey(weighted_paulis, cur_weight) || length(weighted_paulis[cur_weight]) == 0
+            cur_weight += 1
+            continue
+        end
+
+        random_indep_pauli = sample(collect(weighted_paulis[cur_weight]), 1)[1]
+
+        push!(generators, random_indep_pauli)
+
+        closed_inferred_paulis = copy(inferred_paulis)
+
+        push!(closed_inferred_paulis, random_indep_pauli)
+
+        closed_inferred_paulis = find_local_closure(closed_inferred_paulis)
+
+        for pauli in closed_inferred_paulis
+            if !(pauli in inferred_paulis)
+                weight = get_pauli_weight(pauli)
+                delete!(weighted_paulis[weight], pauli)
+            end
+        end
+
+        inferred_paulis = closed_inferred_paulis
+    end
+
+    return generators
+end
+
+
+function calculate_point_operator_basis(value_assignment::Dict{Vector{Int},Int}, n::Int)
+    ps = PauliString(n)
+
+    point_operator_coeffs = Vector{Int}()
+    for u in ps.bit_strings
+        coeff = 0
+        #println("Calculating for ", get_pauli_string(u))
+        for (pauli, value) in value_assignment
+            #println("Pauli is ", get_pauli_string(pauli), " omega is ", omega(u, pauli), " value is ", value)
+            coeff += (-1)^(omega(u, pauli) + value)
+            #println("coef became ", coeff)
+        end
+        #break
+        push!(point_operator_coeffs, coeff)
+    end
+
+    return point_operator_coeffs
+
+end
