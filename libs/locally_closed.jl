@@ -778,13 +778,9 @@ function calculate_point_operator_basis(value_assignment::Dict{Vector{Int},Int},
     point_operator_coeffs = Vector{Int}()
     for u in ps.bit_strings
         coeff = 0
-        #println("Calculating for ", get_pauli_string(u))
         for (pauli, value) in value_assignment
-            #println("Pauli is ", get_pauli_string(pauli), " omega is ", omega(u, pauli), " value is ", value)
-            coeff += (-1)^(omega(u, pauli) + value)
-            #println("coef became ", coeff)
+            coeff += (-1)^(omega(u, pauli)) * value
         end
-        #break
         push!(point_operator_coeffs, coeff)
     end
 
