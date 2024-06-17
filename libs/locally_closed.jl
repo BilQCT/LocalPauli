@@ -458,7 +458,7 @@ end
 
 function find_rank_count_for_given_given_value_assignment(value_assignment::Dict{Vector{Int},Int}, n::Int, stab_coeffs)
     A = value_assignment_to_pauli_basis(value_assignment, n)
-    H = stab_coeffs * A
+    H = stab_coeffs * A; println(H)
     Z = findall(x->x==0,H)
     AZ = stab_coeffs[Z,:]
     rank_AZ = rank(AZ)
