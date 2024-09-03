@@ -130,4 +130,13 @@ function save_input_lrs(M,filename,name,comment,delimiter,input)
     end
 end
 
+function array_to_matrix(A)
+    n = length(A[1]); N = length(A);
+    R = Array{Rational{Int64}}(undef,n,0)
+    for i in 1:N
+        R = hcat(R,A[i]);
+    end
+    return R
+end
+
 # example usage: save_input_lrs(A2,"L2.ine","Lambda2","Lambda2"," ","H")
