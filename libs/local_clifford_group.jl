@@ -4,7 +4,7 @@ using Combinatorics
 
 const g = GAP.Globals
 const gjl = GAP.gap_to_julia
-const jlg = GAP.julia_to_gap;
+const jlg = GAP.GapObj;
 
 include("utils.jl"); include("pauli.jl"); include("symplectic.jl");
 

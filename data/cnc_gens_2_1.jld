@@ -1,0 +1,90 @@
+- Maximal CNC set:
+- Isotropic generators:
+  ["ZI"]
+- Anticommuting Paulis:
+  ["IY", "IZ", "IX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["YI"]
+- Anticommuting Paulis:
+  ["YZ", "YX", "IY"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["XI"]
+- Anticommuting Paulis:
+  ["IY", "IZ", "IX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["IZ"]
+- Anticommuting Paulis:
+  ["YZ", "ZZ", "XZ"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["IX"]
+- Anticommuting Paulis:
+  ["YX", "ZX", "XX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["ZZ"]
+- Anticommuting Paulis:
+  ["YX", "IZ", "XX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["IY"]
+- Anticommuting Paulis:
+  ["YI", "ZY", "XY"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["XZ"]
+- Anticommuting Paulis:
+  ["YX", "IZ", "ZX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["YX"]
+- Anticommuting Paulis:
+  ["YI", "ZY", "XY"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["XY"]
+- Anticommuting Paulis:
+  ["YZ", "YX", "IY"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["ZX"]
+- Anticommuting Paulis:
+  ["YZ", "IX", "XZ"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["YY"]
+- Anticommuting Paulis:
+  ["IY", "ZZ", "ZX"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["YZ"]
+- Anticommuting Paulis:
+  ["YI", "ZY", "XY"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["XX"]
+- Anticommuting Paulis:
+  ["YZ", "IX", "ZZ"]
+
+- Maximal CNC set:
+- Isotropic generators:
+  ["ZY"]
+- Anticommuting Paulis:
+  ["YZ", "YX", "IY"]
+
