@@ -4,7 +4,7 @@ using Combinatorics
 
 const g = GAP.Globals
 const gjl = GAP.gap_to_julia
-const jlg = GAP.GapObj;
+const gobj = GAP.GapObj;
 
 include("utils.jl"); include("pauli.jl"); include("symplectic.jl");
 
@@ -18,10 +18,10 @@ include("utils.jl"); include("pauli.jl"); include("symplectic.jl");
 
 
 R2 = (g.E(8)+(g.E(8))^7)        # root 2 using roots of unity
-Id = jlg([1 0; 0 1])            # identity
-P = jlg([1 0; 0 g.E(4)])        # Phase gate
-H = (1/R2)*jlg([1 1; 1 -1])       # Hadamard gate
-CNOT = jlg([1 0 0 0; 0 1 0 0;   # CNOT gate
+Id = gobj([1 0; 0 1])            # identity
+P = gobj([1 0; 0 g.E(4)])        # Phase gate
+H = (1/R2)*gobj([1 1; 1 -1])       # Hadamard gate
+CNOT = gobj([1 0 0 0; 0 1 0 0;   # CNOT gate
             0 0 0 1; 0 0 1 0])
 
 
@@ -70,9 +70,9 @@ function phase_j(j::Int, n::Int)
     end
 end
 function cnot(c::Int, t::Int, n::Int)
-    Proj00 = g.DiagonalMat(jlg([1, 0]))
-    Proj11 = g.DiagonalMat(jlg([0, 1]))
-    NOT = jlg([0 1; 1 0])
+    Proj00 = g.DiagonalMat(gobj([1, 0]))
+    Proj11 = g.DiagonalMat(gobj([0, 1]))
+    NOT = gobj([0 1; 1 0])
 
     if n == 1
         # Not a valid generator for single qubit
@@ -135,7 +135,7 @@ end
 function n_fold_tensor(n::Int, mat)
     result = nothing
     if n == 0
-        return g.DiagonalMat(jlg([1]))
+        return g.DiagonalMat(gobj([1]))
     elseif n == 1
         return mat
     elseif n > 1
@@ -161,7 +161,7 @@ function local_clifford_unitaries(n::Int)
         end
     end
 
-    gens = jlg(gens)
+    gens = gobj(gens)
 
     return g.Group(gens)
 end
@@ -248,7 +248,7 @@ function pauli_to_action_domain_mappings(P::PauliString,G::GapObj)
     X = Vector{Int64}([]); Y = Vector{Int64}([]);
     for a in E
         for s in [0,1]
-            Ta = jlg((-1)^s)*pauli_n(a)
+            Ta = gobj((-1)^s)*pauli_n(a)
             x = bit_to_int[a]+s*2^(2*n); push!(X,x)
             y = findall(w->w == Ta,F)[1]; push!(Y,y)
             #z = findall(w->w == map(E1[y]),E2)[1]; 
@@ -428,7 +428,7 @@ mutable struct LocalSymplecticOrbit
         G = SP.Grp.Grp; fdict = SP.fdict; bdict = SP.bdict
 
         # generate gap object of subset:
-        DomS = g.Set(jlg([g.Set(jlg([jlg(fdict[a]) for a in Subset]))]))
+        DomS = g.Set(gobj([g.Set(gobj([gobj(fdict[a]) for a in Subset]))]))
 
         # generate orbits:
         DomOrbs = gjl(g.Orbits(G,DomS,g.OnSets)[1]); Orbs = Vector{Set{Vector{Int}}}([]);
@@ -531,19 +531,19 @@ function local_clifford_orbit_of_point(CG::LocalCliffordGroup,C::Vector)
     fdict = CG.IntActionDict
     bdict = CG.ActionIntDict
     G = CG.LocalCliffGroup.Grp
-    N = length(C); S = g.Set(jlg([]))
+    N = length(C); S = g.Set(gobj([]))
 
     vals, V, map = grouping(C)
 
     for v in V
-        global s = g.Set(jlg([]));
+        global s = g.Set(gobj([]));
         for e in v
-            g.Add(s,jlg(fdict[e])); 
+            g.Add(s,gobj(fdict[e])); 
         end
         s = g.Set(s); g.Add(S,s)
     end
 
-    S = g.Set(jlg([S]))
+    S = g.Set(gobj([S]))
     Orbs = g.Orbits(G,S,g.OnSetsSets)[1]
 
     #println(Orbs)
@@ -573,7 +573,7 @@ function local_clifford_gate_action_on_point(gens,CG::LocalCliffordGroup,C::Vect
     bdict = CG.ActionIntDict
     G = CG.CliffGroup.Grp
     N = length(C);
-    K = g.Set(jlg([]))
+    K = g.Set(gobj([]))
 
     gg = g.GeneratorsOfGroup(G)[gens[1]];
     for i in gens[2:end]; gg = gg*g.GeneratorsOfGroup(G)[i]; end;
@@ -584,7 +584,7 @@ function local_clifford_gate_action_on_point(gens,CG::LocalCliffordGroup,C::Vect
     for v in V
         k = Vector{Int}([]);
         for e in v
-            x = e; y = fdict[e]; gy = g.OnPoints(jlg(y),gg); gx = bdict[gy];
+            x = e; y = fdict[e]; gy = g.OnPoints(gobj(y),gg); gx = bdict[gy];
             #println("$x, $y, $gy, $gx")
             push!(k,gx); 
         end
@@ -623,7 +623,7 @@ function unitary_clifford_group(n)
         push!(gens, cnot(c[1], c[2], n))
     end
 
-    gens = jlg(gens)
+    gens = gobj(gens)
 
     return g.Group(gens)
 end
@@ -721,19 +721,19 @@ function clifford_orbit_of_point(CG::CliffordGroup,C::Vector)
     fdict = CG.IntActionDict
     bdict = CG.ActionIntDict
     G = CG.CliffGroup.Grp
-    N = length(C); S = g.Set(jlg([]))
+    N = length(C); S = g.Set(gobj([]))
 
     vals, V, map = grouping(C)
 
     for v in V
-        global s = g.Set(jlg([]));
+        global s = g.Set(gobj([]));
         for e in v
-            g.Add(s,jlg(fdict[e])); 
+            g.Add(s,gobj(fdict[e])); 
         end
         s = g.Set(s); g.Add(S,s)
     end
 
-    S = g.Set(jlg([S]))
+    S = g.Set(gobj([S]))
     Orbs = g.Orbits(G,S,g.OnSetsSets)[1]
 
     #println(Orbs)
@@ -763,7 +763,7 @@ function clifford_gate_action_on_point(gens,CG::CliffordGroup,C::Vector)
     bdict = CG.ActionIntDict
     G = CG.CliffGroup.Grp
     N = length(C);
-    K = g.Set(jlg([]))
+    K = g.Set(gobj([]))
 
     gg = g.GeneratorsOfGroup(G)[gens[1]];
     for i in gens[2:end]; gg = gg*g.GeneratorsOfGroup(G)[i]; end;
@@ -774,7 +774,7 @@ function clifford_gate_action_on_point(gens,CG::CliffordGroup,C::Vector)
     for v in V
         k = Vector{Int}([]);
         for e in v
-            x = e; y = fdict[e]; gy = g.OnPoints(jlg(y),gg); gx = bdict[gy];
+            x = e; y = fdict[e]; gy = g.OnPoints(gobj(y),gg); gx = bdict[gy];
             #println("$x, $y, $gy, $gx")
             push!(k,gx); 
         end

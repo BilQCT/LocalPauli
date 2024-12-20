@@ -16,13 +16,13 @@ using LinearAlgebra
 
 const g = GAP.Globals
 const gjl = GAP.gap_to_julia
-const jlg = GAP.julia_to_gap
+const gobj = GAP.GapObj
 
 include("utils.jl")
 
 function pauli_n(ab)
-    x = jlg([0 1; 1 0])
-    z = g.DiagonalMat(jlg([1, -1]))
+    x = gobj([0 1; 1 0])
+    z = g.DiagonalMat(gobj([1, -1]))
 
     n = length(ab) ÷ 2
 
@@ -52,9 +52,9 @@ function Pauli_group(n)
 
     for i in 1:n
         # Create Pauli binary strings
-        x = jlg(zeros(Int, 2*n)); x[i] = 1
+        x = gobj(zeros(Int, 2*n)); x[i] = 1
 
-        z = jlg(zeros(Int, 2*n)); z[i+n] = 1
+        z = gobj(zeros(Int, 2*n)); z[i+n] = 1
 
         y = x + z
 
@@ -64,7 +64,7 @@ function Pauli_group(n)
         push!(P_lst, pauli_n(z))
     end
 
-    return g.Group(jlg(P_lst))
+    return g.Group(gobj(P_lst))
 end
 
 
@@ -94,6 +94,8 @@ mutable struct PauliString
     bit_to_pauli::Dict{Vector{Int},String}
     bit_to_int::Dict{Vector{Int},Int}
     int_to_bit::Dict{Int,Vector{Int}}
+    pauli_to_int::Dict{String,Int}
+    int_to_pauli::Dict{Int,String}
 
     function PauliString(n::Int)
         """
@@ -110,7 +112,9 @@ mutable struct PauliString
         bit_to_pauli = Dict(zip(bit_strings,pauli_strings))
         bit_to_int = Dict(zip(bit_strings,[i for i in 1:length(bit_strings)]))
         int_to_bit = Dict(zip([i for i in 1:length(bit_strings)],bit_strings))
-        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int,int_to_bit)
+        pauli_to_int = Dict(zip(pauli_strings,[bit_to_int[pauli_to_bit[x]] for x in pauli_strings]))
+        into_to_pauli = Dict(zip([i for i in 1:length(bit_strings)],[bit_to_pauli[int_to_bit[i]] for i in 1:length(bit_strings)]))
+        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int,int_to_bit,pauli_to_int,into_to_pauli)
     end
 end
 

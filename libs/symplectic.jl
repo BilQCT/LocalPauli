@@ -1,7 +1,7 @@
 using GAP
 const g = GAP.Globals
 const gjl = GAP.gap_to_julia
-const jlg = GAP.julia_to_gap
+const gobj = GAP.GapObj
 
 include("pauli.jl");
 
@@ -82,7 +82,7 @@ mutable struct SympOrbit
         G = SP.Group; fdict = SP.fdict; bdict = SP.bdict
 
         # generate gap object of subset:
-        DomS = g.Set(jlg([g.Set(jlg([jlg(fdict[a]) for a in Subset]))]))
+        DomS = g.Set(gobj([g.Set(gobj([gobj(fdict[a]) for a in Subset]))]))
 
         # generate orbits:
         DomOrbs = gjl(g.Orbits(G,DomS,g.OnSets)[1]); Orbs = Vector{Set{Vector{Int}}}([]);
