@@ -11,60 +11,54 @@ Functions related to Pauli operators, Pauli group.
 ############################################################################################
 ############################################################################################
 
-using GAP
-using LinearAlgebra
+function tensor_prod(A, n)
+    """
+    Compute the tensor product of a matrix `A` with itself `n` times.
 
-const g = GAP.Globals
-const gjl = GAP.gap_to_julia
-const gobj = GAP.GapObj
+    Parameters:
+    - `A`: The matrix to be tensor producted.
+    - `n`: The number of times to tensor product `A` with itself.
 
-include("utils.jl")
-
-function pauli_n(ab)
-    x = gobj([0 1; 1 0])
-    z = g.DiagonalMat(gobj([1, -1]))
-
-    n = length(ab) ÷ 2
-
-    a = ab[1:n]
-    b = ab[n+1:2n]
-
-    Xa = x^a[1]
-    Zb = z^b[1]
-
-    if n > 1
-        for i in 2:n
-            Xa = g.KroneckerProduct(Xa, x^a[i])
-            Zb = g.KroneckerProduct(Zb, z^b[i])
-        end
+    Returns:
+    - The resulting tensor product matrix.
+    """
+    An = A
+    for i in 1:(n - 1)
+        An = kron(An, A)
     end
-
-    arg_phase = mod(sum(a .* b), 4)
-    phase = (g.E(4))^arg_phase
-
-    return phase * Xa * Zb
+    return An
 end
 
-############################################################################################
+function pauli(x)
+    """
+    Compute the Pauli operator corresponding to a given bit string.
 
-function Pauli_group(n)
-    P_lst = []
+    Parameters:
+    - `x`: The bit string.
 
-    for i in 1:n
-        # Create Pauli binary strings
-        x = gobj(zeros(Int, 2*n)); x[i] = 1
-
-        z = gobj(zeros(Int, 2*n)); z[i+n] = 1
-
-        y = x + z
-
-        # Add Pauli matrices to the list
-        push!(P_lst, pauli_n(x))
-        push!(P_lst, pauli_n(y))
-        push!(P_lst, pauli_n(z))
+    Returns:
+    - The Pauli operator corresponding to the input bit string.
+    """
+    if typeof(length(x) // 2) != Rational{Int64}
+        return "Must be a bit-string of even length."
+    elseif typeof(length(x) // 2) == Rational{Int64}
+        n = Int(length(x) // 2)
+        X = Matrix([0 1; 1 0])
+        Z = Matrix([1 0; 0 -1])
+        a = x[1:n]
+        b = x[n + 1:end]
+        if n == 1
+            XaZb = (X^a[1] * Z^b[1])
+        else
+            XaZb = (X^a[1] * Z^b[1])
+            for i in 2:n
+                XaZb = kron(XaZb, (X^a[i] * Z^b[i]))
+            end
+        end
+        arg_phase = (transpose(a) * b) % 4
+        phase = im ^ (arg_phase)
+        return phase * XaZb
     end
-
-    return g.Group(gobj(P_lst))
 end
 
 
@@ -145,97 +139,3 @@ function get_pauli_string(T::Vector{Int})
 
     return pauli_str
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-III = [0, 0, 0, 0, 0, 0]
-XII = [1, 0, 0, 0, 0, 0]
-YII = [1, 0, 0, 1, 0, 0]
-ZII = [0, 0, 0, 1, 0, 0]
-IXI = [0, 1, 0, 0, 0, 0]
-IYI = [0, 1, 0, 0, 1, 0]
-IZI = [0, 0, 0, 0, 1, 0]
-IIX = [0, 0, 1, 0, 0, 0]
-IIY = [0, 0, 1, 0, 0, 1]
-IIZ = [0, 0, 0, 0, 0, 1];
-
-IXX = (IXI + IIX) .% 2
-IXY = (IXI + IIY) .% 2
-IXZ = (IXI + IIZ) .% 2
-IYX = (IYI + IIX) .% 2
-IYY = (IYI + IIY) .% 2
-IYZ = (IYI + IIZ) .% 2
-IZX = (IZI + IIX) .% 2
-IZY = (IZI + IIY) .% 2
-IZZ = (IZI + IIZ) .% 2
-
-XIX = (XII + IIX) .% 2
-XIY = (XII + IIY) .% 2
-XIZ = (XII + IIZ) .% 2
-XXI = (XII + IXI) .% 2
-XXX = (XXI + IIX) .% 2
-XXY = (XXI + IIY) .% 2
-XXZ = (XXI + IIZ) .% 2
-XYI = (XII + IYI) .% 2
-XYX = (XYI + IIX) .% 2
-XYY = (XYI + IIY) .% 2
-XYZ = (XYI + IIZ) .% 2
-XZI = (XII + IZI) .% 2
-XZX = (XZI + IIX) .% 2
-XZY = (XZI + IIY) .% 2
-XZZ = (XZI + IIZ) .% 2
-
-YIX = (YII + IIX) .% 2
-YIY = (YII + IIY) .% 2
-YIZ = (YII + IIZ) .% 2
-YXI = (YII + IXI) .% 2
-YXX = (YXI + IIX) .% 2
-YXY = (YXI + IIY) .% 2
-YXZ = (YXI + IIZ) .% 2
-YYI = (YII + IYI) .% 2
-YYX = (YYI + IIX) .% 2
-YYY = (YYI + IIY) .% 2
-YYZ = (YYI + IIZ) .% 2
-YZI = (YII + IZI) .% 2
-YZX = (YZI + IIX) .% 2
-YZY = (YZI + IIY) .% 2
-YZZ = (YZI + IIZ) .% 2
-
-ZIX = (ZII + IIX) .% 2
-ZIY = (ZII + IIY) .% 2
-ZIZ = (ZII + IIZ) .% 2
-ZXI = (ZII + IXI) .% 2
-ZXX = (ZXI + IIX) .% 2
-ZXY = (ZXI + IIY) .% 2
-ZXZ = (ZXI + IIZ) .% 2
-ZYI = (ZII + IYI) .% 2
-ZYX = (ZYI + IIX) .% 2
-ZYY = (ZYI + IIY) .% 2
-ZYZ = (ZYI + IIZ) .% 2
-ZZI = (ZII + IZI) .% 2
-ZZX = (ZZI + IIX) .% 2
-ZZY = (ZZI + IIY) .% 2
-ZZZ = (ZZI + IIZ) .% 2;
