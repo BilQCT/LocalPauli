@@ -11,21 +11,21 @@ Since MBPC is driven by single-qubit Pauli measurements, the computation does no
 
 $$\left |\psi_{G,U} \right \rangle = E(G)T^{\otimes U} \left |+ \right \rangle^{\otimes n}\quad \text{where}\quad E(G) = \prod_{(i,j)\in E}CZ_{ij}$$
 
-The central objects of our classical simulation algorithm are the Local Pauli (LP) polytope, convex geometric structures that enclose the set of quantum states; including magic cluste states. The $n$-qubit LP polytope, denoted $\text{LP}_n$, can be identified with $\text{NS}_n$, the non-signaling polytopes of the (n,3,2) multi-partite Bell scenario for all $n$.
+The central objects of our classical simulation algorithm are the Local Pauli (LP) polytope, convex geometric structures that enclose the set of quantum states; including magic cluste states. The $n$-qubit LP polytope, denoted $LP_n$, can be identified with $NS_n$, the non-signaling polytopes of the (n,3,2) multi-partite Bell scenario for all $n$.
 
-An important structural property of LP polytopes is that they are closed under the tensor product operation familiar from quantum mechanics. In particular, for a vertex $A_1\in \text{LP}_{n_1}$ and vertex $A_2\in \text{LP}_{n_2}$ we have that $A_1\otimes A_2$ is a vertex of $\text{LP}_{n_1+n_2}$.
+An important structural property of LP polytopes is that they are closed under the tensor product operation familiar from quantum mechanics. In particular, for a vertex $A_1\in LP_{n_1}$ and vertex $A_2\in LP_{n_2}$ we have that $A_1\otimes A_2$ is a vertex of $LP_{n_1+n_2}$.
 
-In [Okay, et al. 2024] a distinguished class of operators, called *locally closed (LC)* operators, was introduced. Two Pauli operators are said to *locally commute* if they commute on every tensor factor. A subset of Pauli operators is said to be locally closed if for every two locally commuting Pauli operators $A$ and $B$ in that subset, then their product $A\cdot B$ is also in the subset. For a single qubit $\text{LP}_1$ is a cube enclosing the Bloch sphere whose vertices are LC operators. The $n$-fold tensor product of $\text{LP}_1$ vertices is an LC operator that is always a vertex of $\text{LP}_n$ and can be identified with the deterministic vertices of $\text{NS}_n$; i.e., the vertices of the Bell polytope. Interestingly, the vertices of $\text{LP}_2$, the two-qubit LP polytope also consists only of LC operators. Thus the tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices is also locally closed. 
+In [Okay, et al. 2024] a distinguished class of operators, called *locally closed (LC)* operators, was introduced. Two Pauli operators are said to *locally commute* if they commute on every tensor factor. A subset of Pauli operators is said to be locally closed if for every two locally commuting Pauli operators $A$ and $B$ in that subset, then their product $A\cdot B$ is also in the subset. For a single qubit $LP_1$ is a cube enclosing the Bloch sphere whose vertices are LC operators. The $n$-fold tensor product of $LP_1$ vertices is an LC operator that is always a vertex of $LP_n$ and can be identified with the deterministic vertices of $NS_n$; i.e., the vertices of the Bell polytope. Interestingly, the vertices of $LP_2$, the two-qubit LP polytope also consists only of LC operators. Thus the tensor product of $LP_1$ and $LP_2$ vertices is also locally closed. 
 
 LC operators with efficient representation (in $n$) and update rules can be organized into a phase space that can be used for classical simulation based on sampling from a quasi-probability distribution. The LC phase space subsumes the phase space introduced in [[Raussendorf, et al. 2017]](https://arxiv.org/abs/1905.05374) based on closed non-contextual (CNC) sets, which itself generalizes the stabilizer phase space of (Howard and Campbell, 2016). Some examples of LC phase spaces include:
 
-- $D$:$\quad$ Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
-- $L$:$\quad$ Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
-- $L'$:$\quad$ Deterministic vertices and the $n$-qubit CNC operators.
+- $D~$:$~~~~~$ Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
+- $L~$:$~~~~~$ Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
+- $L'$:$~~~~~$ Deterministic vertices and the $n$-qubit CNC operators.
 
 For any phase space we can define a robustness monotone:
 
-$$\mathfrak{R}(\rho) := \min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
+$$R(\rho) := \min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
 
 where $\alpha \in V$ labels the operators in the phase space.
 
@@ -39,17 +39,16 @@ Our matrices have size:
 
 **Three-qubits**
 
-- $D$:$\quad$ $64\times 512$
-- $L$:$\quad$ $64\times 27,008$
-- $L'$:$\quad$ $64\times 71,648$
+- $D$:$~~~~~$ $64\times 512$
+- $L$:$~~~~~$ $64\times 27,008$
+- $L'$:$~~~~~$ $64\times 71,648$
 
 
 In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L_1$, and $L_2$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
 
+- PBC: $~~~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
+- MBQC: $~~~~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
 \begin{align}
-\text{PBC~:}\quad &     \left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,\notag\\
-\text{MBQC:}\quad &     \left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,\notag
-\end{align}
 
 where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all connected graphs on $3$ qubits. 
 
