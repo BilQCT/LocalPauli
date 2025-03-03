@@ -25,7 +25,7 @@ LC operators with efficient representation (in $n$) and update rules can be orga
 
 For any phase space we can define a robustness monotone:
 
-$$R(\rho) := min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
+$$R(\rho) = \min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
 
 where $\alpha \in V$ labels the operators in the phase space.
 
@@ -33,7 +33,7 @@ where $\alpha \in V$ labels the operators in the phase space.
 ## Code contents
 
 
-In this GitHub repository we provide the $L_1$ and $L_2$ phase space operators for $n=3$ and deterministic vertices for $n=3,4,5$. We encode the phase spaces in matrices whose columns are labeled by $\alpha \in V$ and whose rows are Pauli coefficients of the corresponding operator $A_\alpha$. In particular, for some phase space operator $A_\alpha$ and a Pauli $P$, the matrix has components $M_{P,\alpha} = \text{Tr}(PA_\alpha) $.  We employ lexicographic ordering on the rows so that $I\otimes \cdots \otimes I$ precedes $I\otimes \cdots \otimes X$, which precedes $I\otimes \cdots \otimes Y$, and so on.
+In this GitHub repository we provide the $L$ and $L'$ phase space operators for $n=3$ and deterministic vertices for $n=3,4,5$. We encode the phase spaces in matrices whose columns are labeled by $\alpha \in V$ and whose rows are Pauli coefficients of the corresponding operator $A_\alpha$. In particular, for some phase space operator $A_\alpha$ and a Pauli $P$, the matrix has components $M_{P,\alpha} = \text{Tr}(PA_\alpha) $.  We employ lexicographic ordering on the rows so that $I\otimes \cdots \otimes I$ precedes $I\otimes \cdots \otimes X$, which precedes $I\otimes \cdots \otimes Y$, and so on.
 
 Our matrices have size:
 
@@ -44,7 +44,7 @@ Our matrices have size:
 - $L'$: $64\times 71,648$
 
 
-In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L_1$, and $L_2$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
+In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L$, and $L'$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
 
 - PBC: $~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
 - MBQC: $~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
