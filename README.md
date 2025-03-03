@@ -25,7 +25,7 @@ LC operators with efficient representation (in $n$) and update rules can be orga
 
 For any phase space we can define a robustness monotone:
 
-$$R(\rho) = \min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
+$$\mathfrak{R}(\rho) = \min \left \lbrace\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\rbrace,$$
 
 where $\alpha \in V$ labels the operators in the phase space.
 
@@ -46,7 +46,7 @@ Our matrices have size:
 
 In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L$, and $L'$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
 
-- PBC: $~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
+- PBC: $~~~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
 - MBQC: $~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
 
 where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all connected graphs on $3$ qubits. 
