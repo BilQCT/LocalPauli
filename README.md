@@ -19,13 +19,13 @@ In [Okay, et al. 2024] a distinguished class of operators, called *locally close
 
 LC operators with efficient representation (in $n$) and update rules can be organized into a phase space that can be used for classical simulation based on sampling from a quasi-probability distribution. The LC phase space subsumes the phase space introduced in [[Raussendorf, et al. 2017]](https://arxiv.org/abs/1905.05374) based on closed non-contextual (CNC) sets, which itself generalizes the stabilizer phase space of (Howard and Campbell, 2016). Some examples of LC phase spaces include:
 
-- $D~$:$~~~~~$ Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
-- $L~$:$~~~~~$ Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
-- $L'$:$~~~~~$ Deterministic vertices and the $n$-qubit CNC operators.
+- $D~$: Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
+- $L~$: Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
+- $L'$: Deterministic vertices and the $n$-qubit CNC operators.
 
 For any phase space we can define a robustness monotone:
 
-$$R(\rho) := \min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
+$$R(\rho) := min \left\{\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\},$$
 
 where $\alpha \in V$ labels the operators in the phase space.
 
@@ -39,16 +39,15 @@ Our matrices have size:
 
 **Three-qubits**
 
-- $D$:$~~~~~$ $64\times 512$
-- $L$:$~~~~~$ $64\times 27,008$
-- $L'$:$~~~~~$ $64\times 71,648$
+- $D$: $64\times 512$
+- $L$: $64\times 27,008$
+- $L'$: $64\times 71,648$
 
 
 In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L_1$, and $L_2$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
 
-- PBC: $~~~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
-- MBQC: $~~~~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
-\begin{align}
+- PBC: $~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
+- MBQC: $~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
 
 where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all connected graphs on $3$ qubits. 
 
