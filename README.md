@@ -55,10 +55,15 @@ where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all co
 # Requirements:
 
 Combinatorics   v1.0.2
+
 GLPK            v1.2.1
+
 HDF5            v0.17.2
+
 JLD2            v0.4.53
+
 JuMP            v1.23.0
+
 YAML            v0.4.12
 
 # Instructions
@@ -72,10 +77,11 @@ Pkg.activate("path/to/MyProject")
 Pkg.add("YourPackage")
 
 
-# Disclaimer on Intellectual Property
+# Patent Pending Notice
 
-This repository contains material related to our arXiv preprint arXiv:2410.23734. Please note that the technology described herein is subject to a patent pending (application number: 18/925,447). By using, modifying, or distributing this material under the Apache License 2.0, you acknowledge that certain patent rights may apply. We request that users review the terms of the license and this notice to ensure compliance with our intellectual property rights.
+This repository contains material related to our arXiv preprint arXiv:2410.23734. Please note that specific aspects of the technology described herein is subject to a pending patent (application number: 18/925,447).
+Licensed under MIT, which does not grant patent rights.
 
-If you have any questions regarding the scope of the patent or usage rights, please contact us at cihan.okay@bilkent.edu.tr.
+For inquiries: cihan.okay@bilkent.edu.tr.
 
 
