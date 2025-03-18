@@ -17,7 +17,7 @@ An important structural property of LP polytopes is that they are closed under t
 
 In [Okay, et al. 2024] a distinguished class of operators, called *locally closed (LC)* operators, was introduced. Two Pauli operators are said to *locally commute* if they commute on every tensor factor. A subset of Pauli operators is said to be locally closed if for every two locally commuting Pauli operators $A$ and $B$ in that subset, then their product $A\cdot B$ is also in the subset. For a single qubit $LP_1$ is a cube enclosing the Bloch sphere whose vertices are LC operators. The $n$-fold tensor product of $LP_1$ vertices is an LC operator that is always a vertex of $LP_n$ and can be identified with the deterministic vertices of $NS_n$; i.e., the vertices of the Bell polytope. Interestingly, the vertices of $LP_2$, the two-qubit LP polytope also consists only of LC operators. Thus the tensor product of $LP_1$ and $LP_2$ vertices is also locally closed. 
 
-LC operators with efficient representation (in $n$) and update rules can be organized into a phase space that can be used for classical simulation based on sampling from a quasi-probability distribution. The LC phase space subsumes the phase space introduced in [[Raussendorf, et al. 2017]](https://arxiv.org/abs/1905.05374) based on closed non-contextual (CNC) sets, which itself generalizes the stabilizer phase space of (Howard and Campbell, 2016). Some examples of LC phase spaces include:
+LC operators with efficient representation (in $n$) and update rules can be organized into a phase space that can be used for classical simulation based on sampling from a quasi-probability distribution. The LC phase space subsumes the phase space introduced in [[Raussendorf, et al. 2020]](https://arxiv.org/abs/1905.05374) based on closed non-contextual (CNC) sets, which itself generalizes the stabilizer phase space of (Howard and Campbell, 2016). Some examples of LC phase spaces include:
 
 - $D~$: Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
 - $L~$: Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
@@ -55,10 +55,15 @@ where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all co
 # Requirements:
 
 Combinatorics   v1.0.2
+
 GLPK            v1.2.1
+
 HDF5            v0.17.2
+
 JLD2            v0.4.53
+
 JuMP            v1.23.0
+
 YAML            v0.4.12
 
 # Instructions
@@ -72,10 +77,11 @@ Pkg.activate("path/to/MyProject")
 Pkg.add("YourPackage")
 
 
-# Disclaimer on Intellectual Property
+# Patent Pending Notice
 
-This repository contains material related to our arXiv preprint arXiv:2410.23734. Please note that the technology described herein is subject to a patent pending (application number: 18/925,447). By using, modifying, or distributing this material under the Apache License 2.0, you acknowledge that certain patent rights may apply. We request that users review the terms of the license and this notice to ensure compliance with our intellectual property rights.
+This repository contains material related to our arXiv preprint arXiv:2410.23734. Please note that specific aspects of the technology described herein is subject to a pending patent (application number: 18/925,447).
+Licensed under MIT, which does not grant patent rights.
 
-If you have any questions regarding the scope of the patent or usage rights, please contact us at cihan.okay@bilkent.edu.tr.
+For inquiries: cihan.okay@bilkent.edu.tr.
 
 
