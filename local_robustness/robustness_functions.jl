@@ -48,7 +48,7 @@ const I2 = Matrix{Complex}(I, 2, 2)
 Apply the single-qubit T gate on the `target` qubit of an n-qubit system.
 Returns the full n-qubit gate as the Kronecker product of individual matrices.
 """
-function t_gate(n::Int, target::Int)
+function t_gate(n, target)
     op_list = [I2 for _ in 1:n]
     op_list[target] = T
     return kron(op_list...)
@@ -60,7 +60,7 @@ end
 Apply the single-qubit Hadamard gate on the `target` qubit of an n-qubit system.
 Returns the full n-qubit gate as the Kronecker product.
 """
-function hadamard_gate(n::Int, target::Int)
+function hadamard_gate(n, target)
     op_list = [I2 for _ in 1:n]
     op_list[target] = H
     return kron(op_list...)
@@ -87,7 +87,7 @@ Generate the Controlled-Z gate for an n-qubit system acting on the specified
 `control` and `target` qubits. The gate applies a phase flip (i.e. -1) when both
 qubits are in the |1⟩ state.
 """
-function controlled_z_gate(n::Int, control::Int, target::Int)
+function controlled_z_gate(n, control, target)
     dim = 2^n
     CZ = Matrix{Float64}(I, dim, dim)
     for i in 0:dim-1
@@ -112,7 +112,7 @@ Generates three types of n-qubit graph states (line, cycle, complete) using the
 - A vector of state vectors.
 - A vector of corresponding names.
 """
-function generate_graph_state_vectors(n::Int)
+function generate_graph_state_vectors(n)
     Plus = plus_state(n)
     
     # Line graph: CZ between adjacent qubits
@@ -156,7 +156,7 @@ include("../libs/pauli.jl")
 Converts a density matrix (or operator) A into its expansion coefficients in
 the n-qubit Pauli basis.
 """
-function convert_matrix_to_pauli_basis(n::Int, A)
+function convert_matrix_to_pauli_basis(n, A)
     pauli_dict = PauliString(n)
     vector_A = Float64[]
     for a in pauli_dict.bit_strings
@@ -175,7 +175,7 @@ end
 Simulates the effect of a Hadamard gate on the binary symplectic (tableau)
 representation of a Pauli operator. Returns the transformed tableau and a phase.
 """
-function hadamard_action_on_bsf(q::Int, a::Vector{Int})
+function hadamard_action_on_bsf(q, a)
     n = div(length(a), 2)
     a_prime = copy(a)
     a_prime[q] = a[n+q]
@@ -190,7 +190,7 @@ end
 Simulates the effect of a phase gate on the tableau representation of a Pauli
 operator. Returns the transformed tableau and a phase.
 """
-function phase_action_on_bsf(q::Int, a::Vector{Int})
+function phase_action_on_bsf(q, a)
     n = div(length(a), 2)
     a_prime = copy(a)
     a_prime[n+q] = (a[q] + a[n+q]) % 2
@@ -204,7 +204,7 @@ end
 Simulates the action of a CNOT gate (control-target) on the tableau representation.
 Returns the transformed tableau and a phase.
 """
-function cx_action_on_bsf(control::Int, target::Int, a::Vector{Int})
+function cx_action_on_bsf(control, target, a)
     n = div(length(a), 2)
     a_prime = copy(a)
     x_control, x_target = a[control], a[target]
@@ -221,7 +221,7 @@ end
 Simulates the action of a Controlled-Z gate on the tableau representation.
 Returns the transformed tableau and a phase.
 """
-function cz_action_on_bsf(control::Int, target::Int, a::Vector{Int})
+function cz_action_on_bsf(control, target, a)
     n = div(length(a), 2)
     a_prime = copy(a)
     x_control, x_target = a[control], a[target]
@@ -239,7 +239,7 @@ end
 Helper function that applies a given tableau action (e.g., Hadamard, Phase)
 to each element of the Pauli basis expansion of a Hermitian operator.
 """
-function apply_pauli_basis_action(action_fun, q, hermitian::Vector{Real}, pauli_dict::PauliString)
+function apply_pauli_basis_action(action_fun, q, hermitian, pauli_dict::PauliString)
     N = length(hermitian)
     hermitian_prime = ones(Float64, N)
     for i in 1:N
@@ -253,20 +253,20 @@ function apply_pauli_basis_action(action_fun, q, hermitian::Vector{Real}, pauli_
 end
 
 # Specific wrappers for common operations on the Pauli basis:
-function hadamard_action_on_pauli_basis(q, hermitian::Vector{Real}, pauli_dict::PauliString)
+function hadamard_action_on_pauli_basis(q, hermitian, pauli_dict::PauliString)
     return apply_pauli_basis_action(hadamard_action_on_bsf, q, hermitian, pauli_dict)
 end
 
-function phase_action_on_pauli_basis(q, hermitian::Vector{Real}, pauli_dict::PauliString)
+function phase_action_on_pauli_basis(q, hermitian, pauli_dict::PauliString)
     return apply_pauli_basis_action(phase_action_on_bsf, q, hermitian, pauli_dict)
 end
 
-function cx_action_on_pauli_basis(c, t, hermitian::Vector{Real}, pauli_dict::PauliString)
+function cx_action_on_pauli_basis(c, t, hermitian, pauli_dict::PauliString)
     action_fun(a) = cx_action_on_bsf(c, t, a)
     return apply_pauli_basis_action((q,a)->action_fun(a), nothing, hermitian, pauli_dict)
 end
 
-function cz_action_on_pauli_basis(c, t, hermitian::Vector{Real}, pauli_dict::PauliString)
+function cz_action_on_pauli_basis(c, t, hermitian, pauli_dict::PauliString)
     action_fun(a) = cz_action_on_bsf(c, t, a)
     return apply_pauli_basis_action((q,a)->action_fun(a), nothing, hermitian, pauli_dict)
 end

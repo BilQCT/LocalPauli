@@ -55,7 +55,7 @@ output_folder = "./keys/"
 # Mode selection:
 #   :state_vector  -> Use state-vector approach.
 #   :pauli         -> Use Pauli basis approach.
-mode = :mbqc  # Change to :pauli to use the alternative approach
+mode = :pbc  # Change to :pauli to use the alternative approach
 
 # ------------------------------------------------------------------------------
 # Experiment Loop
