@@ -1,5 +1,5 @@
 ################################################################################
-# run_experiment.jl
+# run_robustness.jl
 #
 # This driver script runs experiments by loading an input phase-space matrix,
 # generating graph states, applying Hadamard and T operations in different orders,
@@ -52,15 +52,21 @@ file_names = ["deterministic_$n", "cnc_3_1", "locally_closed_L_3", "locally_clos
 data_folder = "./data/"
 output_folder = "./keys/"
 
-# Mode selection:
-#   :state_vector  -> Use state-vector approach.
-#   :pauli         -> Use Pauli basis approach.
-mode = :pbc  # Change to :pauli to use the alternative approach
+# There are two modes: :mbqc and :pbc
+mode = :pbc 
+
+println("\n" * "="^80)
+print_centered_message(" RUNNING EXPERIMENTS: MODE = $mode, n = $n ", 80, "=")
+println("="^80)
 
 # ------------------------------------------------------------------------------
 # Experiment Loop
 # ------------------------------------------------------------------------------
 for file_name in file_names
+    println("\n" * "-"^80)
+    print_centered_message(" Phase space: $file_name, n = $n ")
+    println("-"^80)
+
     # Construct HDF5 file path based on mode and qubit number.
     h5_file = joinpath(data_folder, file_name * (mode == :state_vector ? ".h5" : ".h5"))
     
@@ -69,9 +75,8 @@ for file_name in file_names
     dataset_name = (mode == :state_vector ? file_name : file_name)
     R = read(file[dataset_name])
     close(file)
-    
-    println("Phase space: $file_name, n = $n")
-    println("Loaded matrix size: ", size(R))
+
+    println(" → Loaded matrix size: ", size(R), "\n")
     
     if mode == :mbqc
         # State Vector Mode:
@@ -80,12 +85,12 @@ for file_name in file_names
         # 3. Convert the state to a density matrix and then to its Pauli expansion.
         graph_states, graph_names = generate_graph_state_vectors(n)
         for (idx, psi) in enumerate(graph_states)
-            println("Graph: ", graph_names[idx])
+            print_centered_message(" Graph: " * graph_names[idx] * " ")
             hadamard_bits = all_dit_strings(2, n)
             for bits in hadamard_bits
                 state_transformed = copy(psi)
                 hadamard_string = join(bits)
-                println("Applying Hadamards: ", hadamard_string,"\n")
+                println("  ▶ Applying Hadamards: ", hadamard_string)
                 for i in 1:n
                     if bits[i] == 1
                         state_transformed = hadamard_gate(n, i) * state_transformed
@@ -95,11 +100,10 @@ for file_name in file_names
                 rho = state_transformed * (state_transformed')
                 vector_rho = convert_matrix_to_pauli_basis(n, rho)
                 exp_name = file_name * "_" * graph_names[idx] * "_h_" * hadamard_string * "_MBQC"
-                println("Computing robustness for ", exp_name)
+                println("Computing robustness for $exp_name")
                 robustness(R, vector_rho; threshold=1e-16, save=true, file_loc=keys_folder, file_name=exp_name)
-                println("_________________________")
+                println()
             end
-            println("_________________________","\n")
         end
         
     elseif mode == :pbc
@@ -118,18 +122,17 @@ for file_name in file_names
                 end
             end
             graph_states, graph_names = generate_graph_states(magic_state, n, pauli_dict)
+            hadamard_string = join(bits)
+            print_centered_message(" Hadamard pattern: " * hadamard_string * " ")
             for (idx, state_transformed) in enumerate(graph_states)
-                hadamard_string = join(bits)
-                println("Graph: ", graph_names[idx], " with Hadamard pattern: ", hadamard_string,"\n")
+                println("Graph: " * graph_names[idx])
                 vector_rho = state_transformed
                 exp_name = file_name * "_" * graph_names[idx] * "_h_" * hadamard_string * "_PBC"
-                println("Computing robustness for ", exp_name)
+                println("Computing robustness for $exp_name")
                 robustness(R, vector_rho; threshold=1e-16, save=true, file_loc=keys_folder, file_name=exp_name)
-                println("_________________________")
+                println()
             end
-            println("_________________________")
         end
-        
     else
         error("Invalid mode selected.")
     end

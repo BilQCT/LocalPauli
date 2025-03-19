@@ -1,5 +1,5 @@
 ################################################################################
-# functions.jl
+# robustness_functions.jl
 #
 # This file defines common functions and utilities for generating graph states,
 # applying quantum gate operations, converting states to the Pauli basis, and
@@ -364,4 +364,14 @@ implementation; replace with your actual function if needed.)
 """
 function all_dit_strings(base, n)
     return [digits(i, base=base, pad=n) for i in 0:(base^n - 1)]
+end
+
+"""
+    print_centered_message(msg::String, width::Int=80, fill_char::String="-")
+
+Prints a message centered within a line of a given width, using a fill character.
+"""
+function print_centered_message(msg, width=80, fill_char="-")
+    padding = div(width - length(msg), 2)
+    println(rpad(lpad(msg, padding + length(msg), fill_char), width, fill_char))
 end
