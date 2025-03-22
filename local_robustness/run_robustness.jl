@@ -43,10 +43,10 @@ keys_folder = joinpath(base_dir, "keys")
 n = 3
 
 # List of phase-space data file identifiers (adjust as needed)
-file_names = ["deterministic_$n", "cnc_3_1", "locally_closed_L_3", "locally_closed_L_prime_3"]
+file_names = ["deterministic_$n", "locally_closed_L_3", "locally_closed_L_prime_3"]
 
 # List of phase-space data file identifiers (adjust as needed)
-#file_names = ["deterministic_$n"]
+# file_names = ["deterministic_$n"]
 
 # Data folders (adjust paths as needed)
 data_folder = "./data/"
