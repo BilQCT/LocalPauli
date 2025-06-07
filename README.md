@@ -1,7 +1,7 @@
 
 # Introduction
 
-This This is the GitHub repository companion to [Okay, et al. 2024] "Classical simulation of universal measurement-based quantum computation using multipartite Bell scenarios" by Okay, Yücel, Ipek, [arXiv:2410.23734](https://arxiv.org/abs/2410.23734).
+This is the GitHub repository companion to [Okay, et al. 2024] "Classical simulation of universal measurement-based quantum computation using multipartite Bell scenarios" by Okay, Yücel, Ipek, [arXiv:2410.23734](https://arxiv.org/abs/2410.23734).
 
 ## Background
 
