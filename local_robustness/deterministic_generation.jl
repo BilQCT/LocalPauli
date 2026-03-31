@@ -12,19 +12,19 @@ data_folder = joinpath(base_dir, "data")
 
 
 # Generate deterministic vertices:
-global D1 = Matrix{Int64}(undef,4,0)
+global D1 = Matrix{Int8}(undef,4,0)
 
 # Find all possible 3-bit bitstrings:
 combinations = collect(Iterators.product(0:1, 0:1, 0:1))
 
 # Generate all vectors:
 for combo in combinations
-    local D = vcat([1],[(-1)^a for a in combo])
+    local D = Int8[1, (-1)^combo[1], (-1)^combo[2], (-1)^combo[3]]
     global D1 = hcat(D1,D)
 end
 
 
-function generate_all_deterministic_operators(n::Int64)
+function generate_all_deterministic_operators(n::Int8)
     global D = copy(D1)
     if n == 1
         return D
@@ -38,7 +38,7 @@ end
 
 
 # qubit number
-n = 1
+n = Int8(7)
 
 println("Generating deterministic vertices.\n")
 
@@ -50,7 +50,7 @@ println("Saving deterministic vertices.\n")
 file_name = "deterministic_$(n)"
 h5_file = joinpath(data_folder, file_name*".h5")
 h5open(h5_file, "w") do file
-    file[file_name] = n_qubit_deterministic_operators
+    file["data"] = n_qubit_deterministic_operators
 end
 
 println("Matrix saved to $h5_file\n")
