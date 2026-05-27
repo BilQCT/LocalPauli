@@ -29,36 +29,32 @@ function tensor_prod(A, n)
     return An
 end
 
+
 function pauli(x)
-    """
-    Compute the Pauli operator corresponding to a given bit string.
+    xj = x isa GAP.GapObj ? GAP.gap_to_julia(x) : x
+    xj = Int.(collect(xj))
 
-    Parameters:
-    - `x`: The bit string.
-
-    Returns:
-    - The Pauli operator corresponding to the input bit string.
-    """
-    if typeof(length(x) // 2) != Rational{Int64}
-        return "Must be a bit-string of even length."
-    elseif typeof(length(x) // 2) == Rational{Int64}
-        n = Int(length(x) // 2)
-        X = Matrix([0 1; 1 0])
-        Z = Matrix([1 0; 0 -1])
-        a = x[1:n]
-        b = x[n + 1:end]
-        if n == 1
-            XaZb = (X^a[1] * Z^b[1])
-        else
-            XaZb = (X^a[1] * Z^b[1])
-            for i in 2:n
-                XaZb = kron(XaZb, (X^a[i] * Z^b[i]))
-            end
-        end
-        arg_phase = (transpose(a) * b) % 4
-        phase = im ^ (arg_phase)
-        return phase * XaZb
+    if !iseven(length(xj))
+        error("Input must be a bit string of even length.")
     end
+
+    n = div(length(xj), 2)
+
+    X = gobj([0 1; 1 0])
+    Z = gobj([1 0; 0 -1])
+
+    a = xj[1:n]
+    b = xj[n+1:end]
+
+    XaZb = X^a[1] * Z^b[1]
+
+    for i in 2:n
+        XaZb = g.KroneckerProduct(XaZb, X^a[i] * Z^b[i])
+    end
+
+    phase = g.E(4)^mod(sum(a .* b), 4)
+
+    return phase * XaZb
 end
 
 
@@ -69,46 +65,52 @@ end
 
 
 
-# PauliString struct and related functions:
-
 mutable struct PauliString
-    """
-    Structure to store a pauli strings, bit strings, and dictionary mapping between the two 
-
-    Attributes:
-    pauli_strings: for each operator (e.g., XI) a string 'xi'
-    bit_strings: for each operator (e.g., XI) a bit string [1,0,0,0]
-    pauli_to_bit: dictionary from pauli strings to bit strings
-    bit_to_pauli: dictionary from bit strings to pauli strings
-    bit_to_int: dictionary from bit string to integer order of pauli strings in lexicographic order
-    """
     bit_strings::Vector{Vector{Int}}
     pauli_strings::Vector{String}
-    pauli_to_bit::Dict{String,Vector{Int}}
-    bit_to_pauli::Dict{Vector{Int},String}
-    bit_to_int::Dict{Vector{Int},Int}
-    int_to_bit::Dict{Int,Vector{Int}}
-    pauli_to_int::Dict{String,Int}
-    int_to_pauli::Dict{Int,String}
+    pauli_to_bit::Dict{String, Vector{Int}}
+    bit_to_pauli::Dict{Vector{Int}, String}
+    bit_to_int::Dict{Vector{Int}, Int}
+    int_to_bit::Dict{Int, Vector{Int}}
+    pauli_to_int::Dict{String, Int}
+    int_to_pauli::Dict{Int, String}
 
     function PauliString(n::Int)
-        """
-        Constructor for the PauliString structure that creates a vectors of pauli strings and bit strings and dictionaries mapping between them
-        """
-        bit_strings = all_dit_strings(2,2*n)
-        pauli_strings = [get_pauli_string(x) for x in bit_strings]
-        
-        # In lex order
-        perm = sortperm(pauli_strings)
-        pauli_strings = pauli_strings[perm]; bit_strings = bit_strings[perm];
+        bit_strings = vec(all_dit_strings(2, 2*n))
+        bit_strings = [Int.(collect(x)) for x in bit_strings]
 
-        pauli_to_bit = Dict(zip(pauli_strings,bit_strings))
-        bit_to_pauli = Dict(zip(bit_strings,pauli_strings))
-        bit_to_int = Dict(zip(bit_strings,[i for i in 1:length(bit_strings)]))
-        int_to_bit = Dict(zip([i for i in 1:length(bit_strings)],bit_strings))
-        pauli_to_int = Dict(zip(pauli_strings,[bit_to_int[pauli_to_bit[x]] for x in pauli_strings]))
-        into_to_pauli = Dict(zip([i for i in 1:length(bit_strings)],[bit_to_pauli[int_to_bit[i]] for i in 1:length(bit_strings)]))
-        new(bit_strings,pauli_strings,pauli_to_bit,bit_to_pauli,bit_to_int,int_to_bit,pauli_to_int,into_to_pauli)
+        pauli_strings = [get_pauli_string(x) for x in bit_strings]
+
+        perm = sortperm(pauli_strings)
+        pauli_strings = pauli_strings[perm]
+        bit_strings = bit_strings[perm]
+
+        pauli_to_bit = Dict(zip(pauli_strings, bit_strings))
+        bit_to_pauli = Dict(zip(bit_strings, pauli_strings))
+
+        bit_to_int = Dict(zip(bit_strings, 1:length(bit_strings)))
+        int_to_bit = Dict(zip(1:length(bit_strings), bit_strings))
+
+        pauli_to_int = Dict(
+            p => bit_to_int[pauli_to_bit[p]]
+            for p in pauli_strings
+        )
+
+        int_to_pauli = Dict(
+            i => bit_to_pauli[int_to_bit[i]]
+            for i in 1:length(bit_strings)
+        )
+
+        new(
+            bit_strings,
+            pauli_strings,
+            pauli_to_bit,
+            bit_to_pauli,
+            bit_to_int,
+            int_to_bit,
+            pauli_to_int,
+            int_to_pauli,
+        )
     end
 end
 
