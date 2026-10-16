@@ -20,18 +20,18 @@ methods. To support universal computation, the resource states incorporate
 non-stabilizer resources. Given a graph $G=(V,E)$ on $n$ vertices and a subset
 $U\subseteq V$, the paper introduces *magic cluster states* of the form
 
-$$
+```math
 |\psi_{G,U}\rangle = E(G)T^{\otimes U}|+\rangle^{\otimes n},
 \qquad E(G)=\prod_{(i,j)\in E}CZ_{ij},
-$$
+```
 
 where $T^{\otimes U}$ applies a $T$ gate to each qubit in $U$ and the identity
 elsewhere. For the numerical comparisons, the repository uses the reduced
 resource family
 
-$$
+```math
 |\phi_{G,U}\rangle=T^{\otimes n}H^{\otimes U}E(G)|+\rangle^{\otimes n}.
-$$
+```
 
 In this second expression, $U$ labels the Hadamard decorations. The two
 conventions are distinguished in the calculation scripts and
@@ -66,13 +66,13 @@ This framework includes the closed noncontextual (CNC) representations of
 [Raussendorf et al.](https://arxiv.org/abs/1905.05374), which in turn include
 stabilizer representations.
 
-For an operator set $\mathcal A=\{A_\alpha\}$, the associated robustness is
+For an operator set $`\mathcal{A}=\{A_\alpha\}`$, the associated robustness is
 
-$$
-\mathfrak R_{\mathcal A}(\rho)
+```math
+\mathfrak{R}_{\mathcal{A}}(\rho)
 =\min\left\{\sum_\alpha |q_\alpha|:
-\rho=\sum_\alpha q_\alpha A_\alpha,\quad q_\alpha\in\mathbb R\right\}.
-$$
+\rho=\sum_\alpha q_\alpha A_\alpha,\quad q_\alpha\in\mathbb{R}\right\}.
+```
 
 The coefficients may be negative. Their minimum total absolute weight enters
 the sampling cost of the estimation algorithms studied in the paper.
