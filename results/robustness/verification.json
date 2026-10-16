@@ -204,10 +204,10 @@
     },
     {
       "key": "n3_s001_L1",
-      "residual": 2.9799572434053426e-15,
+      "residual": 2.979646079139256e-15,
       "dual_violation": 0,
-      "gap": 0.0,
-      "reported_error": 0.0
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
     },
     {
       "key": "n3_s001_L2",
@@ -1961,7 +1961,7 @@
     }
   ],
   "verified_artifacts_sha256": {
-    "results.json": "589563657a9cab208088ee373353fcbaac73deafe2d06e208eefa691c122ac9b",
+    "results.json": "29793bfa07e610d1503d4fd1d7758e3708ab341f4964df5fc5dd40157b6ef8ac",
     "certificates.npz": "87826f1a2ddda0def87a54b45f94cb1ba293d89a040c8380d5002614933b63ce",
     "exact_small.json": "32c0555e01f8bd59eb27159a7cd72631ec1b08111c6c4203e1efa93179dd4b7d"
   }

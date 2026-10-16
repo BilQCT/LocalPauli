@@ -1,9 +1,0 @@
-macOS
-Python 3.12.2
-Julia 1.11.4
-numpy 1.26.4
-scipy 1.17.1
-sympy 1.14.0
-h5py 3.16.0
-mpmath 1.3.0
-Dependencies were preinstalled; no fresh network installation evaluated.

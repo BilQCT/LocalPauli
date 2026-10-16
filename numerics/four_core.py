@@ -1,4 +1,4 @@
-# Adapted from robustness-review-v75/code; adopted for manuscript reproduction on 2026-10-12.
+# Independent enumeration implementation adopted for the numerical calculations.
 """Standalone, four-qubit robustness audit primitives.
 
 Coordinates are c_a(A)=Tr(A T_a), ordered lexicographically with I,X,Y,Z
@@ -38,7 +38,7 @@ N = 4
 
 
 def catalogue():
-    """Manuscript independent-set catalogue (v74/v75); one-based labels."""
+    """Independent-set catalogue used in the paper; one-based labels."""
     groups = [
         ("G3", [(1,4),(2,4),(3,4)], [[],[1],[4],[1,2],[1,2,3]]),
         ("P4", [(1,3),(1,4),(2,4)], [[],[1],[2],[1,2],[2,3]]),

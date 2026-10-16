@@ -1,1 +1,0 @@
-PASS: newer-file conflict rejected before writes; inspection made no changes; application matched every payload hash; backups exist; second application was a no-op.

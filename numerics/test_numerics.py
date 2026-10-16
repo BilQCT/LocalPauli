@@ -9,7 +9,7 @@ import h5py
 import numpy as np
 import reproduce as r
 import small_core as sc
-from export_manuscript import canonical
+from export_tables import canonical
 
 
 class NumericalConventions(unittest.TestCase):

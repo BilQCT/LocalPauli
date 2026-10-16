@@ -1,4 +1,4 @@
-# Adapted from robustness-review-v75/code; adopted for manuscript reproduction on 2026-10-12.
+# Independent enumeration implementation adopted for the numerical calculations.
 """Independent operator enumeration and exact-certificate helpers for n <= 3.
 
 Coordinates are r_P = Tr(P rho), in lexicographic tensor order over I,X,Y,Z.

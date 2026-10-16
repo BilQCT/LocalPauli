@@ -3,7 +3,7 @@
 The publication subset has independent Hadamard decorations (2,6,24 cases).
 Every LP has a saved primal and full-coordinate dual certificate. The default
 is a complete regeneration; --verify-only validates saved certificates and data.
-The standalone comparison fixture records the v74 reference hash; no manuscript is required.
+No manuscript source or historical comparison fixture is required.
 """
 import os
 os.environ.setdefault('OPENBLAS_NUM_THREADS', '2')
@@ -27,7 +27,7 @@ import four_core as fc
 import exact_certificates as ec
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT/'results/manuscript_v75'
+OUT = ROOT/'results/robustness'
 SEED = 'termwise_product_mod3_sum_mod2_v1'
 CONVENTIONS = {'seed_convention':SEED,'orbit_convention':'proper_local_clifford',
                'pauli_convention':'lexicographic I,X,Y,Z; Tr(P A)',
@@ -228,7 +228,6 @@ def run():
                 'independent_U':independent(record),'kind':kind,'certificate_key':key,**result})
         print('Completed 4',record['id'],flush=True)
     report['input_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'data').glob('*.h5')) if any(s in p.name for s in ('max_weight','stabilizer_states','cnc_operators','deterministic_'))}
-    report['manuscript_reference_sha256']=json.loads((ROOT/'numerics/reference-v74.json').read_text())['manuscript_sha256']
     (OUT/'results.json').write_text(json.dumps(report,indent=2)+'\n')
     (OUT/'exact_small.json').write_text(json.dumps(exact,indent=2)+'\n')
     np.savez_compressed(OUT/'certificates.npz',**archive)
