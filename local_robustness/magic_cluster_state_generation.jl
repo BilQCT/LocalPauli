@@ -1,3 +1,8 @@
+# Historical E(G) T^U |+> resource convention; NOT the manuscript robustness target.
+# Require an explicit opt-in to prevent accidentally generating publication data.
+if abspath(PROGRAM_FILE) == @__FILE__ && !("--legacy" in ARGS)
+    error("Historical state convention. Use the bicolored manuscript pipeline, or pass --legacy explicitly.")
+end
 using Pkg
 
 base_dir = dirname(@__DIR__)
@@ -103,10 +108,10 @@ is_red == true means apply T|+><+|T†
 is_red == false means use |+><+|
 
 Green:
-    |+><+| = I + X      (unnormalized convention)
+    |+><+| has expectation coordinates (1, 1, 0, 0)
 
 Red:
-    T|+><+|T† = I + (X+Y)/√2
+    T|+><+|T† has expectation coordinates (1, 1/√2, 1/√2, 0)
 """
 function one_qubit_local_coeff(local_type::Symbol, is_red::Bool)
     if !is_red

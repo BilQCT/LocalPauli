@@ -1,0 +1,209 @@
+V75 MANUSCRIPT REVISION GUIDE -- VERIFIED NUMERICAL CORRECTIONS
+Reference: v74/main.tex supplied on 12 October 2026.
+The reference manuscript has NOT been edited. Line numbers below refer to v74.
+
+DECISION AND SCOPE
+Retain the manuscript's seed: each monomial is multiplied in Z3; the terms
+are summed in Z2. Use the complete proper local-Clifford orbit, preserving the
+original computational choice of symmetry group. Hoban et al. provide the
+general mixed-arithmetic framework and vertex criterion; they do not uniquely
+specify this particular elementary-polynomial seed.
+
+Of the 104 displayed robustness values, 31 change: two small-table L3 cells,
+14 four-qubit L1 bars, and 15 four-qubit L2 bars. All other displayed values
+agree at printed precision. Neither the graph drawings nor state numbering
+changes. The 22/24 four-qubit L2 advantage remains true.
+
+1. MAKE THE SEED UNAMBIGUOUS (near lines 1951-1983)
+Keep the label eq:gamma p efficient. Replace the expression inside its
+equation environment by the following explicit nested-modulus notation:
+
+\gamma^{(p)}(u)
+:=\left[\sum_{1\leq i_1<\cdots<i_p\leq n}
+\left[u_{i_1}\cdots u_{i_p}\right]_3\right]_2,
+\qquad [x]_m\in\{0,\ldots,m-1\}.
+
+The existing sentence that each product is evaluated in Z3 and the final sum
+is reduced modulo 2 is correct. The p=1 statement and incremental modulo-2
+summation explanation remain correct. For the quadratic example use
+  gamma^(2)(u) = [sum_(i<j) [u_i u_j]_3]_2.
+The two-variable truth table remains unchanged. Do not insert a modulo-3
+reduction around the whole sum.
+
+1a. CORRECT THE PARITY CLAIM IMMEDIATELY AFTER THE TRUTH TABLE
+The sentence claiming that the total truth-table parity is invariant under
+party, input AND outcome relabelings is false. The displayed O5 seed has
+two negative correlations, hence even parity. Flipping the outcome of the
+first setting of the first party negates one entire row (three correlations),
+giving five negative correlations and odd parity, within the SAME Bell orbit.
+Thus parity cannot distinguish O4 from O5. Keep the displayed seed's parity
+calculation if desired, but replace the subsequent two sentences with:
+
+"This parity refers to the displayed representative and is not invariant
+under outcome relabelings. The orbits $\oO_4$ and $\oO_5$ are distinct
+max-weight orbits under the relabeling group used in
+Table~\ref{tab:ns232_orbits_verbose}."
+
+This correction does not change either orbit size or any robustness value.
+
+2. DEFINE THE NUMERICAL M (paragraph preceding L0, L1, L2, L3)
+Replace the sentence beginning "Let D, S, C, and M denote ..." through
+"The local phase spaces used in our analysis are" with:
+
+Let $D$, $S$, and $C$ denote the deterministic operators, all stabilizer
+projectors, and the CNC operators, respectively. For the numerical comparisons,
+$M$ is the complete orbit of the $p=2$ max-weight seed under tensor products
+of single-qubit Clifford conjugations. The seed has identity coefficient $1$,
+zero coefficients at weights $1,\ldots,n-1$, and full-weight coefficients
+$(-1)^{\gamma^{(2)}(u)}$, with $X,Y,Z$ identified with $u_i=0,1,2$.
+Each product in $\gamma^{(2)}$ is evaluated modulo $3$, and the resulting
+terms are added modulo $2$, as in Eq.~\eqref{eq:gamma p efficient}.
+This gives $|M|=96$, $13{,}824$, and $165{,}888$ for $n=2,3,4$,
+respectively. No additional seeds, tensor-product families, or independent
+Bell outcome relabelings are included in $M$. The local phase spaces used
+in our analysis are
+
+Keep the following displayed definitions and robustness inequalities.
+S means all stabilizer projectors, including entangled stabilizers.
+The Bell orbit is a different choice: its two-qubit size is 192 (the O5
+table size), whereas the LC orbit used for robustness has size 96. These
+counts describe different groups and are not a contradiction.
+
+3. REPLACE THE SMALL-TABLE BODY (lines 2432-2441)
+Keep the table header, labels, caption and graph catalogue. Insert these
+eight rows, retaining horizontal rules between graph blocks if desired:
+
+2 & $P_2$ & $\varnothing$ & 1.748 & 1.000 & 1.207 & 1.000 \\
+2 & $P_2$ & $\{1\}$ & 1.000 & 1.000 & 1.000 & 1.000 \\
+3 & $P_3$ & $\varnothing$ & 2.219 & 1.283 & 1.561 & 1.155 \\
+3 & $P_3$ & $\{1\}$ & 1.414 & 1.000 & 1.707 & 1.000 \\
+3 & $P_3$ & $\{2\}$ & 2.200 & 1.000 & 1.500 & 1.000 \\
+3 & $P_3$ & $\{1,3\}$ & 1.414 & 1.000 & 1.414 & 1.000 \\
+3 & $K_3$ & $\varnothing$ & 2.219 & 1.283 & 1.737 & 1.136 \\
+3 & $K_3$ & $\{1\}$ & 2.200 & 1.000 & 1.500 & 1.000 \\
+
+Thus P3 changes 1.183 -> 1.155, and K3 changes 1.190 -> 1.136.
+All S, C and L0 values, and the remaining six L3 values, are unchanged.
+
+4. UPDATE THE REPEATED NUMERICAL PARAGRAPH (lines 2537-2540)
+Replace the sentence beginning "Numerically, the L3 robustness values ..."
+and its CNC comparison with the following (keep the subsequent strictness
+conclusion):
+
+The two nontrivial three-qubit values are
+\[
+\mathfrak R_{L_3}(\rho_{P_3,\varnothing})
+=\frac{5+3\sqrt2}{8}\approx1.155330086,
+\qquad
+\mathfrak R_{L_3}(\rho_{K_3,\varnothing})
+=\frac12+\frac{9\sqrt2}{20}\approx1.136396103.
+\]
+Both are strictly below the CNC robustness
+$1+\sqrt2/5\approx1.282842712$ of the product magic state.
+The three-qubit values are certified by exact primal decompositions and
+dual witnesses over $\mathbb Q(\sqrt2)$.
+
+5. REPLACE ALL THREE FOUR-QUBIT PLOT SERIES (lines 2635-2640)
+Keep the axis, caption, figure label, graph catalogue and numbering. Replace
+the addplot/addlegendentry lines with this block. The S series is supplied
+for completeness and has not changed:
+
+\addplot+[fill=blue!55,draw=blue] coordinates {(1,1.445432) (2,1.457107) (3,1.195652) (4,1.353553) (5,1.500000) (6,1.957107) (7,1.804738) (8,1.707107) (9,1.810660) (10,2.000000) (11,1.935660) (12,1.804738) (13,2.164214) (14,1.727273) (15,1.810660) (16,1.560660) (17,1.804738) (18,1.810660) (19,1.737437) (20,1.804738) (21,1.727273) (22,1.810660) (23,1.260200) (24,1.195652)};
+\addlegendentry{$\mathfrak R_{L_1}$}
+\addplot+[fill=red!55,draw=red] coordinates {(1,1.445432) (2,1.414214) (3,1.195652) (4,1.353553) (5,1.000000) (6,1.957107) (7,1.804738) (8,1.707107) (9,1.471405) (10,1.000000) (11,1.913583) (12,1.804738) (13,1.530330) (14,1.727273) (15,1.471405) (16,1.560660) (17,1.804738) (18,1.471405) (19,1.714855) (20,1.804738) (21,1.727273) (22,1.471405) (23,1.260200) (24,1.195652)};
+\addlegendentry{$\mathfrak R_{L_2}$}
+\addplot+[fill=orange!65,draw=brown] coordinates {(1,2.862742) (2,1.747547) (3,2.555556) (4,1.747547) (5,1.000000) (6,2.862742) (7,2.800610) (8,1.747547) (9,1.747547) (10,1.000000) (11,2.862742) (12,2.800610) (13,1.747547) (14,2.555556) (15,1.747547) (16,2.862742) (17,2.800610) (18,1.747547) (19,2.862742) (20,2.800610) (21,2.555556) (22,1.747547) (23,2.862742) (24,2.555556)};
+\addlegendentry{$\mathfrak R_{S}$}
+
+Full values for checking (U uses the manuscript's one-based vertex labels):
+ID Graph U          L1          L2          S
+ 1 G3  []         1.445431760 1.445431760 2.862741700
+ 2 G3  [1]        1.457106781 1.414213562 1.747546896
+ 3 G3  [4]        1.195652174 1.195652174 2.555555556
+ 4 G3  [1, 2]     1.353553391 1.353553391 1.747546896
+ 5 G3  [1, 2, 3]  1.500000000 1.000000000 1.000000000
+ 6 P4  []         1.957106781 1.957106781 2.862741700
+ 7 P4  [1]        1.804737854 1.804737854 2.800609665
+ 8 P4  [2]        1.707106781 1.707106781 1.747546896
+ 9 P4  [1, 2]     1.810660172 1.471404521 1.747546896
+10 P4  [2, 3]     2.000000000 1.000000000 1.000000000
+11 G2  []         1.935660172 1.913582796 2.862741700
+12 G2  [1]        1.804737854 1.804737854 2.800609665
+13 G2  [2]        2.164213562 1.530330086 1.747546896
+14 G2  [4]        1.727272727 1.727272727 2.555555556
+15 G2  [1, 2]     1.810660172 1.471404521 1.747546896
+16 C4  []         1.560660172 1.560660172 2.862741700
+17 C4  [1]        1.804737854 1.804737854 2.800609665
+18 C4  [1, 2]     1.810660172 1.471404521 1.747546896
+19 G1  []         1.737436867 1.714855486 2.862741700
+20 G1  [1]        1.804737854 1.804737854 2.800609665
+21 G1  [3]        1.727272727 1.727272727 2.555555556
+22 G1  [1, 2]     1.810660172 1.471404521 1.747546896
+23 K4  []         1.260200459 1.260200459 2.862741700
+24 K4  [1]        1.195652174 1.195652174 2.555555556
+
+6. ADD A REPRODUCIBILITY PARAGRAPH
+Place after the phase-space definitions or near the numerical figure:
+
+All computations use the expectation coordinates
+$a_{Pj}=\operatorname{Tr}(PA_j)$ and $r_P=\operatorname{Tr}(P\rho)$,
+in lexicographic $I,X,Y,Z$ order, and solve
+\[
+\min_{Aq=r}\|q\|_1
+=\max_{|A^{\mathsf T}y|\leq\mathbf1}r^{\mathsf T}y.
+\]
+Every dictionary operator has identity coordinate $1$, so the identity
+constraint enforces $\sum_jq_j=1$. Numerical primal reconstructions,
+dual constraints, and primal--dual gaps were checked in the full Pauli
+coordinates to tolerance $10^{-8}$. The four-qubit computation uses a
+lossless average over local Clifford symmetries of each target; the
+certificates were checked against every original dictionary operator.
+These finite-dictionary values are upper bounds on the robustness over
+the full efficiently representable locally closed phase space.
+
+7. CLAIMS TO KEEP / SCOPE TO MAKE EXPLICIT
+- The strict P3 and K3 separation from CNC survives and is stronger numerically.
+- L2 improves over S in 22 of 24 four-qubit cases. States 5 and 10 remain
+  stabilizer states with S=L2=1.
+- The undecorated comparisons to product magic states remain unchanged in logic.
+- "Exhaustive" means connected graphs with INDEPENDENT Hadamard decorations,
+  up to color-preserving graph isomorphism: 2, 6, 24 cases for n=2,3,4.
+  Unrestricted decorations instead give 3, 10, 50 cases; do not mix the counts.
+- The robustness values quantify the stated additive-error estimation bounds;
+  they do not alone prove a total-runtime improvement or an exact sampler
+  for signed decompositions. Existing caveats on initialization remain relevant.
+- The numerical audit does not constitute a new proof of the full simulation
+  theorems. In particular it does not verify the unspecific sentence about
+  "initial numerical results" at n=3 in the conclusion. Retain that sentence
+  only if its separate evidence can be identified; otherwise remove it.
+
+8. VERIFIED EVIDENCE AND FILES
+- 278 newly solved numerical LPs, all with full-coordinate primal/dual checks.
+- 4 newly verified exact certificates: P3/K3 in C and L3.
+- All 417 saved target states through n=5 agree with independent state-vector
+  construction (no claim that all n=5 robustness values were recomputed).
+- Complete connected colored-graph catalogues checked independently through n=4.
+- The original Julia orbit generator agrees with Python on all n=2 and n=3
+  columns after the fix. Julia tests also validate n=4 seed and dictionary size.
+- The two-qubit nonsignaling polytope was re-enumerated: 1,408 vertices in
+  orbits of sizes 64, 576, 288, 288, 192, as in the manuscript.
+- The two-qubit Pauli polytope was independently enumerated: 22,320 vertices,
+  agreeing with the conclusion. The facet counts 36 and 60 agree with the
+  corresponding local and full stabilizer dictionaries.
+- docs/numerical-audit.md records the original audit; docs/v75-test-evaluation.md records standalone release testing.
+
+Corrected data/certificates:
+  LocalPauli/results/manuscript_v75/results.json
+  LocalPauli/results/manuscript_v75/results.csv
+  LocalPauli/results/manuscript_v75/certificates.npz
+  LocalPauli/results/manuscript_v75/exact_small.json
+  LocalPauli/results/manuscript_v75/verification.json
+Machine-readable original-to-corrected comparison:
+  results/manuscript_v75/manuscript/manuscript-value-changes.csv
+Copyable LaTeX plot block:
+  results/manuscript_v75/manuscript/v75-four-qubit-plots.tex
+Copyable LaTeX small-table rows:
+  results/manuscript_v75/manuscript/v75-small-table-rows.tex
+
+The guide changes numerical definitions and claims only where needed. It does
+not silently change the manuscript to preserve the old numerical values.

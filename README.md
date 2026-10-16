@@ -1,81 +1,109 @@
+# LocalPauli
 
-# Introduction
+Companion code for **Classical simulation of universal measurement-based quantum
+computation using multipartite Bell scenarios**, Okay, Yücel and Ipek,
+[arXiv:2410.23734](https://arxiv.org/abs/2410.23734).
 
-This is the GitHub repository companion to [Okay, et al. 2024] "Classical simulation of universal measurement-based quantum computation using multipartite Bell scenarios" by Okay, Yücel, Ipek, [arXiv:2410.23734](https://arxiv.org/abs/2410.23734).
+## Corrected v75 publication numerics
 
-## Background
+The current pipeline and certified results are in `numerics/` and
+`results/manuscript_v75/`. They implement the manuscript seed
 
-Among the central contributions of arXiv:2410.23734 is a probabilistic representation of Measurement-Based Pauli Computation (MBPC), a variant of Measurement-Based Quantum Computing (MBQC) that uses single-qubit Pauli measurements and is also universal; see e.g., [[Danos, et al. 2006]](https://arxiv.org/abs/0704.1263), [[Raussendorf, et al. 2017]](https://arxiv.org/abs/1511.08506).
+```
+gamma_p(u) = sum(product(u_i for i in I) mod 3 for |I|=p) mod 2
+```
 
-Since MBPC is driven by single-qubit Pauli measurements, the computation does not initiate on a graph state, as this would only compute stabilizer circuits. Rather, we use a resource state, called a *magic cluster state*, which is a modification of a graph state that exhibits both entanglement and non-stabilizerness. Given a graph $G = (V,E)$ on $n$ vertices and a subset $U\subset V$, an $n$-qubit magic cluster state in the $n$-qubit Hilbert space $\mathcal{H}_n = (\mathbb{C}^2)^{\otimes n}$ is defined by
+Each product is reduced modulo 3 and the sum modulo 2. Earlier generators
+reduced the running sum modulo 3, producing different dictionaries.
+See [the numerical audit](docs/numerical-audit.md),
+[the change record](docs/v75-change-record.md), and
+[the test evaluation](docs/v75-test-evaluation.md).
 
-$$\left |\psi_{G,U} \right \rangle = E(G)T^{\otimes U} \left |+ \right \rangle^{\otimes n}\quad \text{where}\quad E(G) = \prod_{(i,j)\in E}CZ_{ij}$$
+## Reproduce from a standalone checkout
 
-The central objects of our classical simulation algorithm are the Local Pauli (LP) polytope, convex geometric structures that enclose the set of quantum states; including magic cluste states. The $n$-qubit LP polytope, denoted $LP_n$, can be identified with $NS_n$, the non-signaling polytopes of the (n,3,2) multi-partite Bell scenario for all $n$.
+Python 3.12 is the tested version. Use an isolated environment:
 
-An important structural property of LP polytopes is that they are closed under the tensor product operation familiar from quantum mechanics. In particular, for a vertex $A_1\in LP_{n_1}$ and vertex $A_2\in LP_{n_2}$ we have that $A_1\otimes A_2$ is a vertex of $LP_{n_1+n_2}$.
+```sh
+python3.12 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r numerics/requirements-tested.txt
+python -B numerics/test_numerics.py
+python -B numerics/reproduce.py --prepare-data
+python -B numerics/reproduce.py --verify-only
+python -B numerics/export_manuscript.py
+```
 
-In [Okay, et al. 2024] a distinguished class of operators, called *locally closed (LC)* operators, was introduced. Two Pauli operators are said to *locally commute* if they commute on every tensor factor. A subset of Pauli operators is said to be locally closed if for every two locally commuting Pauli operators $A$ and $B$ in that subset, then their product $A\cdot B$ is also in the subset. For a single qubit $LP_1$ is a cube enclosing the Bloch sphere whose vertices are LC operators. The $n$-fold tensor product of $LP_1$ vertices is an LC operator that is always a vertex of $LP_n$ and can be identified with the deterministic vertices of $NS_n$; i.e., the vertices of the Bell polytope. Interestingly, the vertices of $LP_2$, the two-qubit LP polytope also consists only of LC operators. Thus the tensor product of $LP_1$ and $LP_2$ vertices is also locally closed. 
+`--prepare-data` independently reconstructs the omitted large dictionaries and
+checks the graph catalogues and saved targets. `--verify-only` checks the supplied
+certificates without re-solving the optimization problems. To recompute all
+278 optima and four exact certificates, run:
 
-LC operators with efficient representation (in $n$) and update rules can be organized into a phase space that can be used for classical simulation based on sampling from a quasi-probability distribution. The LC phase space subsumes the phase space introduced in [[Raussendorf, et al. 2020]](https://arxiv.org/abs/1905.05374) based on closed non-contextual (CNC) sets, which itself generalizes the stabilizer phase space of (Howard and Campbell, 2016). Some examples of LC phase spaces include:
+```sh
+python -B numerics/reproduce.py
+python -B numerics/export_manuscript.py
+```
 
-- $D~$: Deterministic vertices; i.e., vertices of the $(n,3,2)$ Bell polytope.
-- $L~$: Tensor product of $\text{LP}_1$ and $\text{LP}_2$ vertices,
-- $L'$: Deterministic vertices and the $n$-qubit CNC operators.
+Full reproduction also prepares missing dictionaries. No manuscript source,
+parent-directory files, historical archive, credentials, or network connection
+is needed after dependencies are installed. The original displayed values and
+manuscript hash are in `numerics/reference-v74.json`, solely for comparing the
+revision. Copyable LaTeX and the comparison guide are exported to
+`results/manuscript_v75/manuscript/`. Do not run with `python -O`:
+assertions are part of the certificate checks.
 
-For any phase space we can define a robustness monotone:
+## Conventions and scope
 
-$$\mathfrak{R}(\rho) = \min \left \lbrace\sum_{\alpha\in V} |Q(\alpha)|~:~\rho = \sum_{\alpha\in V} Q(\alpha) A_\alpha \right\rbrace,$$
+The resource state is `T^n H^U E(G)|+>^n`. Coordinates are `Tr(P rho)` in
+lexicographic I,X,Y,Z order, with identity coefficient +1. The manuscript
+uses independent Hadamard decorations: 2, 6 and 24 inequivalent states at
+n=2,3,4. The computation covers all 3, 10 and 50 colored representatives.
 
-where $\alpha \in V$ labels the operators in the phase space.
+D contains all deterministic operators; S all stabilizer projectors, including
+entangled states; C all maximal CNC operators. M is the orbit of the quadratic
+seed under tensor products of single-qubit Clifford conjugations, with sizes
+96, 13,824 and 165,888. This local-Clifford orbit differs from the full Bell
+relabeling orbit. Here "local Clifford" is distinct from "locally closed".
+L1=D union M, L2=S union D union M, and L3=C union D union M.
 
+Every result has a primal decomposition and dual certificate. The verifier
+checks the full physical coordinates and every original dictionary inequality,
+including for the four-qubit symmetry reduction. It accepts errors below 1e-8.
+Four small-system results also have exact certificates over Q(sqrt(2)).
+See [numerical documentation](numerics/README.md) for the data format.
 
-## Code contents
+## Julia cross-checks
 
+The existing Julia project and manifest are retained (Julia 1.11.4).
+Install its dependencies, prepare the large dictionaries using Python as above,
+then run:
 
-In this GitHub repository we provide the $L$ and $L'$ phase space operators for $n=3$ and deterministic vertices for $n=3,4,5$. We encode the phase spaces in matrices whose columns are labeled by $\alpha \in V$ and whose rows are Pauli coefficients of the corresponding operator $A_\alpha$. In particular, for some phase space operator $A_\alpha$ and a Pauli $P$, the matrix has components $M_{P,\alpha} = \text{Tr}(PA_\alpha) $.  We employ lexicographic ordering on the rows so that $I\otimes \cdots \otimes I$ precedes $I\otimes \cdots \otimes X$, which precedes $I\otimes \cdots \otimes Y$, and so on.
+```sh
+julia --project=MyProject -e 'using Pkg; Pkg.instantiate()'
+julia --project=MyProject systematic_robustness/test/runtests.jl
+julia --project=MyProject systematic_robustness/test/legacy_helpers.jl
+```
 
-Our matrices have size:
+`systematic_robustness/` supplies direct GLPK LPs with saved primal/dual witnesses
+and dictionary hashes. `libs/MaxWeightSeed.jl` centralizes the seed and rejects
+unversioned max-weight files. The GAP generator provides an independent
+implementation of local-Clifford orbits.
 
-**Three-qubits**
+## Historical data
 
-- $D$: $64\times 512$
-- $L$: $64\times 27,008$
-- $L'$: $64\times 71,648$
+`data/locally_closed_L_3.h5` and `locally_closed_L_prime_3.h5` are older,
+different dictionaries; their filenames do not denote the current manuscript's
+L3. Legacy `E(G)T^U|+>` runners require `--legacy`. The old README is retained
+as [historical documentation](docs/historical-readme.md), not current usage.
+Old numerical keys were removed from the publication tree and preserved locally
+under ignored `archive/`; no current calculation requires that archive.
+Large regenerable dictionaries are ignored; current results and certificates
+are deliberately included. Keep Git metadata and local archives out of transfer
+bundles. Integration instructions accompany the update bundle.
 
+## Citation
 
-In the directory **libs** we have basic functionality for manipulating Pauli operators. The directory **local_robustness** has functions for computing the robustness for the $D$, $L$, and $L'$ phase spaces, as well as the CNC phase space. We compute the robustness for two families of resource states
-
-- PBC: $~~~~~\left |\psi_{G,U}^{PBC} \right \rangle = E(G)H^{\otimes U}T^{\otimes 3} \left |+++ \right \rangle,$
-- MBQC: $~~\left |\psi_{G,U}^{MBQC} \right \rangle =T^{\otimes 3} H^{\otimes U}E(G) \left |+++ \right \rangle,$
-
-where $U$ runs over all possible subsets of $\{1,2,3\}$ and $G$ runs over all connected graphs on $3$ qubits. 
-
-
-# Requirements:
-
-Combinatorics   v1.0.2
-
-GLPK            v1.2.1
-
-HDF5            v0.17.2
-
-JLD2            v0.4.53
-
-JuMP            v1.23.0
-
-YAML            v0.4.12
-
-# Instructions
-
-To create an environment for running LocalPauli, in Julia REPL use the following commands:
-
-using Pkg
-Pkg.generate("path/to/MyProject")
-Pkg.activate("path/to/MyProject")
-
-Pkg.add("YourPackage")
-
+Please cite arXiv:2410.23734 and identify the repository release or commit used.
+The internal manuscript designation "v75" is not an arXiv version number.
 
 # Patent Pending Notice
 
@@ -83,5 +111,3 @@ This repository contains material related to our arXiv preprint arXiv:2410.23734
 Licensed under MIT, which does not grant patent rights.
 
 For inquiries: cihan.okay@bilkent.edu.tr.
-
-

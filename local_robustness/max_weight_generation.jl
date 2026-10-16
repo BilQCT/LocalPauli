@@ -9,7 +9,7 @@ using LinearAlgebra
 using Combinatorics
 
 # Load local Clifford / Bloch-vector machinery.
-include("../libs/LocalCliffordBloch.jl")
+include(joinpath(@__DIR__, "..", "libs", "LocalCliffordBloch.jl"))
 using .LocalCliffordBloch
 
 # -----------------------------------------------------------------------------
@@ -17,75 +17,8 @@ using .LocalCliffordBloch
 # Map 0,1,2 in Z_3 to x,y,z on each qubit.
 # -----------------------------------------------------------------------------
 
-function z3_to_local_symplectic(u::Vector{Int})
-    n = length(u)
-    a = zeros(Int, 2*n)
-
-    for i in 1:n
-        if u[i] == 0       # X_i
-            a[i] = 1
-        elseif u[i] == 1   # Y_i = X_i Z_i
-            a[i] = 1
-            a[n+i] = 1
-        elseif u[i] == 2   # Z_i
-            a[n+i] = 1
-        else
-            error("Entries of u must lie in {0,1,2}.")
-        end
-    end
-
-    return a
-end
-
-function gamma_elementary_p(u::Vector{Int}, p::Int)
-    n = length(u)
-
-    if p < 1
-        error("p must be positive.")
-    elseif p > n
-        return 0
-    end
-
-    total_z3 = 0
-    for I in combinations(1:n, p)
-        prod_z3 = 1
-        for i in I
-            prod_z3 = mod(prod_z3 * u[i], 3)
-        end
-        total_z3 = mod(total_z3 + prod_z3, 3)
-    end
-
-    return mod(total_z3, 2)
-end
-
-function max_weight_bloch_vector(n::Int, p::Int; pauli_info::PauliString=PauliString(n))
-    if n < 2
-        error("Need n ≥ 2.")
-    elseif p <= 1
-        error("Need p > 1.")
-    elseif p > n
-        error("Need p ≤ n for this elementary degree-p fiducial.")
-    end
-
-    C = zeros(Int, 4^n)
-    bit_to_int = pauli_info.bit_to_int
-
-    C[bit_to_int[zeros(Int, 2*n)]] = 1
-
-    for u_tuple in Iterators.product(ntuple(_ -> 0:2, n)...)
-        u = collect(u_tuple)
-        a = z3_to_local_symplectic(u)
-        γ = gamma_elementary_p(u, p)
-        C[bit_to_int[a]] = (-1)^γ
-    end
-
-    return C
-end
-
-function all_max_weight_fiducials(n::Int; pauli_info::PauliString=PauliString(n))
-    return Dict(p => max_weight_bloch_vector(n, p; pauli_info=pauli_info) for p in 2:n)
-end
-
+# Seed construction is shared with the dictionary loader and regression tests.
+# See libs/MaxWeightSeed.jl for the explicit modular arithmetic.
 
 # -----------------------------------------------------------------------------
 # Orbit generation and HDF5 saving
@@ -136,6 +69,9 @@ function save_max_weight_orbits_by_p_h5(ns; data_folder="./data")
             filename = joinpath(data_folder, "max_weight_operators_p_$(p)_$(n).h5")
 
             h5open(filename, "w") do file
+                attributes(file)["seed_convention"] = LocalCliffordBloch.MaxWeightSeed.SEED_CONVENTION
+                attributes(file)["orbit_convention"] = LocalCliffordBloch.MaxWeightSeed.ORBIT_CONVENTION
+                attributes(file)["pauli_convention"] = "lexicographic I,X,Y,Z; Tr(P A)"
                 file["data"] = data
                 file["pauli_labels"] = pauli_info.pauli_strings
                 file["p"] = p
@@ -161,4 +97,7 @@ end
 
 data_folder = joinpath(base_dir, "data")
 
-save_max_weight_orbits_by_p_h5(4:4; data_folder=data_folder)
+if abspath(PROGRAM_FILE) == @__FILE__
+    ns = isempty(ARGS) ? (2:4) : parse.(Int, ARGS)
+    save_max_weight_orbits_by_p_h5(ns; data_folder=data_folder)
+end

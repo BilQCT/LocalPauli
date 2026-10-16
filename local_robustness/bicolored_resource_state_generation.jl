@@ -269,6 +269,8 @@ function generate_resource_projectors_pauli(n::Int; save_hdf5::Bool=true)
     if save_hdf5
         h5_file = joinpath(data_folder, "bicolored_resource_projectors_pauli_n$(n).h5")
         h5open(h5_file, "w") do file
+            attributes(file)["state_family"] = "T^n H^U E(G) |+>^n"
+            attributes(file)["pauli_convention"] = "lexicographic I,X,Y,Z; Tr(P rho)"
             file["data"] = M
             file["labels"] = labels
         end
@@ -280,5 +282,8 @@ function generate_resource_projectors_pauli(n::Int; save_hdf5::Bool=true)
     return M, labels
 end
 
-n = 4
-generate_resource_projectors_pauli(n; save_hdf5=true)
+if abspath(PROGRAM_FILE) == @__FILE__
+    for n in (isempty(ARGS) ? (2:4) : parse.(Int, ARGS))
+        generate_resource_projectors_pauli(n; save_hdf5=true)
+    end
+end

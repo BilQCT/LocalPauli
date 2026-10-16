@@ -1,0 +1,1968 @@
+{
+  "passed": true,
+  "numerical_certificates": 278,
+  "exact_small_certificates": 4,
+  "four_independent_improvements": 22,
+  "serialization_changes": [
+    "data/stabilizer_states_4.h5"
+  ],
+  "worst_errors": {
+    "residual": 1.0673840283859093e-13,
+    "dual_violation": 1.247890679678676e-13,
+    "gap": 1.9539925233402755e-14,
+    "reported_error": 4.440892098500626e-16
+  },
+  "checks": [
+    {
+      "key": "n2_s000_D",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s000_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s000_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s000_L1",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s000_L2",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s000_L3",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_S",
+      "residual": 6.123233995736765e-17,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_C",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 2.6645352591003757e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_L1",
+      "residual": 1.1674349118862548e-16,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_L2",
+      "residual": 6.123233995736765e-17,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s001_L3",
+      "residual": 6.123233995736765e-17,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n2_s002_L3",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s000_D",
+      "residual": 6.682154829462661e-15,
+      "dual_violation": 2.531308496145357e-14,
+      "gap": 0.0,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s000_S",
+      "residual": 1.5543122344752192e-15,
+      "dual_violation": 2.220446049250313e-15,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 4.440892098500626e-16
+    },
+    {
+      "key": "n3_s000_C",
+      "residual": 4.551914400963142e-15,
+      "dual_violation": 6.217248937900877e-15,
+      "gap": 1.9984014443252818e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s000_L1",
+      "residual": 1.0325074129013956e-14,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s000_L2",
+      "residual": 1.2337353361147052e-14,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s000_L3",
+      "residual": 3.608224830031759e-16,
+      "dual_violation": 5.773159728050814e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s001_D",
+      "residual": 1.6066516270773353e-15,
+      "dual_violation": 0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s001_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 1.7763568394002505e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s001_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.218847493575595e-15,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s001_L1",
+      "residual": 2.9799572434053426e-15,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s001_L2",
+      "residual": 5.72111802377151e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s001_L3",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 5.728750807065808e-14,
+      "gap": 9.992007221626409e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s002_D",
+      "residual": 1.1796119636642288e-15,
+      "dual_violation": 0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s002_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 3.1086244689504383e-15,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 4.440892098500626e-16
+    },
+    {
+      "key": "n3_s002_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 1.1324274851176597e-14,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s002_L1",
+      "residual": 4.53109771925142e-15,
+      "dual_violation": 3.774758283725532e-15,
+      "gap": 9.992007221626409e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s002_L2",
+      "residual": 6.106226635438361e-16,
+      "dual_violation": 1.8207657603852567e-14,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s002_L3",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 6.661338147750939e-15,
+      "gap": 0.0,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s003_D",
+      "residual": 1.0673840283859093e-13,
+      "dual_violation": 1.1146639167236572e-13,
+      "gap": 1.3322676295501878e-14,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s003_S",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 4.6629367034256575e-14,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s003_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.1094237467877974e-14,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "n3_s003_L1",
+      "residual": 1.8419293867921738e-14,
+      "dual_violation": 1.3322676295501878e-15,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s003_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s003_L3",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 1.0658141036401503e-14,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s004_D",
+      "residual": 1.8318679906315083e-15,
+      "dual_violation": 1.5765166949677223e-14,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s004_S",
+      "residual": 2.8449465006019636e-16,
+      "dual_violation": 2.220446049250313e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s004_C",
+      "residual": 2.901845430614003e-14,
+      "dual_violation": 1.9984014443252818e-15,
+      "gap": 1.9539925233402755e-14,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s004_L1",
+      "residual": 5.218048215738236e-14,
+      "dual_violation": 7.993605777301127e-14,
+      "gap": 3.774758283725532e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s004_L2",
+      "residual": 9.575673587391975e-16,
+      "dual_violation": 8.881784197001252e-15,
+      "gap": 1.5543122344752192e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s004_L3",
+      "residual": 1.6653345369377348e-15,
+      "dual_violation": 2.90878432451791e-14,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s005_D",
+      "residual": 7.396860901565105e-15,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s005_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 3.774758283725532e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s005_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.4424906541753444e-15,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "n3_s005_L1",
+      "residual": 3.462508058049707e-15,
+      "dual_violation": 0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s005_L2",
+      "residual": 1.4726358529118887e-15,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s005_L3",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s006_D",
+      "residual": 2.3939183968479938e-14,
+      "dual_violation": 3.5083047578154947e-14,
+      "gap": 1.9984014443252818e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s006_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 1.1102230246251565e-14,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 4.440892098500626e-16
+    },
+    {
+      "key": "n3_s006_C",
+      "residual": 1.8041124150158794e-15,
+      "dual_violation": 1.0436096431476471e-14,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s006_L1",
+      "residual": 3.635980405647388e-15,
+      "dual_violation": 5.10702591327572e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s006_L2",
+      "residual": 5.562217353372034e-14,
+      "dual_violation": 1.7763568394002505e-14,
+      "gap": 1.865174681370263e-14,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s006_L3",
+      "residual": 5.5067062021407764e-14,
+      "dual_violation": 3.5083047578154947e-14,
+      "gap": 1.354472090042691e-14,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s007_D",
+      "residual": 6.293576770843856e-15,
+      "dual_violation": 0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s007_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s007_C",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 3.774758283725532e-15,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "n3_s007_L1",
+      "residual": 1.4432899320127035e-15,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 1.1102230246251565e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s007_L2",
+      "residual": 3.219646771412954e-15,
+      "dual_violation": 1.247890679678676e-13,
+      "gap": 2.9976021664879227e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s007_L3",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 3.3306690738754696e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s008_D",
+      "residual": 9.509754095304856e-15,
+      "dual_violation": 3.5083047578154947e-14,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 2.220446049250313e-16
+    },
+    {
+      "key": "n3_s008_S",
+      "residual": 6.106226635438361e-16,
+      "dual_violation": 2.886579864025407e-15,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s008_C",
+      "residual": 3.6637359812630166e-15,
+      "dual_violation": 2.930988785010413e-14,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s008_L1",
+      "residual": 8.951867025430715e-14,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.7763568394002505e-14,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s008_L2",
+      "residual": 7.216449660063518e-16,
+      "dual_violation": 1.9984014443252818e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s008_L3",
+      "residual": 1.096345236817342e-15,
+      "dual_violation": 4.218847493575595e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s009_D",
+      "residual": 3.35009797680641e-14,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s009_S",
+      "residual": 2.220446049250313e-15,
+      "dual_violation": 4.884981308350689e-15,
+      "gap": 0.0,
+      "reported_error": 4.440892098500626e-16
+    },
+    {
+      "key": "n3_s009_C",
+      "residual": 0.0,
+      "dual_violation": 1.176836406102666e-14,
+      "gap": 3.3306690738754696e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s009_L1",
+      "residual": 1.9984014443252818e-15,
+      "dual_violation": 5.773159728050814e-15,
+      "gap": 5.551115123125783e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s009_L2",
+      "residual": 5.995204332975845e-15,
+      "dual_violation": 0,
+      "gap": 1.887379141862766e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n3_s009_L3",
+      "residual": 0.0,
+      "dual_violation": 3.552713678800501e-15,
+      "gap": 0.0,
+      "reported_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "n4_s000_D",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s000_S",
+      "residual": 7.771561172376096e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.6645352591003757e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s000_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s000_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s001_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s001_S",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s001_L1",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s001_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s002_D",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s002_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.552713678800501e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s002_L1",
+      "residual": 3.636830773662308e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s002_L2",
+      "residual": 3.636830773662308e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s003_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s003_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s003_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s003_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s004_D",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s004_S",
+      "residual": 1.4432899320127035e-15,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s004_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s004_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s005_D",
+      "residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s005_S",
+      "residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s005_L1",
+      "residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s005_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s006_D",
+      "residual": 1.3877787807814457e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s006_S",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s006_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s006_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s007_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s007_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 1.1102230246251565e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s007_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s007_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s008_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s008_S",
+      "residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.552713678800501e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s008_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s008_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s009_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s009_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 3.9968028886505635e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s009_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.5543122344752192e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s009_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s010_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s010_S",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s010_L1",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s010_L2",
+      "residual": 2.7755575615628914e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s011_D",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s011_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s011_L1",
+      "residual": 3.885780586188048e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s011_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s012_D",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s012_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s012_L1",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s012_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s013_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s013_S",
+      "residual": 1.4432899320127035e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.552713678800501e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s013_L1",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s013_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s014_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s014_S",
+      "residual": 6.123233995736764e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s014_L1",
+      "residual": 2.000102180355122e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s014_L2",
+      "residual": 6.123233995736764e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s015_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s015_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s015_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s015_L2",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s016_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s016_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s016_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s016_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s017_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s017_S",
+      "residual": 2.7755575615628914e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s017_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s017_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s018_D",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s018_S",
+      "residual": 1.4432899320127035e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.1086244689504383e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s018_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s018_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s019_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s019_S",
+      "residual": 7.216449660063518e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.1086244689504383e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s019_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.1102230246251565e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s019_L2",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 1.7763568394002505e-15,
+      "gap": 1.9984014443252818e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s020_D",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s020_S",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s020_L1",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s020_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s021_D",
+      "residual": 3.885780586188048e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s021_S",
+      "residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 5.329070518200751e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s021_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s021_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s022_D",
+      "residual": 1.3877787807814457e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s022_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s022_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 1.3322676295501878e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s022_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s023_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s023_S",
+      "residual": 1.3322676295501878e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s023_L1",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s023_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s024_D",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s024_S",
+      "residual": 1.4432899320127035e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.552713678800501e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s024_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s024_L2",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s025_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s025_S",
+      "residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s025_L1",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s025_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s026_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s026_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s026_L1",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s026_L2",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s027_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s027_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s027_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s027_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s028_D",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s028_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.6645352591003757e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s028_L1",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s028_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s029_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s029_S",
+      "residual": 8.881784197001252e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 3.9968028886505635e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s029_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s029_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s030_D",
+      "residual": 5.551115123125783e-17,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s030_S",
+      "residual": 9.992007221626409e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s030_L1",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s030_L2",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s031_D",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s031_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s031_L1",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s031_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s032_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s032_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s032_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s032_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s033_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s033_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s033_L1",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s033_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s034_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s034_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s034_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s034_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s035_D",
+      "residual": 1.7225464241988328e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s035_S",
+      "residual": 6.123233995736761e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s035_L1",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s035_L2",
+      "residual": 6.123233995736761e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s036_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s036_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.6645352591003757e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s036_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s036_L2",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s037_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s037_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s037_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s037_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s038_D",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s038_S",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.9968028886505635e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s038_L1",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s038_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s039_D",
+      "residual": 2.7755575615628914e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s039_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 1.1102230246251565e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s039_L1",
+      "residual": 5.551115123125783e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s039_L2",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s040_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s040_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s040_L1",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s040_L2",
+      "residual": 1.3322676295501878e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 6.661338147750939e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s041_D",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s041_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.6645352591003757e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s041_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s041_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s042_D",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s042_S",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 1.1102230246251565e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s042_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s042_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s043_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s043_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s043_L1",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s043_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s044_D",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s044_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s044_L1",
+      "residual": 5.551115123125783e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s044_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s045_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s045_S",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s045_L1",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s045_L2",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s046_D",
+      "residual": 8.881784197001252e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 8.881784197001252e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s046_S",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s046_L1",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s046_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s047_D",
+      "residual": 8.881784197001252e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s047_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.7763568394002505e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s047_L1",
+      "residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.1102230246251565e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s047_L2",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s048_D",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s048_S",
+      "residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.6645352591003757e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s048_L1",
+      "residual": 6.106226635438361e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s048_L2",
+      "residual": 1.6653345369377348e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s049_D",
+      "residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s049_S",
+      "residual": 6.661338147750939e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 3.1086244689504383e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s049_L1",
+      "residual": 4.440892098500626e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 1.3322676295501878e-15,
+      "reported_error": 0.0
+    },
+    {
+      "key": "n4_s049_L2",
+      "residual": 5.551115123125783e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "reported_error": 0.0
+    }
+  ],
+  "verified_artifacts_sha256": {
+    "results.json": "589563657a9cab208088ee373353fcbaac73deafe2d06e208eefa691c122ac9b",
+    "certificates.npz": "87826f1a2ddda0def87a54b45f94cb1ba293d89a040c8380d5002614933b63ce",
+    "exact_small.json": "32c0555e01f8bd59eb27159a7cd72631ec1b08111c6c4203e1efa93179dd4b7d"
+  }
+}

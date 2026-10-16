@@ -108,8 +108,8 @@ end
 # Generate for desired n
 # ----------------------------------------------------------------------
 
-data_folder = "./data"
-
-for n in 2:4
-    generate_local_stabilizer_states(n; data_folder=data_folder)
+if abspath(PROGRAM_FILE) == @__FILE__
+    for n in 2:4
+        generate_local_stabilizer_states(n; data_folder=joinpath(base_dir, "data"))
+    end
 end

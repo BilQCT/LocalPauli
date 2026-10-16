@@ -1,3 +1,8 @@
+# Historical E(G) T^U |+> resource convention; NOT the manuscript robustness target.
+# Require an explicit opt-in to prevent accidentally generating publication data.
+if abspath(PROGRAM_FILE) == @__FILE__ && !("--legacy" in ARGS)
+    error("Historical state convention. Use the bicolored manuscript pipeline, or pass --legacy explicitly.")
+end
 using Pkg
 
 base_dir = dirname(@__DIR__)

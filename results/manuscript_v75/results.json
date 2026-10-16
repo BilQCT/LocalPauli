@@ -1,0 +1,9471 @@
+{
+  "schema_version": 1,
+  "conventions": {
+    "seed_convention": "termwise_product_mod3_sum_mod2_v1",
+    "orbit_convention": "proper_local_clifford",
+    "pauli_convention": "lexicographic I,X,Y,Z; Tr(P A)",
+    "state_family": "T^n H^U E(G) |+>^n"
+  },
+  "rows": [
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n2_s000_D",
+      "value": 1.2071067811865475,
+      "primal_l1": 1.2071067811865475,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n2_s000_S",
+      "value": 1.7475468957064282,
+      "primal_l1": 1.7475468957064282,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n2_s000_C",
+      "value": 1.0,
+      "primal_l1": 0.9999999999999999,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n2_s000_L1",
+      "value": 1.138071187457698,
+      "primal_l1": 1.1380711874576983,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 4.440892098500626e-16,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n2_s000_L2",
+      "value": 1.1380711874576983,
+      "primal_l1": 1.1380711874576983,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n2_s000_L3",
+      "value": 1.0,
+      "primal_l1": 1.0,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n2_s001_D",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999997,
+      "primal_residual": 1.3877787807814457e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n2_s001_S",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 6.123233995736765e-17,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n2_s001_C",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 2.6645352591003757e-15,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n2_s001_L1",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 1.1674349118862548e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n2_s001_L2",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 6.123233995736765e-17,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n2_s001_L3",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 6.123233995736765e-17,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n2_s002_D",
+      "value": 1.207106781186547,
+      "primal_l1": 1.207106781186547,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n2_s002_S",
+      "value": 1.7475468957064275,
+      "primal_l1": 1.7475468957064275,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "C",
+      "certificate_key": "n2_s002_C",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n2_s002_L1",
+      "value": 1.1380711874576976,
+      "primal_l1": 1.1380711874576979,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n2_s002_L2",
+      "value": 1.1380711874576976,
+      "primal_l1": 1.1380711874576983,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 6.661338147750939e-16
+    },
+    {
+      "n": 2,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L3",
+      "certificate_key": "n2_s002_L3",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999998,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s000_D",
+      "value": 1.5606601717798205,
+      "primal_l1": 1.5606601717798205,
+      "primal_residual": 6.654399253847032e-15,
+      "dual_violation": 2.531308496145357e-14,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s000_S",
+      "value": 2.218951416497459,
+      "primal_l1": 2.2189514164974606,
+      "primal_residual": 1.7763568394002505e-15,
+      "dual_violation": 2.220446049250313e-15,
+      "duality_gap": 1.7763568394002505e-15
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s000_C",
+      "value": 1.2828427124746196,
+      "primal_l1": 1.2828427124746218,
+      "primal_residual": 4.551914400963142e-15,
+      "dual_violation": 6.217248937900877e-15,
+      "duality_gap": 2.220446049250313e-15
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s000_L1",
+      "value": 1.3106601717798212,
+      "primal_l1": 1.3106601717798223,
+      "primal_residual": 1.0297318553398327e-14,
+      "dual_violation": 8.881784197001252e-16,
+      "duality_gap": 1.1102230246251565e-15
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s000_L2",
+      "value": 1.310660171779821,
+      "primal_l1": 1.3106601717798223,
+      "primal_residual": 1.2448375663609568e-14,
+      "dual_violation": 1.1102230246251565e-15,
+      "duality_gap": 1.3322676295501878e-15
+    },
+    {
+      "n": 3,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s000_L3",
+      "value": 1.1553300858899105,
+      "primal_l1": 1.1553300858899105,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 5.773159728050814e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s001_D",
+      "value": 1.7071067811865468,
+      "primal_l1": 1.7071067811865466,
+      "primal_residual": 1.6344072026929642e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s001_S",
+      "value": 1.414213562373094,
+      "primal_l1": 1.4142135623730945,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 1.7763568394002505e-15,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s001_C",
+      "value": 0.9999999999999994,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.218847493575595e-15,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s001_L1",
+      "value": 1.4142135623730945,
+      "primal_l1": 1.4142135623730947,
+      "primal_residual": 2.9209766452221312e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s001_L2",
+      "value": 1.4142135623730945,
+      "primal_l1": 1.4142135623730947,
+      "primal_residual": 5.7419347054832315e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s001_L3",
+      "value": 0.9999999999999986,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 5.728750807065808e-14,
+      "duality_gap": 9.992007221626409e-16
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s002_D",
+      "value": 1.4999999999999996,
+      "primal_l1": 1.4999999999999991,
+      "primal_residual": 1.1518563880486e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s002_S",
+      "value": 2.1999999999999993,
+      "primal_l1": 2.1999999999999993,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 3.1086244689504383e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s002_C",
+      "value": 0.9999999999999994,
+      "primal_l1": 0.9999999999999997,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 1.1324274851176597e-14,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s002_L1",
+      "value": 0.9999999999999993,
+      "primal_l1": 0.9999999999999983,
+      "primal_residual": 4.538036613155327e-15,
+      "dual_violation": 3.774758283725532e-15,
+      "duality_gap": 9.992007221626409e-16
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s002_L2",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999994,
+      "primal_residual": 6.245004513516506e-16,
+      "dual_violation": 1.8207657603852567e-14,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 3,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s002_L3",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 6.661338147750939e-15,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s003_D",
+      "value": 1.4142135623730976,
+      "primal_l1": 1.4142135623730996,
+      "primal_residual": 1.0480505352461478e-13,
+      "dual_violation": 1.1146639167236572e-13,
+      "duality_gap": 1.9984014443252818e-15
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s003_S",
+      "value": 1.414213562373094,
+      "primal_l1": 1.4142135623730943,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 4.6629367034256575e-14,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s003_C",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.1094237467877974e-14,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s003_L1",
+      "value": 1.207106781186547,
+      "primal_l1": 1.2071067811865468,
+      "primal_residual": 1.8419293867921738e-14,
+      "dual_violation": 1.3322676295501878e-15,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s003_L2",
+      "value": 1.2071067811865468,
+      "primal_l1": 1.207106781186547,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s003_L3",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 1.0658141036401503e-14,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n3_s004_D",
+      "value": 1.5606601717798203,
+      "primal_l1": 1.5606601717798199,
+      "primal_residual": 2.1094237467877974e-15,
+      "dual_violation": 1.5765166949677223e-14,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n3_s004_S",
+      "value": 2.218951416497459,
+      "primal_l1": 2.2189514164974593,
+      "primal_residual": 2.8449465006019636e-16,
+      "dual_violation": 2.220446049250313e-15,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "C",
+      "certificate_key": "n3_s004_C",
+      "value": 1.2828427124746187,
+      "primal_l1": 1.2828427124747626,
+      "primal_residual": 7.500597365428519e-14,
+      "dual_violation": 1.9984014443252818e-15,
+      "duality_gap": 1.438849039914203e-13
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n3_s004_L1",
+      "value": 1.3106601717798232,
+      "primal_l1": 1.310660171779827,
+      "primal_residual": 5.21249710061511e-14,
+      "dual_violation": 7.993605777301127e-14,
+      "duality_gap": 3.774758283725532e-15
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n3_s004_L2",
+      "value": 1.3106601717798219,
+      "primal_l1": 1.3106601717798205,
+      "primal_residual": 9.506284648352903e-16,
+      "dual_violation": 8.881784197001252e-15,
+      "duality_gap": 1.3322676295501878e-15
+    },
+    {
+      "n": 3,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L3",
+      "certificate_key": "n3_s004_L3",
+      "value": 1.1553300858899107,
+      "primal_l1": 1.1553300858899105,
+      "primal_residual": 1.6653345369377348e-15,
+      "dual_violation": 2.90878432451791e-14,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n3_s005_D",
+      "value": 1.7071067811865464,
+      "primal_l1": 1.7071067811865466,
+      "primal_residual": 7.33441085642994e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n3_s005_S",
+      "value": 1.414213562373094,
+      "primal_l1": 1.414213562373094,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 3.774758283725532e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "C",
+      "certificate_key": "n3_s005_C",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.4424906541753444e-15,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n3_s005_L1",
+      "value": 1.4142135623730936,
+      "primal_l1": 1.4142135623730945,
+      "primal_residual": 3.479855292809475e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 8.881784197001252e-16
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n3_s005_L2",
+      "value": 1.4142135623730938,
+      "primal_l1": 1.4142135623730943,
+      "primal_residual": 1.469166405959935e-15,
+      "dual_violation": 8.881784197001252e-16,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L3",
+      "certificate_key": "n3_s005_L3",
+      "value": 0.9999999999999993,
+      "primal_l1": 0.9999999999999991,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s006_D",
+      "value": 1.7374368670764553,
+      "primal_l1": 1.737436867076453,
+      "primal_residual": 2.388367281724868e-14,
+      "dual_violation": 3.5083047578154947e-14,
+      "duality_gap": 2.220446049250313e-15
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s006_S",
+      "value": 2.21895141649746,
+      "primal_l1": 2.21895141649746,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 1.1102230246251565e-14,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s006_C",
+      "value": 1.282842712474619,
+      "primal_l1": 1.2828427124746187,
+      "primal_residual": 1.7763568394002505e-15,
+      "dual_violation": 1.0436096431476471e-14,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s006_L1",
+      "value": 1.2071067811865472,
+      "primal_l1": 1.207106781186548,
+      "primal_residual": 3.622102617839573e-15,
+      "dual_violation": 5.10702591327572e-15,
+      "duality_gap": 6.661338147750939e-16
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s006_L2",
+      "value": 1.2071067811865466,
+      "primal_l1": 1.2071067811866714,
+      "primal_residual": 8.201772594418344e-14,
+      "dual_violation": 1.7763568394002505e-14,
+      "duality_gap": 1.247890679678676e-13
+    },
+    {
+      "n": 3,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s006_L3",
+      "value": 1.1363961030678928,
+      "primal_l1": 1.1363961030678793,
+      "primal_residual": 5.5011550870176507e-14,
+      "dual_violation": 3.5083047578154947e-14,
+      "duality_gap": 1.354472090042691e-14
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n3_s007_D",
+      "value": 1.4999999999999996,
+      "primal_l1": 1.4999999999999991,
+      "primal_residual": 6.3629657098829284e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n3_s007_S",
+      "value": 2.1999999999999993,
+      "primal_l1": 2.1999999999999993,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "C",
+      "certificate_key": "n3_s007_C",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 3.774758283725532e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n3_s007_L1",
+      "value": 0.9999999999999998,
+      "primal_l1": 0.9999999999999999,
+      "primal_residual": 1.4432899320127035e-15,
+      "dual_violation": 1.5543122344752192e-15,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n3_s007_L2",
+      "value": 1.0000000000000024,
+      "primal_l1": 0.9999999999999994,
+      "primal_residual": 3.219646771412954e-15,
+      "dual_violation": 1.247890679678676e-13,
+      "duality_gap": 2.9976021664879227e-15
+    },
+    {
+      "n": 3,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L3",
+      "certificate_key": "n3_s007_L3",
+      "value": 0.9999999999999997,
+      "primal_l1": 0.9999999999999992,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 3.3306690738754696e-15,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n3_s008_D",
+      "value": 1.7374368670764542,
+      "primal_l1": 1.7374368670764557,
+      "primal_residual": 9.537509670920485e-15,
+      "dual_violation": 3.5083047578154947e-14,
+      "duality_gap": 1.5543122344752192e-15
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n3_s008_S",
+      "value": 2.2189514164974593,
+      "primal_l1": 2.2189514164974584,
+      "primal_residual": 6.106226635438361e-16,
+      "dual_violation": 2.886579864025407e-15,
+      "duality_gap": 8.881784197001252e-16
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "C",
+      "certificate_key": "n3_s008_C",
+      "value": 1.2828427124746187,
+      "primal_l1": 1.2828427124746173,
+      "primal_residual": 3.6637359812630166e-15,
+      "dual_violation": 2.930988785010413e-14,
+      "duality_gap": 1.3322676295501878e-15
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n3_s008_L1",
+      "value": 1.207106781186547,
+      "primal_l1": 1.2071067811866885,
+      "primal_residual": 9.550693569337909e-14,
+      "dual_violation": 2.220446049250313e-16,
+      "duality_gap": 1.4144241333724494e-13
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n3_s008_L2",
+      "value": 1.207106781186547,
+      "primal_l1": 1.2071067811865472,
+      "primal_residual": 7.216449660063518e-16,
+      "dual_violation": 1.9984014443252818e-15,
+      "duality_gap": 2.220446049250313e-16
+    },
+    {
+      "n": 3,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L3",
+      "certificate_key": "n3_s008_L3",
+      "value": 1.1363961030678922,
+      "primal_l1": 1.1363961030678922,
+      "primal_residual": 1.1102230246251565e-15,
+      "dual_violation": 4.218847493575595e-15,
+      "duality_gap": 0.0
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n3_s009_D",
+      "value": 1.4999999999999987,
+      "primal_l1": 1.4999999999999978,
+      "primal_residual": 3.351485755587191e-14,
+      "dual_violation": 6.661338147750939e-16,
+      "duality_gap": 8.881784197001252e-16
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n3_s009_S",
+      "value": 2.1999999999999984,
+      "primal_l1": 2.199999999999998,
+      "primal_residual": 2.4424906541753444e-15,
+      "dual_violation": 4.884981308350689e-15,
+      "duality_gap": 4.440892098500626e-16
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "C",
+      "certificate_key": "n3_s009_C",
+      "value": 0.9999999999999997,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 0.0,
+      "dual_violation": 1.176836406102666e-14,
+      "duality_gap": 3.3306690738754696e-16
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n3_s009_L1",
+      "value": 0.9999999999999989,
+      "primal_l1": 0.9999999999999983,
+      "primal_residual": 1.9984014443252818e-15,
+      "dual_violation": 5.773159728050814e-15,
+      "duality_gap": 5.551115123125783e-16
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n3_s009_L2",
+      "value": 0.9999999999999993,
+      "primal_l1": 0.9999999999999974,
+      "primal_residual": 5.995204332975845e-15,
+      "dual_violation": 0.0,
+      "duality_gap": 1.887379141862766e-15
+    },
+    {
+      "n": 3,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L3",
+      "certificate_key": "n3_s009_L3",
+      "value": 0.9999999999999994,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 0.0,
+      "dual_violation": 3.552713678800501e-15,
+      "duality_gap": 1.1102230246251565e-16
+    },
+    {
+      "n": 4,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s000_D",
+      "orbit": "clifford",
+      "value": 2.010327766287466,
+      "primal_l1": 2.0103277662874657,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s000_S",
+      "orbit": "clifford",
+      "value": 2.86274169979695,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 7.771561172376096e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.6645352591003757e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s000_L1",
+      "orbit": "clifford",
+      "value": 1.445431759768233,
+      "primal_l1": 1.4454317597682327,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 10,
+      "reduced_columns": 5485
+    },
+    {
+      "n": 4,
+      "record_id": 0,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s000_L2",
+      "orbit": "clifford",
+      "value": 1.445431759768233,
+      "primal_l1": 1.4454317597682333,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 6562
+    },
+    {
+      "n": 4,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s001_D",
+      "orbit": "clifford",
+      "value": 1.914213562373095,
+      "primal_l1": 1.914213562373095,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s001_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064286,
+      "primal_l1": 1.7475468957064282,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s001_L1",
+      "orbit": "clifford",
+      "value": 1.4571067811865475,
+      "primal_l1": 1.4571067811865472,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 2715
+    },
+    {
+      "n": 4,
+      "record_id": 1,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s001_L2",
+      "orbit": "clifford",
+      "value": 1.414213562373095,
+      "primal_l1": 1.414213562373095,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 3198
+    },
+    {
+      "n": 4,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s002_D",
+      "orbit": "clifford",
+      "value": 1.583333333333333,
+      "primal_l1": 1.583333333333333,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "support_size": 11,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s002_S",
+      "orbit": "clifford",
+      "value": 2.555555555555552,
+      "primal_l1": 2.5555555555555554,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.552713678800501e-15,
+      "support_size": 5,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s002_L1",
+      "orbit": "clifford",
+      "value": 1.1956521739130432,
+      "primal_l1": 1.1956521739130435,
+      "primal_residual": 3.636830773662308e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 16,
+      "reduced_columns": 5670
+    },
+    {
+      "n": 4,
+      "record_id": 2,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s002_L2",
+      "orbit": "clifford",
+      "value": 1.1956521739130432,
+      "primal_l1": 1.1956521739130435,
+      "primal_residual": 3.636830773662308e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 16,
+      "reduced_columns": 6273
+    },
+    {
+      "n": 4,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s003_D",
+      "orbit": "clifford",
+      "value": 2.4142135623730945,
+      "primal_l1": 2.4142135623730945,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 14,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s003_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064288,
+      "primal_l1": 1.7475468957064275,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 3,
+      "reduced_columns": 395
+    },
+    {
+      "n": 4,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s003_L1",
+      "orbit": "clifford",
+      "value": 1.3535533905932733,
+      "primal_l1": 1.3535533905932733,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 1811
+    },
+    {
+      "n": 4,
+      "record_id": 3,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s003_L2",
+      "orbit": "clifford",
+      "value": 1.3535533905932735,
+      "primal_l1": 1.353553390593273,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 2206
+    },
+    {
+      "n": 4,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s004_D",
+      "orbit": "clifford",
+      "value": 2.0103277662874666,
+      "primal_l1": 2.010327766287465,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s004_S",
+      "orbit": "clifford",
+      "value": 2.86274169979695,
+      "primal_l1": 2.8627416997969517,
+      "primal_residual": 1.4432899320127035e-15,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s004_L1",
+      "orbit": "clifford",
+      "value": 1.445431759768233,
+      "primal_l1": 1.4454317597682325,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 5485
+    },
+    {
+      "n": 4,
+      "record_id": 4,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s004_L2",
+      "orbit": "clifford",
+      "value": 1.4454317597682331,
+      "primal_l1": 1.4454317597682325,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 10,
+      "reduced_columns": 6562
+    },
+    {
+      "n": 4,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s005_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999996,
+      "primal_l1": 1.9999999999999991,
+      "primal_residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s005_S",
+      "orbit": "clifford",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 1,
+      "reduced_columns": 307
+    },
+    {
+      "n": 4,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s005_L1",
+      "orbit": "clifford",
+      "value": 1.4999999999999998,
+      "primal_l1": 1.4999999999999996,
+      "primal_residual": 1.2246467991473525e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 6,
+      "reduced_columns": 810
+    },
+    {
+      "n": 4,
+      "record_id": 5,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s005_L2",
+      "orbit": "clifford",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 1,
+      "reduced_columns": 1117
+    },
+    {
+      "n": 4,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s006_D",
+      "orbit": "clifford",
+      "value": 1.914213562373094,
+      "primal_l1": 1.914213562373094,
+      "primal_residual": 1.3877787807814457e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s006_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064262,
+      "primal_l1": 1.747546895706428,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s006_L1",
+      "orbit": "clifford",
+      "value": 1.457106781186547,
+      "primal_l1": 1.457106781186547,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 11,
+      "reduced_columns": 2715
+    },
+    {
+      "n": 4,
+      "record_id": 6,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s006_L2",
+      "orbit": "clifford",
+      "value": 1.4142135623730943,
+      "primal_l1": 1.4142135623730945,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 3198
+    },
+    {
+      "n": 4,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s007_D",
+      "orbit": "clifford",
+      "value": 2.414213562373094,
+      "primal_l1": 2.414213562373093,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "support_size": 12,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s007_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064262,
+      "primal_l1": 1.7475468957064273,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 1.1102230246251565e-15,
+      "support_size": 3,
+      "reduced_columns": 395
+    },
+    {
+      "n": 4,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s007_L1",
+      "orbit": "clifford",
+      "value": 1.3535533905932726,
+      "primal_l1": 1.3535533905932728,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 10,
+      "reduced_columns": 1811
+    },
+    {
+      "n": 4,
+      "record_id": 7,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s007_L2",
+      "orbit": "clifford",
+      "value": 1.3535533905932728,
+      "primal_l1": 1.3535533905932728,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 2206
+    },
+    {
+      "n": 4,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s008_D",
+      "orbit": "clifford",
+      "value": 2.164213562373094,
+      "primal_l1": 2.164213562373095,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "support_size": 15,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s008_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.552713678800501e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s008_L1",
+      "orbit": "clifford",
+      "value": 1.957106781186547,
+      "primal_l1": 1.9571067811865472,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 15,
+      "reduced_columns": 775
+    },
+    {
+      "n": 4,
+      "record_id": 8,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s008_L2",
+      "orbit": "clifford",
+      "value": 1.957106781186547,
+      "primal_l1": 1.9571067811865472,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 15,
+      "reduced_columns": 1852
+    },
+    {
+      "n": 4,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s009_D",
+      "orbit": "clifford",
+      "value": 1.9874368670764577,
+      "primal_l1": 1.9874368670764577,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 12,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s009_S",
+      "orbit": "clifford",
+      "value": 2.800609665440983,
+      "primal_l1": 2.800609665440987,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 3.9968028886505635e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s009_L1",
+      "orbit": "clifford",
+      "value": 1.804737854124366,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.5543122344752192e-15,
+      "support_size": 14,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 9,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s009_L2",
+      "orbit": "clifford",
+      "value": 1.8047378541243662,
+      "primal_l1": 1.8047378541243648,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 10,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s010_D",
+      "orbit": "clifford",
+      "value": 2.2071067811865475,
+      "primal_l1": 2.207106781186547,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 10,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s010_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064288,
+      "primal_l1": 1.7475468957064282,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 10,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s010_L1",
+      "orbit": "clifford",
+      "value": 1.7071067811865475,
+      "primal_l1": 1.7071067811865472,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 435
+    },
+    {
+      "n": 4,
+      "record_id": 10,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s010_L2",
+      "orbit": "clifford",
+      "value": 1.7071067811865475,
+      "primal_l1": 1.707106781186547,
+      "primal_residual": 2.7755575615628914e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 9,
+      "reduced_columns": 918
+    },
+    {
+      "n": 4,
+      "record_id": 11,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s011_D",
+      "orbit": "clifford",
+      "value": 1.8106601717798207,
+      "primal_l1": 1.810660171779821,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 11,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s011_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064273,
+      "primal_l1": 1.747546895706428,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 387
+    },
+    {
+      "n": 4,
+      "record_id": 11,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s011_L1",
+      "orbit": "clifford",
+      "value": 1.810660171779821,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 3.885780586188048e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 541
+    },
+    {
+      "n": 4,
+      "record_id": 11,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s011_L2",
+      "orbit": "clifford",
+      "value": 1.4714045207910311,
+      "primal_l1": 1.4714045207910311,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 928
+    },
+    {
+      "n": 4,
+      "record_id": 12,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s012_D",
+      "orbit": "clifford",
+      "value": 2.1642135623730936,
+      "primal_l1": 2.164213562373094,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 12,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s012_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.86274169979695,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 12,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s012_L1",
+      "orbit": "clifford",
+      "value": 1.9571067811865466,
+      "primal_l1": 1.9571067811865468,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 15,
+      "reduced_columns": 775
+    },
+    {
+      "n": 4,
+      "record_id": 12,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s012_L2",
+      "orbit": "clifford",
+      "value": 1.9571067811865461,
+      "primal_l1": 1.9571067811865468,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 14,
+      "reduced_columns": 1852
+    },
+    {
+      "n": 4,
+      "record_id": 13,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s013_D",
+      "orbit": "clifford",
+      "value": 1.560660171779821,
+      "primal_l1": 1.5606601717798205,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 8,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 13,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s013_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 1.4432899320127035e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.552713678800501e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 13,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s013_L1",
+      "orbit": "clifford",
+      "value": 1.5606601717798212,
+      "primal_l1": 1.5606601717798205,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 8,
+      "reduced_columns": 1101
+    },
+    {
+      "n": 4,
+      "record_id": 13,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s013_L2",
+      "orbit": "clifford",
+      "value": 1.5606601717798205,
+      "primal_l1": 1.5606601717798205,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 8,
+      "reduced_columns": 2178
+    },
+    {
+      "n": 4,
+      "record_id": 14,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s014_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999991,
+      "primal_l1": 1.9999999999999991,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 8,
+      "reduced_columns": 128
+    },
+    {
+      "n": 4,
+      "record_id": 14,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s014_S",
+      "orbit": "clifford",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 6.123233995736764e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 1,
+      "reduced_columns": 323
+    },
+    {
+      "n": 4,
+      "record_id": 14,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s014_L1",
+      "orbit": "clifford",
+      "value": 1.9999999999999993,
+      "primal_l1": 1.9999999999999991,
+      "primal_residual": 2.000102180355122e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 258
+    },
+    {
+      "n": 4,
+      "record_id": 14,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        2
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s014_L2",
+      "orbit": "clifford",
+      "value": 0.9999999999999996,
+      "primal_l1": 0.9999999999999996,
+      "primal_residual": 6.123233995736764e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 1,
+      "reduced_columns": 581
+    },
+    {
+      "n": 4,
+      "record_id": 15,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s015_D",
+      "orbit": "clifford",
+      "value": 2.207106781186547,
+      "primal_l1": 2.2071067811865466,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 15,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s015_S",
+      "orbit": "clifford",
+      "value": 1.747546895706428,
+      "primal_l1": 1.7475468957064275,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 15,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s015_L1",
+      "orbit": "clifford",
+      "value": 1.7071067811865468,
+      "primal_l1": 1.7071067811865468,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 435
+    },
+    {
+      "n": 4,
+      "record_id": 15,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s015_L2",
+      "orbit": "clifford",
+      "value": 1.707106781186547,
+      "primal_l1": 1.7071067811865472,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 918
+    },
+    {
+      "n": 4,
+      "record_id": 16,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s016_D",
+      "orbit": "clifford",
+      "value": 1.9874368670764564,
+      "primal_l1": 1.987436867076457,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 16,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s016_S",
+      "orbit": "clifford",
+      "value": 2.8006096654409864,
+      "primal_l1": 2.8006096654409856,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 16,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s016_L1",
+      "orbit": "clifford",
+      "value": 1.804737854124365,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 14,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 16,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s016_L2",
+      "orbit": "clifford",
+      "value": 1.8047378541243648,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 17,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s017_D",
+      "orbit": "clifford",
+      "value": 2.1642135623730927,
+      "primal_l1": 2.164213562373094,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 17,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s017_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.8627416997969495,
+      "primal_residual": 2.7755575615628914e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 17,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s017_L1",
+      "orbit": "clifford",
+      "value": 1.9571067811865461,
+      "primal_l1": 1.9571067811865461,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 13,
+      "reduced_columns": 775
+    },
+    {
+      "n": 4,
+      "record_id": 17,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s017_L2",
+      "orbit": "clifford",
+      "value": 1.9571067811865457,
+      "primal_l1": 1.9571067811865461,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 14,
+      "reduced_columns": 1852
+    },
+    {
+      "n": 4,
+      "record_id": 18,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s018_D",
+      "orbit": "clifford",
+      "value": 2.1124368670764575,
+      "primal_l1": 2.1124368670764584,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 18,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s018_S",
+      "orbit": "clifford",
+      "value": 2.862741699796951,
+      "primal_l1": 2.862741699796954,
+      "primal_residual": 1.4432899320127035e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.1086244689504383e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 18,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s018_L1",
+      "orbit": "clifford",
+      "value": 1.935660171779821,
+      "primal_l1": 1.9356601717798214,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 13,
+      "reduced_columns": 619
+    },
+    {
+      "n": 4,
+      "record_id": 18,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s018_L2",
+      "orbit": "clifford",
+      "value": 1.9135827963072973,
+      "primal_l1": 1.913582796307298,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 1696
+    },
+    {
+      "n": 4,
+      "record_id": 19,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s019_D",
+      "orbit": "clifford",
+      "value": 1.9874368670764577,
+      "primal_l1": 1.9874368670764577,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 12,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 19,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s019_S",
+      "orbit": "clifford",
+      "value": 2.8006096654409824,
+      "primal_l1": 2.8006096654409856,
+      "primal_residual": 7.216449660063518e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.1086244689504383e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 19,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s019_L1",
+      "orbit": "clifford",
+      "value": 1.804737854124366,
+      "primal_l1": 1.8047378541243648,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.1102230246251565e-15,
+      "support_size": 13,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 19,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s019_L2",
+      "orbit": "clifford",
+      "value": 1.8047378541243664,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 1.7763568394002505e-15,
+      "gap": 1.9984014443252818e-15,
+      "support_size": 13,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 20,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s020_D",
+      "orbit": "clifford",
+      "value": 2.1642135623730954,
+      "primal_l1": 2.164213562373095,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 20,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s020_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064288,
+      "primal_l1": 1.7475468957064282,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 20,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s020_L1",
+      "orbit": "clifford",
+      "value": 2.1642135623730945,
+      "primal_l1": 2.164213562373095,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 13,
+      "reduced_columns": 489
+    },
+    {
+      "n": 4,
+      "record_id": 20,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s020_L2",
+      "orbit": "clifford",
+      "value": 1.5303300858899107,
+      "primal_l1": 1.5303300858899105,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 972
+    },
+    {
+      "n": 4,
+      "record_id": 21,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s021_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999996,
+      "primal_l1": 1.9999999999999991,
+      "primal_residual": 3.885780586188048e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 21,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s021_S",
+      "orbit": "clifford",
+      "value": 2.555555555555551,
+      "primal_l1": 2.5555555555555562,
+      "primal_residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 5.329070518200751e-15,
+      "support_size": 6,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 21,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s021_L1",
+      "orbit": "clifford",
+      "value": 1.7272727272727266,
+      "primal_l1": 1.7272727272727268,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 518
+    },
+    {
+      "n": 4,
+      "record_id": 21,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        3
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s021_L2",
+      "orbit": "clifford",
+      "value": 1.7272727272727268,
+      "primal_l1": 1.7272727272727268,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 0.0,
+      "support_size": 7,
+      "reduced_columns": 1121
+    },
+    {
+      "n": 4,
+      "record_id": 22,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s022_D",
+      "orbit": "clifford",
+      "value": 1.8106601717798207,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 1.3877787807814457e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 10,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 22,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s022_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064273,
+      "primal_l1": 1.747546895706428,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 387
+    },
+    {
+      "n": 4,
+      "record_id": 22,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s022_L1",
+      "orbit": "clifford",
+      "value": 1.8106601717798205,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 1.3322676295501878e-15,
+      "gap": 0.0,
+      "support_size": 13,
+      "reduced_columns": 541
+    },
+    {
+      "n": 4,
+      "record_id": 22,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s022_L2",
+      "orbit": "clifford",
+      "value": 1.471404520791031,
+      "primal_l1": 1.4714045207910311,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 928
+    },
+    {
+      "n": 4,
+      "record_id": 23,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s023_D",
+      "orbit": "clifford",
+      "value": 2.112436867076457,
+      "primal_l1": 2.1124368670764575,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 23,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s023_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969495,
+      "primal_l1": 2.862741699796949,
+      "primal_residual": 1.3322676295501878e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 23,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s023_L1",
+      "orbit": "clifford",
+      "value": 1.9356601717798203,
+      "primal_l1": 1.9356601717798205,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 14,
+      "reduced_columns": 619
+    },
+    {
+      "n": 4,
+      "record_id": 23,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s023_L2",
+      "orbit": "clifford",
+      "value": 1.913582796307297,
+      "primal_l1": 1.9135827963072969,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 1696
+    },
+    {
+      "n": 4,
+      "record_id": 24,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s024_D",
+      "orbit": "clifford",
+      "value": 1.8624368670764573,
+      "primal_l1": 1.8624368670764575,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 14,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 24,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s024_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969495,
+      "primal_l1": 2.862741699796953,
+      "primal_residual": 1.4432899320127035e-15,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 3.552713678800501e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 24,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s024_L1",
+      "orbit": "clifford",
+      "value": 1.7374368670764573,
+      "primal_l1": 1.7374368670764575,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 10,
+      "reduced_columns": 501
+    },
+    {
+      "n": 4,
+      "record_id": 24,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s024_L2",
+      "orbit": "clifford",
+      "value": 1.7148554861068588,
+      "primal_l1": 1.7148554861068586,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 1578
+    },
+    {
+      "n": 4,
+      "record_id": 25,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s025_D",
+      "orbit": "clifford",
+      "value": 2.1124368670764566,
+      "primal_l1": 2.112436867076457,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 25,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s025_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969486,
+      "primal_l1": 2.8627416997969504,
+      "primal_residual": 1.1102230246251565e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 25,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s025_L1",
+      "orbit": "clifford",
+      "value": 1.9356601717798205,
+      "primal_l1": 1.9356601717798203,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 619
+    },
+    {
+      "n": 4,
+      "record_id": 25,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s025_L2",
+      "orbit": "clifford",
+      "value": 1.913582796307297,
+      "primal_l1": 1.9135827963072969,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 1696
+    },
+    {
+      "n": 4,
+      "record_id": 26,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s026_D",
+      "orbit": "clifford",
+      "value": 2.164213562373094,
+      "primal_l1": 2.164213562373094,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 12,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 26,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s026_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064284,
+      "primal_l1": 1.7475468957064277,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 26,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s026_L1",
+      "orbit": "clifford",
+      "value": 2.164213562373094,
+      "primal_l1": 2.1642135623730936,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 13,
+      "reduced_columns": 489
+    },
+    {
+      "n": 4,
+      "record_id": 26,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s026_L2",
+      "orbit": "clifford",
+      "value": 1.5303300858899107,
+      "primal_l1": 1.53033008588991,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 12,
+      "reduced_columns": 972
+    },
+    {
+      "n": 4,
+      "record_id": 27,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s027_D",
+      "orbit": "clifford",
+      "value": 1.9874368670764566,
+      "primal_l1": 1.9874368670764573,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 27,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s027_S",
+      "orbit": "clifford",
+      "value": 2.8006096654409847,
+      "primal_l1": 2.8006096654409864,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 27,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s027_L1",
+      "orbit": "clifford",
+      "value": 1.8047378541243653,
+      "primal_l1": 1.804737854124364,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 14,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 27,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s027_L2",
+      "orbit": "clifford",
+      "value": 1.8047378541243653,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 28,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s028_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999996,
+      "primal_l1": 1.999999999999999,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 11,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 28,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s028_S",
+      "orbit": "clifford",
+      "value": 2.5555555555555514,
+      "primal_l1": 2.555555555555554,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.6645352591003757e-15,
+      "support_size": 5,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 28,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s028_L1",
+      "orbit": "clifford",
+      "value": 1.727272727272726,
+      "primal_l1": 1.7272727272727266,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 7,
+      "reduced_columns": 518
+    },
+    {
+      "n": 4,
+      "record_id": 28,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s028_L2",
+      "orbit": "clifford",
+      "value": 1.7272727272727262,
+      "primal_l1": 1.727272727272726,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 7,
+      "reduced_columns": 1121
+    },
+    {
+      "n": 4,
+      "record_id": 29,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s029_D",
+      "orbit": "clifford",
+      "value": 2.1124368670764566,
+      "primal_l1": 2.1124368670764566,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 16,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 29,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s029_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969486,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 8.881784197001252e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 3.9968028886505635e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 29,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s029_L1",
+      "orbit": "clifford",
+      "value": 1.9356601717798196,
+      "primal_l1": 1.93566017177982,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 13,
+      "reduced_columns": 619
+    },
+    {
+      "n": 4,
+      "record_id": 29,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s029_L2",
+      "orbit": "clifford",
+      "value": 1.9135827963072962,
+      "primal_l1": 1.9135827963072964,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 1696
+    },
+    {
+      "n": 4,
+      "record_id": 30,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s030_D",
+      "orbit": "clifford",
+      "value": 1.5606601717798214,
+      "primal_l1": 1.5606601717798212,
+      "primal_residual": 5.551115123125783e-17,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 30,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s030_S",
+      "orbit": "clifford",
+      "value": 2.86274169979695,
+      "primal_l1": 2.862741699796952,
+      "primal_residual": 9.992007221626409e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 30,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s030_L1",
+      "orbit": "clifford",
+      "value": 1.5606601717798212,
+      "primal_l1": 1.5606601717798212,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 8,
+      "reduced_columns": 1101
+    },
+    {
+      "n": 4,
+      "record_id": 30,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s030_L2",
+      "orbit": "clifford",
+      "value": 1.5606601717798205,
+      "primal_l1": 1.5606601717798212,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 8,
+      "reduced_columns": 2178
+    },
+    {
+      "n": 4,
+      "record_id": 31,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s031_D",
+      "orbit": "clifford",
+      "value": 1.987436867076457,
+      "primal_l1": 1.987436867076458,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "support_size": 14,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 31,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s031_S",
+      "orbit": "clifford",
+      "value": 2.800609665440986,
+      "primal_l1": 2.8006096654409873,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 31,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s031_L1",
+      "orbit": "clifford",
+      "value": 1.8047378541243653,
+      "primal_l1": 1.8047378541243646,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 31,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s031_L2",
+      "orbit": "clifford",
+      "value": 1.804737854124365,
+      "primal_l1": 1.8047378541243646,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 32,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s032_D",
+      "orbit": "clifford",
+      "value": 1.8106601717798212,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 10,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 32,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s032_S",
+      "orbit": "clifford",
+      "value": 1.747546895706427,
+      "primal_l1": 1.7475468957064277,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 3,
+      "reduced_columns": 387
+    },
+    {
+      "n": 4,
+      "record_id": 32,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s032_L1",
+      "orbit": "clifford",
+      "value": 1.8106601717798203,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 541
+    },
+    {
+      "n": 4,
+      "record_id": 32,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s032_L2",
+      "orbit": "clifford",
+      "value": 1.4714045207910307,
+      "primal_l1": 1.471404520791031,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 10,
+      "reduced_columns": 928
+    },
+    {
+      "n": 4,
+      "record_id": 33,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s033_D",
+      "orbit": "clifford",
+      "value": 2.164213562373094,
+      "primal_l1": 2.164213562373094,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 15,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 33,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s033_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969486,
+      "primal_l1": 2.862741699796951,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 33,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s033_L1",
+      "orbit": "clifford",
+      "value": 1.9571067811865472,
+      "primal_l1": 1.9571067811865466,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 6.661338147750939e-16,
+      "support_size": 15,
+      "reduced_columns": 775
+    },
+    {
+      "n": 4,
+      "record_id": 33,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s033_L2",
+      "orbit": "clifford",
+      "value": 1.9571067811865464,
+      "primal_l1": 1.957106781186547,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 14,
+      "reduced_columns": 1852
+    },
+    {
+      "n": 4,
+      "record_id": 34,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s034_D",
+      "orbit": "clifford",
+      "value": 2.2071067811865466,
+      "primal_l1": 2.207106781186546,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 15,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 34,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s034_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064288,
+      "primal_l1": 1.7475468957064275,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 34,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s034_L1",
+      "orbit": "clifford",
+      "value": 1.7071067811865468,
+      "primal_l1": 1.7071067811865466,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 435
+    },
+    {
+      "n": 4,
+      "record_id": 34,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s034_L2",
+      "orbit": "clifford",
+      "value": 1.7071067811865468,
+      "primal_l1": 1.7071067811865464,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 918
+    },
+    {
+      "n": 4,
+      "record_id": 35,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s035_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999984,
+      "primal_l1": 1.9999999999999984,
+      "primal_residual": 1.7225464241988328e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "support_size": 7,
+      "reduced_columns": 128
+    },
+    {
+      "n": 4,
+      "record_id": 35,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s035_S",
+      "orbit": "clifford",
+      "value": 0.9999999999999993,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 6.123233995736761e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 1,
+      "reduced_columns": 323
+    },
+    {
+      "n": 4,
+      "record_id": 35,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s035_L1",
+      "orbit": "clifford",
+      "value": 1.9999999999999984,
+      "primal_l1": 1.9999999999999987,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 258
+    },
+    {
+      "n": 4,
+      "record_id": 35,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s035_L2",
+      "orbit": "clifford",
+      "value": 0.9999999999999993,
+      "primal_l1": 0.9999999999999993,
+      "primal_residual": 6.123233995736761e-17,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 1,
+      "reduced_columns": 581
+    },
+    {
+      "n": 4,
+      "record_id": 36,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s036_D",
+      "orbit": "clifford",
+      "value": 1.8624368670764584,
+      "primal_l1": 1.862436867076458,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 11,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 36,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s036_S",
+      "orbit": "clifford",
+      "value": 2.86274169979695,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.6645352591003757e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 36,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s036_L1",
+      "orbit": "clifford",
+      "value": 1.7374368670764584,
+      "primal_l1": 1.737436867076458,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 501
+    },
+    {
+      "n": 4,
+      "record_id": 36,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s036_L2",
+      "orbit": "clifford",
+      "value": 1.714855486106859,
+      "primal_l1": 1.714855486106859,
+      "primal_residual": 1.3877787807814457e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 1578
+    },
+    {
+      "n": 4,
+      "record_id": 37,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s037_D",
+      "orbit": "clifford",
+      "value": 1.987436867076457,
+      "primal_l1": 1.987436867076458,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 8.881784197001252e-16,
+      "support_size": 14,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 37,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s037_S",
+      "orbit": "clifford",
+      "value": 2.800609665440986,
+      "primal_l1": 2.8006096654409873,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 37,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s037_L1",
+      "orbit": "clifford",
+      "value": 1.8047378541243653,
+      "primal_l1": 1.8047378541243646,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 37,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s037_L2",
+      "orbit": "clifford",
+      "value": 1.804737854124365,
+      "primal_l1": 1.8047378541243646,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 38,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s038_D",
+      "orbit": "clifford",
+      "value": 1.9999999999999996,
+      "primal_l1": 1.9999999999999996,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 38,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s038_S",
+      "orbit": "clifford",
+      "value": 2.555555555555551,
+      "primal_l1": 2.555555555555555,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 3.9968028886505635e-15,
+      "support_size": 5,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 38,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s038_L1",
+      "orbit": "clifford",
+      "value": 1.7272727272727273,
+      "primal_l1": 1.727272727272727,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "support_size": 8,
+      "reduced_columns": 518
+    },
+    {
+      "n": 4,
+      "record_id": 38,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s038_L2",
+      "orbit": "clifford",
+      "value": 1.7272727272727268,
+      "primal_l1": 1.7272727272727266,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "support_size": 7,
+      "reduced_columns": 1121
+    },
+    {
+      "n": 4,
+      "record_id": 39,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s039_D",
+      "orbit": "clifford",
+      "value": 1.81066017177982,
+      "primal_l1": 1.8106601717798205,
+      "primal_residual": 2.7755575615628914e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 10,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 39,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s039_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064269,
+      "primal_l1": 1.747546895706428,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 1.5543122344752192e-15,
+      "gap": 1.1102230246251565e-15,
+      "support_size": 3,
+      "reduced_columns": 387
+    },
+    {
+      "n": 4,
+      "record_id": 39,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s039_L1",
+      "orbit": "clifford",
+      "value": 1.810660171779821,
+      "primal_l1": 1.8106601717798207,
+      "primal_residual": 5.551115123125783e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 12,
+      "reduced_columns": 541
+    },
+    {
+      "n": 4,
+      "record_id": 39,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s039_L2",
+      "orbit": "clifford",
+      "value": 1.4714045207910313,
+      "primal_l1": 1.471404520791031,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 9,
+      "reduced_columns": 928
+    },
+    {
+      "n": 4,
+      "record_id": 40,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s040_D",
+      "orbit": "clifford",
+      "value": 2.112436867076459,
+      "primal_l1": 2.1124368670764575,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 15,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 40,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s040_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969495,
+      "primal_l1": 2.862741699796951,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 40,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s040_L1",
+      "orbit": "clifford",
+      "value": 1.9356601717798207,
+      "primal_l1": 1.9356601717798207,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 0.0,
+      "support_size": 14,
+      "reduced_columns": 619
+    },
+    {
+      "n": 4,
+      "record_id": 40,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s040_L2",
+      "orbit": "clifford",
+      "value": 1.9135827963072967,
+      "primal_l1": 1.9135827963072973,
+      "primal_residual": 1.3322676295501878e-15,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 6.661338147750939e-16,
+      "support_size": 13,
+      "reduced_columns": 1696
+    },
+    {
+      "n": 4,
+      "record_id": 41,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s041_D",
+      "orbit": "clifford",
+      "value": 1.8624368670764573,
+      "primal_l1": 1.8624368670764573,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 11,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 41,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s041_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.8627416997969517,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.6645352591003757e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 41,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s041_L1",
+      "orbit": "clifford",
+      "value": 1.7374368670764575,
+      "primal_l1": 1.7374368670764575,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 10,
+      "reduced_columns": 501
+    },
+    {
+      "n": 4,
+      "record_id": 41,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s041_L2",
+      "orbit": "clifford",
+      "value": 1.7148554861068583,
+      "primal_l1": 1.7148554861068583,
+      "primal_residual": 3.885780586188048e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 1578
+    },
+    {
+      "n": 4,
+      "record_id": 42,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s042_D",
+      "orbit": "clifford",
+      "value": 2.164213562373094,
+      "primal_l1": 2.1642135623730945,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 42,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s042_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064269,
+      "primal_l1": 1.747546895706428,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 1.1102230246251565e-15,
+      "support_size": 3,
+      "reduced_columns": 483
+    },
+    {
+      "n": 4,
+      "record_id": 42,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s042_L1",
+      "orbit": "clifford",
+      "value": 2.1642135623730945,
+      "primal_l1": 2.164213562373094,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 489
+    },
+    {
+      "n": 4,
+      "record_id": 42,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s042_L2",
+      "orbit": "clifford",
+      "value": 1.5303300858899098,
+      "primal_l1": 1.53033008588991,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 972
+    },
+    {
+      "n": 4,
+      "record_id": 43,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s043_D",
+      "orbit": "clifford",
+      "value": 1.987436867076457,
+      "primal_l1": 1.987436867076457,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 14,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 43,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s043_S",
+      "orbit": "clifford",
+      "value": 2.800609665440985,
+      "primal_l1": 2.8006096654409864,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 8,
+      "reduced_columns": 691
+    },
+    {
+      "n": 4,
+      "record_id": 43,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s043_L1",
+      "orbit": "clifford",
+      "value": 1.804737854124365,
+      "primal_l1": 1.8047378541243637,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 13,
+      "reduced_columns": 657
+    },
+    {
+      "n": 4,
+      "record_id": 43,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s043_L2",
+      "orbit": "clifford",
+      "value": 1.8047378541243648,
+      "primal_l1": 1.8047378541243644,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 14,
+      "reduced_columns": 1348
+    },
+    {
+      "n": 4,
+      "record_id": 44,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s044_D",
+      "orbit": "clifford",
+      "value": 1.81066017177982,
+      "primal_l1": 1.81066017177982,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 9,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 44,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s044_S",
+      "orbit": "clifford",
+      "value": 1.7475468957064269,
+      "primal_l1": 1.7475468957064273,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 3,
+      "reduced_columns": 387
+    },
+    {
+      "n": 4,
+      "record_id": 44,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s044_L1",
+      "orbit": "clifford",
+      "value": 1.81066017177982,
+      "primal_l1": 1.8106601717798196,
+      "primal_residual": 5.551115123125783e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 12,
+      "reduced_columns": 541
+    },
+    {
+      "n": 4,
+      "record_id": 44,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s044_L2",
+      "orbit": "clifford",
+      "value": 1.4714045207910311,
+      "primal_l1": 1.471404520791031,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 928
+    },
+    {
+      "n": 4,
+      "record_id": 45,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s045_D",
+      "orbit": "clifford",
+      "value": 1.799936867076458,
+      "primal_l1": 1.799936867076458,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 0.0,
+      "gap": 0.0,
+      "support_size": 11,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 45,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s045_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969517,
+      "primal_l1": 2.8627416997969526,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 45,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s045_L1",
+      "orbit": "clifford",
+      "value": 1.2602004594045824,
+      "primal_l1": 1.2602004594045815,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 9,
+      "reduced_columns": 4659
+    },
+    {
+      "n": 4,
+      "record_id": 45,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s045_L2",
+      "orbit": "clifford",
+      "value": 1.2602004594045826,
+      "primal_l1": 1.2602004594045817,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 9,
+      "reduced_columns": 5736
+    },
+    {
+      "n": 4,
+      "record_id": 46,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "D",
+      "certificate_key": "n4_s046_D",
+      "orbit": "clifford",
+      "value": 1.5833333333333328,
+      "primal_l1": 1.5833333333333337,
+      "primal_residual": 8.881784197001252e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 8.881784197001252e-16,
+      "support_size": 11,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 46,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "S",
+      "certificate_key": "n4_s046_S",
+      "orbit": "clifford",
+      "value": 2.555555555555551,
+      "primal_l1": 2.5555555555555554,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 4.440892098500626e-15,
+      "support_size": 5,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 46,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L1",
+      "certificate_key": "n4_s046_L1",
+      "orbit": "clifford",
+      "value": 1.1956521739130432,
+      "primal_l1": 1.195652173913043,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 5670
+    },
+    {
+      "n": 4,
+      "record_id": 46,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0
+      ],
+      "independent_U": true,
+      "kind": "L2",
+      "certificate_key": "n4_s046_L2",
+      "orbit": "clifford",
+      "value": 1.1956521739130432,
+      "primal_l1": 1.1956521739130437,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 4.440892098500626e-16,
+      "support_size": 13,
+      "reduced_columns": 6273
+    },
+    {
+      "n": 4,
+      "record_id": 47,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s047_D",
+      "orbit": "clifford",
+      "value": 1.7999368670764575,
+      "primal_l1": 1.799936867076457,
+      "primal_residual": 8.881784197001252e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 11,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 47,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s047_S",
+      "orbit": "clifford",
+      "value": 2.862741699796949,
+      "primal_l1": 2.862741699796951,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.7763568394002505e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 47,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s047_L1",
+      "orbit": "clifford",
+      "value": 1.2602004594045824,
+      "primal_l1": 1.2602004594045813,
+      "primal_residual": 1.1102230246251565e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 1.1102230246251565e-15,
+      "support_size": 9,
+      "reduced_columns": 4659
+    },
+    {
+      "n": 4,
+      "record_id": 47,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s047_L2",
+      "orbit": "clifford",
+      "value": 1.2602004594045817,
+      "primal_l1": 1.2602004594045813,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 4.440892098500626e-16,
+      "support_size": 9,
+      "reduced_columns": 5736
+    },
+    {
+      "n": 4,
+      "record_id": 48,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s048_D",
+      "orbit": "clifford",
+      "value": 1.5833333333333324,
+      "primal_l1": 1.5833333333333326,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 2.220446049250313e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 11,
+      "reduced_columns": 144
+    },
+    {
+      "n": 4,
+      "record_id": 48,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s048_S",
+      "orbit": "clifford",
+      "value": 2.555555555555551,
+      "primal_l1": 2.5555555555555536,
+      "primal_residual": 2.220446049250313e-16,
+      "dual_violation": 6.661338147750939e-16,
+      "gap": 2.6645352591003757e-15,
+      "support_size": 6,
+      "reduced_columns": 603
+    },
+    {
+      "n": 4,
+      "record_id": 48,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s048_L1",
+      "orbit": "clifford",
+      "value": 1.1956521739130423,
+      "primal_l1": 1.1956521739130426,
+      "primal_residual": 6.106226635438361e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 16,
+      "reduced_columns": 5670
+    },
+    {
+      "n": 4,
+      "record_id": 48,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s048_L2",
+      "orbit": "clifford",
+      "value": 1.195652173913043,
+      "primal_l1": 1.1956521739130428,
+      "primal_residual": 1.6653345369377348e-16,
+      "dual_violation": 1.1102230246251565e-15,
+      "gap": 2.220446049250313e-16,
+      "support_size": 13,
+      "reduced_columns": 6273
+    },
+    {
+      "n": 4,
+      "record_id": 49,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "D",
+      "certificate_key": "n4_s049_D",
+      "orbit": "clifford",
+      "value": 1.799936867076457,
+      "primal_l1": 1.7999368670764566,
+      "primal_residual": 3.3306690738754696e-16,
+      "dual_violation": 0.0,
+      "gap": 4.440892098500626e-16,
+      "support_size": 11,
+      "reduced_columns": 136
+    },
+    {
+      "n": 4,
+      "record_id": 49,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "S",
+      "certificate_key": "n4_s049_S",
+      "orbit": "clifford",
+      "value": 2.8627416997969486,
+      "primal_l1": 2.8627416997969517,
+      "primal_residual": 6.661338147750939e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 3.1086244689504383e-15,
+      "support_size": 12,
+      "reduced_columns": 1077
+    },
+    {
+      "n": 4,
+      "record_id": 49,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L1",
+      "certificate_key": "n4_s049_L1",
+      "orbit": "clifford",
+      "value": 1.260200459404582,
+      "primal_l1": 1.2602004594045806,
+      "primal_residual": 4.440892098500626e-16,
+      "dual_violation": 8.881784197001252e-16,
+      "gap": 1.3322676295501878e-15,
+      "support_size": 9,
+      "reduced_columns": 4659
+    },
+    {
+      "n": 4,
+      "record_id": 49,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "U": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "independent_U": false,
+      "kind": "L2",
+      "certificate_key": "n4_s049_L2",
+      "orbit": "clifford",
+      "value": 1.2602004594045813,
+      "primal_l1": 1.260200459404581,
+      "primal_residual": 5.551115123125783e-16,
+      "dual_violation": 4.440892098500626e-16,
+      "gap": 2.220446049250313e-16,
+      "support_size": 9,
+      "reduced_columns": 5736
+    }
+  ],
+  "pool_counts": {
+    "2": {
+      "C": 432,
+      "D": 64,
+      "S": 60,
+      "M": 96,
+      "L1": 160,
+      "L2": 220,
+      "L3": 592
+    },
+    "3": {
+      "C": 71136,
+      "D": 512,
+      "S": 1080,
+      "M": 13824,
+      "L1": 14336,
+      "L2": 15416,
+      "L3": 85472
+    },
+    "4": {
+      "D": 4096,
+      "S": 36720,
+      "M": 165888
+    }
+  },
+  "catalogues": {
+    "2": {
+      "all_decorations": 3,
+      "independent_decorations": 2
+    },
+    "3": {
+      "all_decorations": 10,
+      "independent_decorations": 6
+    },
+    "4": {
+      "all_decorations": 50,
+      "independent_decorations": 24
+    }
+  },
+  "targets": {
+    "2": {
+      "targets_checked": 3,
+      "max_coordinate_error": 4.440892098500626e-16
+    },
+    "3": {
+      "targets_checked": 10,
+      "max_coordinate_error": 6.661338147750939e-16
+    },
+    "4": {
+      "targets_checked": 50,
+      "max_coordinate_error": 6.661338147750939e-16
+    },
+    "5": {
+      "targets_checked": 354,
+      "max_coordinate_error": 1.1102230246251565e-15
+    }
+  },
+  "runtime": {
+    "python": "3.12.2",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0"
+  },
+  "input_sha256": {
+    "data/cnc_operators_2.h5": "70f888a62a081b9f59111702239712c33d66736501fe634b8414748458227fd3",
+    "data/cnc_operators_3.h5": "07a3db9a4ae2d26bbdf4f20d1c846f5e0d1b670e0660c86e5f2c0667a07eb3ac",
+    "data/deterministic_1.h5": "0b74680c59d8e639b9d23d945654ac8fd02bac7fd8e5a4cefdb54958845a2be9",
+    "data/deterministic_2.h5": "9caaf1d32475bf04e1e49c5ab7fed6400db038ad2768d868e2b6aba989b23db0",
+    "data/deterministic_3.h5": "fe289d2a2e7409b8b656ccc512544c9950b09af6181d1239a78c18194cff79c4",
+    "data/deterministic_4.h5": "8736863b57b8b91357f9481965cd5791e938a641a260f8255e55ba8ecdd0a199",
+    "data/deterministic_5.h5": "8a7e58f2621cd432d11d83a74687c48c1075793ec996f314a85f6abde40ef710",
+    "data/local_stabilizer_states_2.h5": "baba117ee2353f4a325982a0add7524a7a9d94c9108539bd018a91f6ccd4a682",
+    "data/local_stabilizer_states_3.h5": "61969395dc5fae3d1062c4e92795a9ed0075afe053ec345cfcdc866f7dcaef48",
+    "data/local_stabilizer_states_4.h5": "19c2a77321b83f07cdb6a5ccfbe41dd16afc282746eda19655cced0b859ac1e7",
+    "data/max_weight_operators_p_2_2.h5": "cee3a30dbcbd99fc50f1f26994ae437128fde809e0438d409c81cc20255a8009",
+    "data/max_weight_operators_p_2_3.h5": "a52abf40b6ba3fa3c00d765ec123a9f6acb7ca72287bbe519d419c486a12bf3a",
+    "data/max_weight_operators_p_2_4.h5": "1d25d1c76395e5586e02037086ee126a71d82327d95436dc40430d4380c927de",
+    "data/stabilizer_states_2.h5": "743e16e274afade2c20643902cafd1ace4f2ecd93ba02163fd20fa1a0d7a78a7",
+    "data/stabilizer_states_3.h5": "be365bb53302ee61412a12f8b41fa2dc2deae94777b964203b52f75a35746620",
+    "data/stabilizer_states_4.h5": "6aab3a6286934966518837fa53db2d0e0677f03bc9d7453a22dc358ac6ad89f8"
+  },
+  "manuscript_reference_sha256": "fb14c379501aaf1db79fe7af8d4bea45b76e8a62a2de9e173c85cd44cc75231e"
+}

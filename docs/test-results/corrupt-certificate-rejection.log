@@ -1,0 +1,8 @@
+PASS: added 0.1 to a saved dual witness; full verifier rejected it.
+Traceback (most recent call last):
+  File "<standalone-checkout>/numerics/reproduce.py", line 310, in <module>
+    elif args.verify_only:verify()
+                          ^^^^^^^^
+  File "<standalone-checkout>/numerics/reproduce.py", line 276, in verify
+    assert max(v for k,v in metrics.items() if k!='key')<1e-8,metrics
+AssertionError: {'key': 'n2_s000_D', 'residual': 5.551115123125783e-17, 'dual_violation': 0.10000000000000009, 'gap': 0.09999999999999987, 'reported_error': 0.10000000000000009}

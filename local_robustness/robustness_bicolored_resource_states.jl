@@ -28,6 +28,7 @@ include(joinpath(local_robustness_folder, "robustness_functions.jl"))
 Load an HDF5 dataset by name, falling back to the only dataset if needed.
 """
 function load_hdf5_dataset(file_path::String; preferred_dataset::String="data")
+    BicoloredRobustness.MaxWeightSeed.validate_maxweight_file(file_path)
     h5open(file_path, "r") do file
         ks = collect(keys(file))
         if preferred_dataset in ks
@@ -53,7 +54,7 @@ function load_hdf5_labels(file_path::String)
     end
 end
 
-# phase space options include: "deterministic", "stabililzer_states", "cnc_operators", "max_weight_operators_p_2"
+# phase space options include: "deterministic", "stabilizer_states", "cnc_operators", "max_weight_operators_p_2"
 phase_space_name = "max_weight_operators_p_2"
 
 for n in 2:3

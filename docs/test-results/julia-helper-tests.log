@@ -1,0 +1,3 @@
+  Activating project at `<repository>/MyProject`
+Test Summary:                                       | Pass  Total  Time
+legacy helpers use physical expectation coordinates |   15     15  2.8s

@@ -1,6 +1,21 @@
-MyProject/*
+# Operating system, editor and Python environment files
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Local backups and historical decomposition caches
+archive/
+keys/
 large_data/
-keys/*
+
+# Rebuild with: python -B numerics/reproduce.py --prepare-data
 data/cnc_operators_3.h5
 data/stabilizer_states_4.h5
 data/max_weight_operators_p_2_4.h5
+
+# Keep Julia Project.toml and Manifest.toml available for publication.
+MyProject/LocalPreferences.toml
+
+# Publication results and certificates are intentionally NOT ignored.

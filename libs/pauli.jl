@@ -31,30 +31,19 @@ end
 
 
 function pauli(x)
-    xj = x isa GAP.GapObj ? GAP.gap_to_julia(x) : x
-    xj = Int.(collect(xj))
-
-    if !iseven(length(xj))
-        error("Input must be a bit string of even length.")
+    bits = Int.(collect(x))
+    iseven(length(bits)) || throw(ArgumentError("Pauli bit string must have even length"))
+    all(b -> b in (0, 1), bits) || throw(ArgumentError("Pauli entries must be binary"))
+    n = length(bits) ÷ 2
+    local_paulis = (ComplexF64[1 0; 0 1], ComplexF64[0 1; 1 0],
+                    ComplexF64[0 -im; im 0], ComplexF64[1 0; 0 -1])
+    result = ones(ComplexF64, 1, 1)
+    for q in 1:n
+        a, b = bits[q], bits[n+q]
+        label = a == 0 ? (b == 0 ? 1 : 4) : (b == 0 ? 2 : 3)
+        result = kron(result, local_paulis[label])
     end
-
-    n = div(length(xj), 2)
-
-    X = gobj([0 1; 1 0])
-    Z = gobj([1 0; 0 -1])
-
-    a = xj[1:n]
-    b = xj[n+1:end]
-
-    XaZb = X^a[1] * Z^b[1]
-
-    for i in 2:n
-        XaZb = g.KroneckerProduct(XaZb, X^a[i] * Z^b[i])
-    end
-
-    phase = g.E(4)^mod(sum(a .* b), 4)
-
-    return phase * XaZb
+    return result
 end
 
 

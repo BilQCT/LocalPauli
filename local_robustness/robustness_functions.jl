@@ -11,6 +11,7 @@ using Pkg
 base_dir = dirname(@__DIR__)            # one level up from local_robustness
 project_folder = joinpath(base_dir, "MyProject")
 Pkg.activate(project_folder)
+include(joinpath(base_dir, "systematic_robustness", "BicoloredRobustness.jl"))
 
 using HDF5, JuMP, GLPK, LinearAlgebra, Combinatorics
 
@@ -72,7 +73,7 @@ end
 Construct the tensor product of n copies of the |+> state (with |+> = [1, 1]^T).
 """
 function plus_state(n::Int)
-    plus = Vector{Complex}([1; 1])
+    plus = ComplexF64[1, 1] / sqrt(2)
     plus_n = [1]
     for _ in 1:n
         plus_n = kron(plus_n, plus)
@@ -148,20 +149,19 @@ end
 # The following assumes that you have a module or definitions for the Pauli
 # basis (e.g., a type `PauliString` and function `pauli`). Here we include the
 # external file that defines these.
-include("../libs/pauli.jl")
+
 
 """
     convert_matrix_to_pauli_basis(n::Int, A) -> Vector{Float64}
 
-Converts a density matrix (or operator) A into its expansion coefficients in
-the n-qubit Pauli basis.
+Converts A into expectation coordinates Tr(P A), with identity equal to Tr(A).
 """
 function convert_matrix_to_pauli_basis(n, A)
     pauli_dict = PauliString(n)
     vector_A = Float64[]
     for a in pauli_dict.bit_strings
         Ta = pauli(a)
-        A_a = real(tr(Ta * A) / (2^n))
+        A_a = real(tr(Ta * A))
         push!(vector_A, A_a)
     end
     return vector_A
@@ -313,29 +313,28 @@ end
 # ------------------------------------------------------------------------------
 
 function robustness(input_array, target_state; threshold=1e-16, save=true, file_loc::String=keys_folder, file_name="result")
-    model = Model(GLPK.Optimizer)
-    N = size(input_array, 2)
-    @variable(model, x[1:N])
-    @variable(model, u[1:N] ≥ 0)
-    @objective(model, Min, sum(u))
-    @constraint(model, [i=1:N], u[i] ≥ x[i])
-    @constraint(model, [i=1:N], u[i] ≥ -x[i])
-    @constraint(model, input_array * x .== target_state)
-    optimize!(model)
-    if termination_status(model) != MOI.OPTIMAL
-        error("Optimization failed with status: ", termination_status(model))
-    end
-    x_value = value.(x)
-    obj_value = objective_value(model)
-    println("Optimal objective value (min ||x||₁): ", obj_value)
-    significant_terms = findall(x -> abs(x) > threshold, x_value)
-    decomposition_array = vcat(transpose(x_value[significant_terms]), input_array[:, significant_terms])
+    dictionary = BicoloredRobustness.FixedDictionary(
+        Matrix{Float64}(input_array), round(Int, log(4, size(input_array, 1))),
+        file_name, String[])
+    all(isapprox.(dictionary.vectors[1, :], 1; atol=1e-12, rtol=0)) ||
+        error("Dictionary identity row must equal one")
+    result = BicoloredRobustness.compute_robustness(dictionary, target_state;
+        support_tolerance=threshold)
+    println("Optimal objective value (min ||x||₁): ", result.objective)
     if save
-        h5_file = joinpath(file_loc, file_name * ".h5")
-        h5open(h5_file, "w") do file
+        mkpath(file_loc)
+        selected = result.support_indices
+        decomposition_array = vcat(transpose(result.support_coefficients), input_array[:, selected])
+        h5open(joinpath(file_loc, file_name * ".h5"), "w") do file
             file[file_name] = decomposition_array
+            file["dual"] = result.dual
+            attributes(file)["objective"] = result.objective
+            attributes(file)["dual_violation"] = result.dual_violation
+            attributes(file)["duality_gap"] = result.duality_gap
+            attributes(file)["pauli_convention"] = "lexicographic I,X,Y,Z; Tr(P A)"
         end
     end
+    return result
 end
 
 # ------------------------------------------------------------------------------

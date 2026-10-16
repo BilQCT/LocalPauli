@@ -1,0 +1,38 @@
+% Generated from verified results/manuscript_v75/results.json.
+% Publication subset: independent Hadamard decorations, proper LC orbit M.
+\begin{table}[t]
+\centering
+\begin{tabular}{cclrrrr}
+\hline
+$n$ & $G$ & $U$ & $\mathfrak R_S$ & $\mathfrak R_C$ & $\mathfrak R_{L_0}$ & $\mathfrak R_{L_3}$ \\
+\hline
+2 & $P_2$ & $\varnothing$ & 1.748 & 1.000 & 1.207 & 1.000 \\
+2 & $P_2$ & $\{1\}$ & 1.000 & 1.000 & 1.000 & 1.000 \\
+3 & $P_3$ & $\varnothing$ & 2.219 & 1.283 & 1.561 & 1.155 \\
+3 & $P_3$ & $\{1\}$ & 1.414 & 1.000 & 1.707 & 1.000 \\
+3 & $P_3$ & $\{2\}$ & 2.200 & 1.000 & 1.500 & 1.000 \\
+3 & $P_3$ & $\{1,3\}$ & 1.414 & 1.000 & 1.414 & 1.000 \\
+3 & $K_3$ & $\varnothing$ & 2.219 & 1.283 & 1.737 & 1.136 \\
+3 & $K_3$ & $\{1\}$ & 2.200 & 1.000 & 1.500 & 1.000 \\
+\hline
+\end{tabular}
+\caption{Corrected robustness for the independent-decoration two- and three-qubit catalogue.}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar=0pt,bar width=4pt,width=\textwidth,height=7.2cm,
+xmin=0.5,xmax=24.5,ymin=0,ymax=3.1,xtick={1,...,24},
+xlabel={State Index},ylabel={Robustness},ymajorgrids=true,
+legend columns=3,legend style={at={(0.5,1.02)},anchor=south,draw=none}]
+\addplot+[fill=blue!55,draw=blue] coordinates {(1,1.445432) (2,1.457107) (3,1.195652) (4,1.353553) (5,1.500000) (6,1.957107) (7,1.804738) (8,1.707107) (9,1.810660) (10,2.000000) (11,1.935660) (12,1.804738) (13,2.164214) (14,1.727273) (15,1.810660) (16,1.560660) (17,1.804738) (18,1.810660) (19,1.737437) (20,1.804738) (21,1.727273) (22,1.810660) (23,1.260200) (24,1.195652)};
+\addlegendentry{$\mathfrak R_{L_1}$}
+\addplot+[fill=red!55,draw=red] coordinates {(1,1.445432) (2,1.414214) (3,1.195652) (4,1.353553) (5,1.000000) (6,1.957107) (7,1.804738) (8,1.707107) (9,1.471405) (10,1.000000) (11,1.913583) (12,1.804738) (13,1.530330) (14,1.727273) (15,1.471405) (16,1.560660) (17,1.804738) (18,1.471405) (19,1.714855) (20,1.804738) (21,1.727273) (22,1.471405) (23,1.260200) (24,1.195652)};
+\addlegendentry{$\mathfrak R_{L_2}$}
+\addplot+[fill=orange!65,draw=brown] coordinates {(1,2.862742) (2,1.747547) (3,2.555556) (4,1.747547) (5,1.000000) (6,2.862742) (7,2.800610) (8,1.747547) (9,1.747547) (10,1.000000) (11,2.862742) (12,2.800610) (13,1.747547) (14,2.555556) (15,1.747547) (16,2.862742) (17,2.800610) (18,1.747547) (19,2.862742) (20,2.800610) (21,2.555556) (22,1.747547) (23,2.862742) (24,2.555556)};
+\addlegendentry{$\mathfrak R_{S}$}
+\end{axis}
+\end{tikzpicture}
+\caption{Corrected robustness for the 24 independent-decoration four-qubit states in the manuscript order.}
+\end{figure}

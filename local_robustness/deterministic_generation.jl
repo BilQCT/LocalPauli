@@ -37,24 +37,14 @@ function generate_all_deterministic_operators(n::Int8)
 end
 
 
-# qubit number
-n = Int8(7)
-
-println("Generating deterministic vertices.\n")
-
-n_qubit_deterministic_operators = generate_all_deterministic_operators(n)
-
-println("Saving deterministic vertices.\n")
-
-# Save to HDF5 file
-file_name = "deterministic_$(n)"
-h5_file = joinpath(data_folder, file_name*".h5")
-h5open(h5_file, "w") do file
-    file["data"] = n_qubit_deterministic_operators
+# Explicit bounded default; the previous hard-coded n=7 allocation was enormous.
+if abspath(PROGRAM_FILE) == @__FILE__
+    for n in (isempty(ARGS) ? (2:4) : parse.(Int, ARGS))
+        1 <= n <= 5 || error("Dense deterministic generation is restricted to n <= 5")
+        data = generate_all_deterministic_operators(Int8(n))
+        h5open(joinpath(data_folder, "deterministic_$(n).h5"), "w") do file
+            file["data"] = data
+            attributes(file)["pauli_convention"] = "lexicographic I,X,Y,Z; Tr(P A)"
+        end
+    end
 end
-
-println("Matrix saved to $h5_file\n")
-
-
-
-

@@ -49,11 +49,11 @@ file_names = ["deterministic_$n", "locally_closed_L_3", "locally_closed_L_prime_
 # file_names = ["deterministic_$n"]
 
 # Data folders (adjust paths as needed)
-data_folder = "./data/"
-output_folder = "./keys/"
+data_folder = joinpath(base_dir, "data")
+output_folder = joinpath(base_dir, "keys")
 
 # There are two modes: :mbqc and :pbc
-mode = :pbc 
+mode = :mbqc
 
 println("\n" * "="^80)
 print_centered_message(" RUNNING EXPERIMENTS: MODE = $mode, n = $n ", 80, "=")
@@ -71,10 +71,11 @@ for file_name in file_names
     h5_file = joinpath(data_folder, file_name * (mode == :state_vector ? ".h5" : ".h5"))
     
     # Open and read the phase-space matrix.
-    file = h5open(h5_file, "r")
-    dataset_name = (mode == :state_vector ? file_name : file_name)
-    R = read(file[dataset_name])
-    close(file)
+    BicoloredRobustness.MaxWeightSeed.validate_maxweight_file(h5_file)
+    R = h5open(h5_file, "r") do file
+        dataset_name = haskey(file, "data") ? "data" : file_name
+        read(file[dataset_name])
+    end
 
     println(" → Loaded matrix size: ", size(R), "\n")
     

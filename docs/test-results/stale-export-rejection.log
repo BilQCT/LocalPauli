@@ -1,0 +1,8 @@
+PASS: changed a result by 0.01 after verification; exporter refused it.
+Traceback (most recent call last):
+  File "<standalone-checkout>/numerics/export_manuscript.py", line 276, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "<standalone-checkout>/numerics/export_manuscript.py", line 26, in main
+    assert hashlib.sha256((ROOT/'results/manuscript_v75'/name).read_bytes()).hexdigest()==verify['verified_artifacts_sha256'][name], 'Run --verify-only again: '+name+' changed after verification'
+AssertionError: Run --verify-only again: results.json changed after verification

@@ -3,6 +3,8 @@ module LocalCliffordBloch
 using GAP
 using LinearAlgebra
 using Combinatorics
+include("MaxWeightSeed.jl")
+using .MaxWeightSeed: gamma_elementary_p, seed_coordinates
 
 export PauliString,
        pauli_n,
@@ -25,6 +27,19 @@ const gobj = GAP.GapObj
 
 function all_dit_strings(d::Int, n::Int)
     return [collect(t) for t in Iterators.product(ntuple(_ -> 0:d-1, n)...)]
+end
+
+function z3_to_local_symplectic(u::Vector{Int})
+    all(x -> 0 <= x <= 2, u) || throw(ArgumentError("inputs must lie in 0:2"))
+    return vcat(Int.(u .!= 2), Int.(u .!= 0))
+end
+
+function max_weight_bloch_vector(n::Int, p::Int; pauli_info=PauliString(n))
+    return seed_coordinates(n, p)
+end
+
+function all_max_weight_fiducials(n::Int; pauli_info=PauliString(n))
+    return Dict(p => max_weight_bloch_vector(n, p; pauli_info=pauli_info) for p in 2:n)
 end
 
 reverse_map(D::Dict) = Dict(v => k for (k, v) in D)
