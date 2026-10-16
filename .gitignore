@@ -1,8 +1,6 @@
 MyProject/*
 large_data/
 keys/*
-data/deterministic_6.h5
-data/deterministic_7.h5
 data/cnc_operators_3.h5
 data/stabilizer_states_4.h5
 data/max_weight_operators_p_2_4.h5

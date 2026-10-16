@@ -229,7 +229,7 @@ end
 # phase_space_spec = "max_weight_operators_p_2"
 
 # Default combined phase space:
-phase_space_spec = ["deterministic", "max_weight_operators_p_2"]
+phase_space_spec = ["deterministic", "cnc_operators"]
 
 # Later examples:
 # phase_space_spec = ["deterministic", "max_weight_operators_p_2", "max_weight_operators_p_3"]
@@ -238,7 +238,7 @@ phase_space_spec = ["deterministic", "max_weight_operators_p_2"]
 phase_space_name = phase_space_label(phase_space_spec)
 
 # Choose the n-values to process.
-n_values = 4:4
+n_values = 3:3
 
 # Whether to remove duplicate columns after combining phase spaces.
 deduplicate_phase_space = true
